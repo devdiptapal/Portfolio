@@ -5,108 +5,81 @@
     Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
 -->
 <html>
+
 <head>
     <title>Dev Pal - Where I'm going..</title>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
     <link rel="stylesheet" href="assets/css/main.css" />
-    <noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
-
+    <noscript>
+        <link rel="stylesheet" href="assets/css/noscript.css" />
+    </noscript>
     <style>
+        /* Add custom fonts */
+        @import url('https://fonts.googleapis.com/css?family=Open+Sans:400,700&display=swap');
+
+        /* Adjust typography */
         body {
             font-family: 'Open Sans', sans-serif;
-            color: #444;
-            background-color: #f7f7f7;
-            line-height: 1.5;
-            padding-top: 4rem;
+            font-size: 16px;
+            line-height: 1.6;
         }
 
-        h2 {
-            font-size: 2rem;
-            font-weight: bold;
-            margin-bottom: 1.5rem;
-            color: #333;
+        h1, h2 {
+            font-weight: 700;
         }
 
-        h3 {
-            font-size: 1.5rem;
-            font-weight: bold;
-            margin-bottom: 1.2rem;
-            color: #555;
+        /* Experiment with color scheme */
+        body {
+            color: #333333;
         }
 
-        p {
-            margin-bottom: 1.2rem;
+        a {
+            color: #337ab7;
         }
 
-        hr {
-            border: none;
-            border-top: 1px solid #ddd;
-            margin-top: 2rem;
-            margin-bottom: 2rem;
+        /* Adjust layout */
+        #main {
+            background-color: #f8f8f8;
         }
 
-        footer {
-            background-color: #fff;
-            padding: 3rem 0;
-            text-align: center;
-            font-size: 0.9rem;
-        }
-
-        footer p {
-            margin-bottom: 0.5rem;
-        }
-
-        .split {
+        .posts {
             display: grid;
-            grid-template-columns: 1fr 1fr 1fr;
-            gap: 2rem;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            grid-gap: 30px;
         }
 
-        .split h3 {
-            margin-bottom: 0.8rem;
-            font-size: 1.1rem;
-            font-weight: bold;
-            color: #333;
+        .image-wrapper {
+            max-width: 100%;
+            height: auto;
         }
 
-        .split p {
-            margin-bottom: 1.2rem;
+        /* Add subtle animation */
+        .image-wrapper img {
+            transition: transform 0.3s ease-in-out;
         }
 
-        .icons.alt li {
-            margin-right: 1rem;
+        .image-wrapper:hover img {
+            transform: scale(1.1);
         }
 
-        @media screen and (max-width: 768px) {
-            .split {
-                grid-template-columns: 1fr;
-            }
+        /* Modify logo and header colors */
+        #header .logo {
+            color: #333333;
         }
 
-        /* Custom modifications */
-        .post {
-            margin-bottom: 3rem;
+        #header {
+            background-color: #f8f8f8;
         }
 
-        .post .major {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
-
-        .post .major .date {
-            font-size: 1.2rem;
-            color: #777;
-            margin-bottom: 1rem;
-        }
-
-        .post .major .image.fit img {
-            width: 100%;
-            max-width: 500px;
+        /* Modify navigation link colors */
+        #nav ul.links li a {
+            color: #333333;
         }
     </style>
 </head>
+
+
 <body class="is-preload">
 
 <!-- Wrapper -->
