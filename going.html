@@ -4,13 +4,17 @@
     html5up.net | @ajlkn
     Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
 -->
-<html>
+<html lang="en">
 
 <head>
-    <title>Dev Pal - Where I'm going..</title>
+    <title>Dev Pal - Future Vision & Personal Values</title>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <meta name="description" content="Explore Dev Pal's personal values, future vision, and guiding principles that shape his approach to data science, product development, and life." />
+    <meta name="keywords" content="personal values, future vision, data science philosophy, product development principles" />
+    <meta name="author" content="Dev Pal" />
     <link rel="stylesheet" href="assets/css/main.css" />
+    <link rel="stylesheet" href="assets/css/custom.css" />
     <noscript>
         <link rel="stylesheet" href="assets/css/noscript.css" />
     </noscript>
@@ -25,7 +29,7 @@
             line-height: 1.6;
         }
 
-        h1, h2 {
+        h1, h2, h3 {
             font-weight: 700;
         }
 
@@ -43,24 +47,39 @@
             background-color: #f8f8f8;
         }
 
-        .posts {
+        /* Enhanced value cards */
+        .value-card {
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            padding: 2rem;
+            margin-bottom: 2rem;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .value-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 5px 20px rgba(0,0,0,0.15);
+        }
+
+        .value-card h3 {
+            color: #337ab7;
+            margin-bottom: 1rem;
+            border-bottom: 2px solid #f0f0f0;
+            padding-bottom: 0.5rem;
+        }
+
+        .value-card p {
+            margin: 0;
+            color: #555;
+        }
+
+        /* Grid layout for values */
+        .values-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            grid-gap: 30px;
-        }
-
-        .image-wrapper {
-            max-width: 100%;
-            height: auto;
-        }
-
-        /* Add subtle animation */
-        .image-wrapper img {
-            transition: transform 0.3s ease-in-out;
-        }
-
-        .image-wrapper:hover img {
-            transform: scale(1.1);
+            gap: 2rem;
+            margin: 2rem 0;
         }
 
         /* Modify logo and header colors */
@@ -72,13 +91,24 @@
             background-color: #f8f8f8;
         }
 
-        /* Modify navigation link colors */
-        #nav ul.links li a {
-            color: #333333;
+        /* Medium embed styling */
+        .medium-embed {
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            overflow: hidden;
+            margin: 2rem 0;
         }
+
+        .medium-embed iframe {
+            border: none;
+            width: 100%;
+            min-height: 600px;
+        }
+
+        /* Remove nav link color overrides here to allow external CSS to take effect */
     </style>
 </head>
-
 
 <body class="is-preload">
 
@@ -112,89 +142,112 @@
         <!-- Post -->
         <section class="post">
             <header class="major">
-                <span class="date">Where I'm going..</span>
-                <a href="#" class="image fit"><img src="images/not found.jpg" alt="" /></a>
+                <span class="date">Future Vision</span>
+                <h1>Where I'm going..</h1>
+                <p>Guiding principles that continue despite milestones and shape my approach to data, product, and life.</p>
             </header>
 
+            <div class="values-grid">
+                <div class="value-card">
+                    <h3>Vulnerability</h3>
+                    <p>Believe that we're all somehow connected and have the larger perspective on things. Embrace openness and authenticity in all interactions.</p>
+                </div>
+
+                <div class="value-card">
+                    <h3>Honesty</h3>
+                    <p>Invest in the truth for the good and the bad. Build trust through transparency and genuine communication.</p>
+                </div>
+
+                <div class="value-card">
+                    <h3>Redemption</h3>
+                    <p>Try as hard as you can, sometimes you fall. This is not permanent. Get up and seize the next day with renewed energy.</p>
+                </div>
+
+                <div class="value-card">
+                    <h3>Perseverance</h3>
+                    <p>Stick it out for things that matter. You define the things that matter. Stay committed to your core values and goals.</p>
+                </div>
+
+                <div class="value-card">
+                    <h3>Intellectual Vitality</h3>
+                    <p>The ability to tackle seemingly uncomfortable and abstract topics under the sun with an open mind and reasoning from first principles.</p>
+                </div>
+
+                <div class="value-card">
+                    <h3>Grit</h3>
+                    <p>Combines with perseverance with a single goal in mind. Maintain focus and determination through challenges.</p>
+                </div>
+
+                <div class="value-card">
+                    <h3>Drive</h3>
+                    <p>An innate, biologically determined urge to attain a goal or satisfy a need. Channel this energy into meaningful pursuits.</p>
+                </div>
+
+                <div class="value-card">
+                    <h3>Question Status Quo</h3>
+                    <p>Question the "status quo" that is usually accepted. Reason for relevance and challenge conventional thinking.</p>
+                </div>
+
+                <div class="value-card">
+                    <h3>Openness</h3>  
+                    <p>Be open to changing your mind, often. It's powerful. Embrace new perspectives and continuous learning.</p>
+                </div>
+
+                <div class="value-card">
+                    <h3>Candor</h3>
+                    <p>Powerful to allow for new ideas to emerge. People reciprocate and mimic candor. Foster honest dialogue.</p>
+                </div>
+
+                <div class="value-card">
+                    <h3>Humor</h3>
+                    <p>With the perspective that we're on a ball of dust floating through space, you'd only be left with the humor of it. Maintain perspective and joy.</p>
+                </div>
+            </div>
+
             <hr />
 
-            <h2>Values</h2>
-            <p>Guiding principles that continue despite milestones.</p>
+            <!-- Remove Latest Thoughts & Writing section below -->
+            <!--
+            <header class="major">
+                <h2>Latest Thoughts & Writing</h2>
+                <p>Exploring ideas at the intersection of data, product, and human behavior.</p>
+            </header>
 
-            <h3>Vulnerability</h3>
-            <p>Believe that we're all somehow connected and have the larger perspective on things.</p>
-
-            <h3>Honesty</h3>
-            <p>Invest in the truth for the good and the bad.</p>
-
-            <h3>Redemption</h3>
-            <p>Try as hard as you can, sometimes you fall. This is not permanent. Get up seize the next day.</p>
-
-            <h3>Perseverance</h3>
-            <p>Stick it out for things that matter. You define the things that matter.</p>
-
-            <h3>Intellectual vitality</h3>
-            <p>The ability to seemingly uncomfortable and abstract topics under the sun with an open mind and reasoning from first principles.</p>
-
-            <h3>Grit</h3>
-            <p>Combines with perseverance with a single goal in mind.</p>
-
-            <h3>Drive</h3>
-            <p>An innate, biologically determined urge to attain a goal or satisfy a need.</p>
-
-            <h3>Question status quo</h3>
-            <p>Question the "status quo" that is usually accepted. Reason for relevance</p>
-
-            <h3>Openness</h3>  
-            <p>Be open to changing your mind, often. It's powerful.</p>
-
-            <h3>Candor</h3>
-            <p>Powerful to allow for new ideas to emerge. People reciprocate and mimic candor.</p>
-
-            <h3>Humor</h3>
-            <p>With the perspective that we're on a ball of dust floating through space, you'd only be left with the humor of it.</p>
-            <hr />
+            <div class="medium-embed">
+                <iframe src="https://medium.com/@devpal/latest?embed=1&limit=5" frameborder="0"></iframe>
+            </div>
+            -->
         </section>
 
-    <!-- Main -->
-    <div id="main">
-
-        <!-- Posts -->
-        <section class="posts">
-            <!-- Replace the URL below with the actual URL of your Medium account -->
-            <iframe src="https://medium.com/@devpal/latest?embed=1&limit=5" frameborder="0" style="width: 100%; min-height: 100vh;"></iframe>
-        </section>
-
-    </div>
-
-
-        <section class="split contact">
-            <section class="alt">
-				<section class="footer-section">
-					<div class="footer-column">
-						<h3>Email</h3>
-						<p><a href="mailto:devdiptapal@gmail.com">devdiptapal@gmail.com</a></p>
-					</div>
-					<div class="footer-column">
-						<h3>Social</h3>
-						<ul class="icons alt">
-							<li><a href="https://twitter.com/devpecks" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
-							<li><a href="https://www.linkedin.com/in/devpal/" class="icon brands fa-linkedin-in"><span class="label">Linkedin</span></a></li>
-							<li><a href="https://www.instagram.com/yourpaldev/" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
-							<li><a href="https://github.com/devdiptapal/" class="icon brands fa-github"><span class="label">GitHub</span></a></li>
-						</ul>
-					</div>
-				</section>
     </div>
 
     <!-- Footer -->
     <footer id="footer">
-        <div class="inner">
-            <ul>
-                <li>&copy; DEV PAL 2023</li>
-            </ul>
-        </div>
+        <section class="split contact">
+            <section class="alt">
+            </section>
+            <section>
+                <h3>Email</h3>
+                <p><a href="mailto: devdiptapal@gmail.com">devdiptapal@gmail.com</a></p>
+            </section>
+            <section>
+                <h3>Social</h3>
+                <ul class="icons alt">
+                    <li><a href="https://twitter.com/devpecks" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
+                    <li><a href="https://www.linkedin.com/in/devpal/" class="icon brands fa-linkedin-in"><span class="label">Linkedin</span></a></li>
+                    <li><a href="https://www.instagram.com/yourpaldev/" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
+                    <li><a href="https://github.com/devdiptapal/" class="icon brands fa-github"><span class="label">GitHub</span></a></li>
+                </ul>
+            </section>
+        </section>
     </footer>
+
+    <!-- Copyright -->
+    <div id="copyright">
+        <ul>
+            <li>&copy; DEV PAL 2024</li>
+        </ul>
+    </div>
 
 </div>
 
@@ -206,6 +259,8 @@
 <script src="assets/js/breakpoints.min.js"></script>
 <script src="assets/js/util.js"></script>
 <script src="assets/js/main.js"></script>
+<script src="assets/js/enhancements.js"></script>
 
 </body>
+
 </html>

@@ -1,0 +1,617 @@
+/* Custom Enhancements for Dev Pal Portfolio */
+
+/* Smooth scrolling */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Enhanced typography */
+body {
+    font-family: 'Open Sans', 'Merriweather', Georgia, serif;
+    line-height: 1.7;
+}
+
+/* Improved button styling */
+.button {
+    transition: all 0.3s ease;
+    border-radius: 4px;
+    font-weight: 600;
+}
+
+.button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
+.button.primary {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    border: none;
+}
+
+.button.primary:hover {
+    background: linear-gradient(135deg, #764ba2 0%, #667eea 100%);
+}
+
+/* Enhanced intro section */
+#intro {
+    background: linear-gradient(135deg, rgba(30, 37, 45, 0.95) 0%, rgba(30, 37, 45, 0.9) 100%);
+    backdrop-filter: blur(10px);
+}
+
+#intro h1 {
+    background: linear-gradient(45deg, #667eea, #764ba2);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    animation: fadeInUp 1s ease-out;
+}
+
+/* Card hover effects */
+.posts article, .value-card {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.posts article:hover, .value-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+}
+
+/* Improved nav bar aesthetics */
+#nav {
+    background: #23272f !important;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.10);
+    border-radius: 12px;
+    border: 1px solid #23272f;
+    margin: 1.5rem auto 2.5rem auto;
+    max-width: 95vw;
+    padding: 0.2rem 1.2rem;
+}
+
+#nav ul.links {
+    display: flex;
+    align-items: center;
+    gap: 2.2rem;
+    margin: 0;
+    padding: 0;
+}
+
+#nav ul.links li {
+    margin: 0;
+    padding: 0;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+#nav ul.links li a {
+    position: relative;
+    transition: color 0.3s, background 0.3s, box-shadow 0.3s;
+    color: #fff !important;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    padding: 0.75em 1.5em;
+    border-radius: 8px;
+    background: transparent;
+    z-index: 1;
+    box-shadow: none;
+}
+
+#nav ul.links li a:hover {
+    color: #fff !important;
+    background: rgba(255,255,255,0.12);
+}
+
+#nav ul.links li.active a {
+    color: #fff !important;
+    background: linear-gradient(90deg, #667eea 0%, #764ba2 100%);
+    box-shadow: 0 2px 12px rgba(102,126,234,0.10);
+}
+
+#nav ul.links li a::after {
+    display: none;
+}
+
+/* Principles list styling */
+.principles-list {
+    list-style: disc !important;
+    padding-left: 2rem !important;
+}
+
+.principles-list li {
+    margin-bottom: 1rem;
+    line-height: 1.6;
+    color: #333333;
+}
+
+.principles-list li strong {
+    color: #212931;
+    font-weight: 600;
+}
+
+/* Skills section styling */
+.skills-list {
+    list-style: none !important;
+    padding-left: 0 !important;
+}
+
+.skills-list li {
+    margin-bottom: 0.75rem;
+    line-height: 1.5;
+    color: #555555;
+    position: relative;
+    padding-left: 1.5rem;
+}
+
+.skills-list li::before {
+    content: "▸";
+    position: absolute;
+    left: 0;
+    color: #667eea;
+    font-weight: bold;
+}
+
+.skills-list li:hover {
+    color: #333333;
+    transform: translateX(5px);
+    transition: all 0.3s ease;
+}
+
+/* Skills section headers */
+.skills-list + h3 {
+    color: #212931;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    border-bottom: 2px solid #667eea;
+    padding-bottom: 0.5rem;
+}
+
+/* Achievements list styling */
+.achievements-list {
+    list-style: none !important;
+    padding-left: 0 !important;
+}
+
+.achievements-list li {
+    margin-bottom: 1rem;
+    line-height: 1.6;
+    color: #555555;
+    position: relative;
+    padding-left: 1.5rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid #f0f0f0;
+}
+
+.achievements-list li:last-child {
+    border-bottom: none;
+}
+
+.achievements-list li::before {
+    content: "★";
+    position: absolute;
+    left: 0;
+    color: #667eea;
+    font-weight: bold;
+    top: 0;
+}
+
+.achievements-list li strong {
+    color: #212931;
+    font-weight: 600;
+}
+
+.achievements-list li:hover {
+    color: #333333;
+    transform: translateX(5px);
+    transition: all 0.3s ease;
+}
+
+/* Social icons enhancement */
+.icons li a {
+    transition: all 0.3s ease;
+    border-radius: 50%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+}
+
+.icons li a:hover {
+    transform: translateY(-3px) scale(1.1);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
+/* Enhanced header */
+#header {
+    backdrop-filter: blur(10px);
+    background: rgba(255, 255, 255, 0.95);
+    border-bottom: 1px solid rgba(0,0,0,0.1);
+}
+
+#header .logo {
+    font-weight: 700;
+    background: linear-gradient(45deg, #667eea, #764ba2);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+/* Improved footer */
+#footer {
+    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+    border-top: 1px solid rgba(0,0,0,0.1);
+}
+
+#footer, #footer h3, #footer p, #footer a, #footer ul, #footer li, #footer section, #footer .split.contact section, #footer .split.contact section h3, #footer .split.contact section p, #footer .split.contact section a {
+  color: #fff !important;
+}
+
+#footer .icons.alt a {
+  color: #fff !important;
+  border-color: #fff !important;
+}
+
+/* Loading animations */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+/* Apply animations to elements */
+.posts article, .value-card {
+    animation: fadeInUp 0.6s ease-out;
+}
+
+.posts article:nth-child(1) { animation-delay: 0.1s; }
+.posts article:nth-child(2) { animation-delay: 0.2s; }
+.posts article:nth-child(3) { animation-delay: 0.3s; }
+.posts article:nth-child(4) { animation-delay: 0.4s; }
+.posts article:nth-child(5) { animation-delay: 0.5s; }
+.posts article:nth-child(6) { animation-delay: 0.6s; }
+
+/* Enhanced image styling */
+.image img {
+    transition: transform 0.3s ease;
+    opacity: 1; /* Ensure images are visible by default */
+}
+
+.image:hover img {
+    transform: scale(1.02);
+}
+
+/* Fallback for images if JavaScript fails */
+img {
+    opacity: 1 !important; /* Override any JavaScript opacity settings */
+}
+
+/* Only apply fade-in effect when JavaScript is working */
+.js-enabled img {
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.js-enabled img.loaded {
+    opacity: 1;
+}
+
+/* Improved form elements */
+input[type="text"], input[type="email"], textarea {
+    border-radius: 4px;
+    border: 2px solid #e9ecef;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+input[type="text"]:focus, input[type="email"]:focus, textarea:focus {
+    border-color: #667eea;
+    box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+    outline: none;
+}
+
+/* Responsive improvements */
+@media screen and (max-width: 736px) {
+    .values-grid {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+    
+    .posts {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+    
+    #intro h1 {
+        font-size: 2.5rem;
+    }
+}
+
+/* Dark mode support */
+@media (prefers-color-scheme: dark) {
+    body {
+        background-color: #1a1a1a;
+        color: #ffffff;
+    }
+    
+    #nav, #header {
+        background: rgba(26, 26, 26, 0.95);
+    }
+    
+    .posts article, .value-card {
+        background: #2d2d2d;
+        color: #ffffff;
+    }
+    
+    #footer {
+        background: linear-gradient(135deg, #2d2d2d 0%, #1a1a1a 100%);
+    }
+}
+
+/* Print styles */
+@media print {
+    #nav, #footer, .actions {
+        display: none;
+    }
+    
+    body {
+        background: white;
+        color: black;
+    }
+    
+    .posts article, .value-card {
+        break-inside: avoid;
+        box-shadow: none;
+        border: 1px solid #ccc;
+    }
+}
+
+/* Accessibility improvements */
+@media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+}
+
+/* Focus styles for accessibility */
+a:focus, button:focus, input:focus, textarea:focus {
+    outline: 2px solid #667eea;
+    outline-offset: 2px;
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+    .button {
+        border: 2px solid currentColor;
+    }
+    
+    .posts article, .value-card {
+        border: 2px solid currentColor;
+    }
+} 
+/* Professional profile picture styling */
+.image.main img {
+    max-width: 300px;
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+    transition: all 0.3s ease;
+    display: block;
+    margin: 2rem auto;
+}
+
+.image.main img:hover {
+    transform: scale(1.02);
+    box-shadow: 0 6px 25px rgba(0,0,0,0.15);
+}
+
+/* Responsive profile picture */
+@media screen and (max-width: 736px) {
+    .image.main img {
+        max-width: 250px;
+        margin: 1.5rem auto;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .image.main img {
+        max-width: 200px;
+        margin: 1rem auto;
+    }
+}
+
+/* Intro Flex Layout */
+#intro.intro-flex {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 3rem;
+  padding: 3rem 2rem 2.5rem 2rem;
+  max-width: 1100px;
+  margin: 0 auto 2rem auto;
+  background: linear-gradient(135deg, rgba(30, 37, 45, 0.95) 0%, rgba(30, 37, 45, 0.9) 100%);
+  border-radius: 18px;
+  box-shadow: 0 4px 32px rgba(30,37,45,0.07);
+}
+
+.intro-image img {
+  width: 220px;
+  height: 220px;
+  object-fit: cover;
+  border-radius: 50%;
+  box-shadow: 0 2px 16px rgba(102,126,234,0.10);
+  border: 4px solid #fff;
+  background: #fff;
+}
+
+.intro-content {
+  flex: 1;
+  min-width: 260px;
+  max-width: 540px;
+}
+
+#intro .intro-content h1 {
+  margin-top: 0;
+  margin-bottom: 1.2rem;
+  font-size: 2.5rem;
+  font-weight: 800;
+  line-height: 1.1;
+  background: linear-gradient(45deg, #667eea, #764ba2);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+#intro .intro-content p {
+  color: #f3f3f3;
+  font-size: 1.15rem;
+  margin-bottom: 1.2rem;
+}
+
+#intro .actions {
+  margin-top: 1.5rem;
+}
+
+@media (max-width: 800px) {
+  #intro.intro-flex {
+    flex-direction: column;
+    gap: 2rem;
+    padding: 2rem 1rem 1.5rem 1rem;
+  }
+  .intro-image img {
+    width: 160px;
+    height: 160px;
+  }
+  .intro-content {
+    max-width: 100%;
+  }
+}
+
+/* Compact main section layout */
+.main-section.compact {
+  margin: 0 auto 1.5rem auto;
+  padding: 0 0 0.5rem 0;
+  max-width: 1100px;
+}
+
+.main-section.compact article.post,
+.main-section.compact article.post.featured {
+  margin: 0 0 1.2rem 0;
+  padding: 1.2rem 1.2rem 0.7rem 1.2rem;
+  border-radius: 12px;
+  box-shadow: 0 2px 12px rgba(30,37,45,0.04);
+}
+
+.main-section.compact .row {
+  margin: 0;
+  padding: 0;
+}
+
+.main-section.compact header.major {
+  margin-bottom: 1rem;
+}
+
+.main-section.compact ul,
+.main-section.compact p {
+  margin-bottom: 0.7rem;
+}
+
+@media (max-width: 800px) {
+  .main-section.compact article.post,
+  .main-section.compact article.post.featured {
+    padding: 0.7rem 0.5rem 0.5rem 0.5rem;
+  }
+  .main-section.compact {
+    padding: 0 0 0.2rem 0;
+  }
+}
+
+/* High-contrast text for main content */
+.main-section,
+.main-section .post,
+.main-section .post.featured,
+.main-section .row,
+.main-section .post h2,
+.main-section .post h3,
+.main-section .post p,
+.main-section .post ul,
+.main-section .post li {
+  color: #f3f3f3 !important;
+}
+
+.main-section .post h1,
+.main-section .post h2,
+.main-section .post h3,
+.main-section .post header.major span.date {
+  color: #fff !important;
+}
+
+.principles-list li,
+.skills-list li,
+.achievements-list li {
+  color: #f3f3f3 !important;
+}
+
+.principles-list li strong,
+.achievements-list li strong {
+  color: #fff !important;
+}
+
+/* Ensure links are also readable */
+.main-section .post a {
+  color: #a5b4fc !important;
+}
+
+/* Intro actions layout */
+.intro-actions {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1.2rem;
+  margin-top: 2rem;
+}
+
+.button.round-arrow {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  border: 2px solid #a5b4fc;
+  background: transparent;
+  color: #a5b4fc;
+  font-size: 1.6rem;
+  transition: background 0.2s, color 0.2s, box-shadow 0.2s;
+  box-shadow: 0 2px 8px rgba(102,126,234,0.08);
+}
+.button.round-arrow:hover {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: #fff;
+  border-color: #764ba2;
+}
+
+.button.round-arrow .icon {
+  font-size: 1.5rem;
+  margin: 0;
+}
+
+/* High-contrast for school names and links */
+.main-section .post strong,
+.main-section .post a {
+  color: #fff !important;
+}
