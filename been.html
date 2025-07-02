@@ -27,30 +27,27 @@
             font-family: 'Open Sans', sans-serif;
             font-size: 16px;
             line-height: 1.6;
+            color: #f3f3f3;
+            background: linear-gradient(135deg, #23272f 0%, #1e252d 100%) !important;
         }
 
         h1, h2 {
             font-weight: 700;
         }
 
-        /* Experiment with color scheme */
-        body {
-            color: #333333;
-        }
-
         a {
-            color: #337ab7;
+            color: #a5b4fc;
         }
 
         /* Adjust layout */
         #main {
-            background-color: #f8f8f8;
+            background: transparent !important;
         }
 
         .posts {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            grid-gap: 30px;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            grid-gap: 18px;
         }
 
         .image-wrapper {
@@ -69,40 +66,71 @@
 
         /* Modify logo and header colors */
         #header .logo {
-            color: #333333;
+            color: #fff;
         }
 
         #header {
-            background-color: #f8f8f8;
+            background: transparent;
         }
 
         /* Enhanced card styling */
         .posts article {
-            background: white;
+            background: #23272f;
             border-radius: 8px;
             box-shadow: 0 2px 10px rgba(0,0,0,0.1);
             transition: transform 0.3s ease, box-shadow 0.3s ease;
             overflow: hidden;
+            padding: 1.1rem 1rem 0.7rem 1rem;
+            margin-bottom: 0;
+            min-height: 260px;
         }
-
-        .posts article:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 5px 20px rgba(0,0,0,0.15);
-        }
-
         .posts article header {
-            padding: 1.5rem 1.5rem 0.5rem;
+            padding: 1rem 1rem 0.3rem 1rem;
         }
-
+        .posts article h2 {
+            font-size: 1.1rem;
+            margin-bottom: 0.3rem;
+        }
         .posts article p {
-            padding: 0 1.5rem 1.5rem;
+            padding: 0 1rem 1rem 1rem;
             margin: 0;
+            font-size: 0.98rem;
         }
-
         .posts article .date {
-            color: #666;
+            color: #a5b4fc;
             font-size: 0.9rem;
             font-weight: 600;
+        }
+        /* Improve main header visibility */
+        .post > header.major {
+            background: rgba(30, 37, 45, 0.7);
+            border-radius: 8px;
+            padding: 1.2rem 1rem 1rem 1rem;
+            margin-bottom: 1.2rem;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.10);
+        }
+        .post > header.major h1 {
+            color: #fff;
+            text-shadow: 0 2px 8px rgba(30,37,45,0.5), 0 1px 0 #23272f;
+        }
+        @media (max-width: 800px) {
+            .posts {
+                grid-template-columns: 1fr;
+                grid-gap: 12px;
+            }
+            .posts article {
+                min-height: 180px;
+                padding: 0.7rem 0.5rem 0.5rem 0.5rem;
+            }
+            .posts article header {
+                padding: 0.7rem 0.5rem 0.2rem 0.5rem;
+            }
+            .posts article h2 {
+                font-size: 1rem;
+            }
+            .posts article p {
+                font-size: 0.95rem;
+            }
         }
     </style>
 </head>
@@ -121,8 +149,8 @@
         <nav id="nav">
             <ul class="links">
                 <li><a href="index.html">Me</a></li>
-                <li class="active"><a href="been.html">Where I've been..</a></li>
-                <li><a href="going.html">Where I'm going..</a></li>
+                <li class="active"><a href="been.html">Experience</a></li>
+                <li><a href="going.html">Core Values</a></li>
             </ul>
 
             <ul class="icons">

@@ -615,3 +615,18 @@ a:focus, button:focus, input:focus, textarea:focus {
 .main-section .post a {
   color: #fff !important;
 }
+
+@media (max-width: 800px) {
+  #footer, #footer section, #footer .split.contact section {
+    background: #23272f !important;
+    color: #fff !important;
+  }
+  #footer h3, #footer p, #footer a, #footer ul, #footer li {
+    color: #fff !important;
+  }
+  #footer .icons.alt a {
+    color: #fff !important;
+    border-color: #fff !important;
+    opacity: 1 !important;
+  }
+}

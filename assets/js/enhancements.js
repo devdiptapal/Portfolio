@@ -211,18 +211,28 @@ document.addEventListener('DOMContentLoaded', function() {
     // Enhanced mobile menu
     const navToggle = document.querySelector('#navPanelToggle');
     const navPanel = document.querySelector('#navPanel');
+    const nav = document.querySelector('#nav');
     
-    if (navToggle && navPanel) {
-        navToggle.addEventListener('click', function() {
+    if (navToggle && navPanel && nav) {
+        navToggle.addEventListener('click', function(e) {
+            e.preventDefault();
             document.body.classList.toggle('is-navPanel-visible');
         });
 
+        // Always copy nav HTML into navPanel on mobile
+        function updateNavPanel() {
+            if (window.innerWidth <= 980) {
+                navPanel.querySelector('nav').innerHTML = nav.innerHTML;
+            }
+        }
+        updateNavPanel();
+        window.addEventListener('resize', updateNavPanel);
+
         // Close mobile menu when clicking on a link
-        const mobileLinks = navPanel.querySelectorAll('a');
-        mobileLinks.forEach(link => {
-            link.addEventListener('click', function() {
+        navPanel.addEventListener('click', function(e) {
+            if (e.target.tagName === 'A') {
                 document.body.classList.remove('is-navPanel-visible');
-            });
+            }
         });
     }
 
