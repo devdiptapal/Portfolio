@@ -44,26 +44,47 @@
             background: transparent !important;
         }
 
-        /* Enhanced value cards */
+        /* Modern accent styles for Core Values */
+        .values-section {
+            margin: 2.5rem 0 2.5rem 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .post > header.major {
+            text-align: center;
+            border-bottom: 3px solid #667eea;
+            padding-bottom: 1.2rem;
+            margin-bottom: 2.2rem;
+            background: none;
+            box-shadow: none;
+        }
+        .post > header.major .date {
+            color: #667eea;
+            font-weight: 700;
+            font-size: 1.1rem;
+            letter-spacing: 0.08em;
+        }
         .value-card {
             background: #23272f;
-            border-radius: 8px;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-            padding: 1.1rem 1rem 0.7rem 1rem;
-            margin-bottom: 0;
-            min-height: 180px;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border-radius: 14px;
+            box-shadow: 0 4px 24px rgba(0,0,0,0.10);
+            margin-bottom: 2.2rem;
+            padding: 1.5rem 1.2rem 1.2rem 1.2rem;
+            transition: box-shadow 0.2s, transform 0.2s;
         }
         .value-card:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 5px 20px rgba(0,0,0,0.15);
+            box-shadow: 0 8px 32px rgba(102,126,234,0.18);
+            transform: translateY(-2px);
         }
         .value-card h3 {
-            color: #a5b4fc;
+            color: #667eea;
+            font-size: 1.1rem;
+            font-weight: 700;
             margin-bottom: 0.5rem;
             border-bottom: 1px solid #333;
             padding-bottom: 0.3rem;
-            font-size: 1.1rem;
         }
         .value-card p {
             margin: 0;
@@ -77,32 +98,26 @@
             gap: 18px;
             margin: 1.2rem 0;
         }
-        /* Improve main header visibility */
-        .post > header.major {
-            background: rgba(30, 37, 45, 0.7);
-            border-radius: 8px;
-            padding: 1.2rem 1rem 1rem 1rem;
-            margin-bottom: 1.2rem;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.10);
-        }
-        .post > header.major h1 {
+        ul.actions.special .button {
+            background: linear-gradient(90deg, #667eea 0%, #764ba2 100%);
             color: #fff;
-            text-shadow: 0 2px 8px rgba(30,37,45,0.5), 0 1px 0 #23272f;
+            font-weight: 700;
+            border-radius: 8px;
+            box-shadow: 0 2px 12px rgba(102,126,234,0.10);
+            transition: background 0.2s, box-shadow 0.2s, transform 0.2s;
         }
-        @media (max-width: 800px) {
-            .values-grid {
-                grid-template-columns: 1fr;
-                gap: 12px;
-            }
+        ul.actions.special .button:hover {
+            background: linear-gradient(90deg, #764ba2 0%, #667eea 100%);
+            box-shadow: 0 4px 24px rgba(102,126,234,0.18);
+            transform: translateY(-2px);
+        }
+        @media (max-width: 600px) {
             .value-card {
-                min-height: 120px;
-                padding: 0.7rem 0.5rem 0.5rem 0.5rem;
+                padding: 1rem 0.5rem 0.7rem 0.5rem;
             }
-            .value-card h3 {
-                font-size: 1rem;
-            }
-            .value-card p {
-                font-size: 0.95rem;
+            .post > header.major {
+                padding-bottom: 0.7rem;
+                margin-bottom: 1.2rem;
             }
         }
         /* Modify logo and header colors */
@@ -149,6 +164,7 @@
             <li><a href="index.html">Me</a></li>
             <li><a href="been.html">Experience</a></li>
             <li class="active"><a href="going.html">Core Values</a></li>
+            <li><a href="blog.html">Blog</a></li>
         </ul>
 
         <ul class="icons">
@@ -165,65 +181,64 @@
         <!-- Post -->
         <section class="post">
             <header class="major">
-                <span class="date">Vision & Values</span>
-                <h1>Vision & Values</h1>
+                <h1 class="values-main">VALUES</h1>
                 <p>Guiding principles that shape my approach to data, product, and life.</p>
             </header>
 
             <div class="values-grid">
                 <div class="value-card">
-                    <h3>Vulnerability</h3>
-                    <p>I embrace openness and authenticity, believing that genuine connection and vulnerability foster stronger teams and better outcomes.</p>
+                    <h3>VULNERABILITY</h3>
+                    <p>Embrace openness and authenticity, believing that genuine connection and vulnerability foster stronger teams and better outcomes.</p>
                 </div>
 
                 <div class="value-card">
-                    <h3>Honesty</h3>
-                    <p>I prioritize transparency and honest communication, building trust and credibility in every collaboration.</p>
+                    <h3>HONESTY</h3>
+                    <p>Prioritize transparency and honest communication, building trust and credibility in every collaboration.</p>
                 </div>
 
                 <div class="value-card">
-                    <h3>Redemption</h3>
-                    <p>I view setbacks as opportunities for growth, always striving to learn, adapt, and return stronger.</p>
+                    <h3>REDEMPTION</h3>
+                    <p>View setbacks as opportunities for growth, always striving to learn, adapt, and return stronger.</p>
                 </div>
 
                 <div class="value-card">
-                    <h3>Perseverance</h3>
-                    <p>I remain committed to my goals and values, persevering through challenges to achieve meaningful results.</p>
+                    <h3>PERSEVERANCE</h3>
+                    <p>Remain committed to goals and values, persevering through challenges to achieve meaningful results.</p>
                 </div>
 
                 <div class="value-card">
-                    <h3>Intellectual Vitality</h3>
-                    <p>I approach complex problems with curiosity and an open mind, leveraging first-principles thinking to drive innovation.</p>
+                    <h3>INTELLECTUAL VITALITY</h3>
+                    <p>Approach complex problems with curiosity and an open mind, leveraging first-principles thinking to drive innovation.</p>
                 </div>
 
                 <div class="value-card">
-                    <h3>Grit</h3>
-                    <p>I maintain focus and determination, consistently pushing through obstacles to achieve ambitious objectives.</p>
+                    <h3>GRIT</h3>
+                    <p>Maintain focus and determination, consistently pushing through obstacles to achieve ambitious objectives.</p>
                 </div>
 
                 <div class="value-card">
-                    <h3>Drive</h3>
-                    <p>I channel my intrinsic motivation into purposeful work, always seeking to make a positive impact.</p>
+                    <h3>DRIVE</h3>
+                    <p>Channel intrinsic motivation into purposeful work, always seeking to make a positive impact.</p>
                 </div>
 
                 <div class="value-card">
-                    <h3>Question Status Quo</h3>
-                    <p>I challenge conventional thinking, always questioning the status quo to find better solutions.</p>
+                    <h3>QUESTION STATUS QUO</h3>
+                    <p>Challenge conventional thinking, always questioning the status quo to find better solutions.</p>
                 </div>
 
                 <div class="value-card">
-                    <h3>Openness</h3>  
-                    <p>I welcome new perspectives and continuous learning, adapting readily to change.</p>
+                    <h3>OPENNESS</h3>  
+                    <p>Welcome new perspectives and continuous learning, adapting readily to change.</p>
                 </div>
 
                 <div class="value-card">
-                    <h3>Candor</h3>
-                    <p>I foster honest dialogue, encouraging candor to spark innovation and collaboration.</p>
+                    <h3>CANDOR</h3>
+                    <p>Foster honest dialogue, encouraging candor to spark innovation and collaboration.</p>
                 </div>
 
                 <div class="value-card">
-                    <h3>Humor</h3>
-                    <p>I maintain perspective and bring humor to my work, believing that joy and levity fuel creativity and resilience.</p>
+                    <h3>HUMOR</h3>
+                    <p>Maintain perspective and bring humor to work, believing that joy and levity fuel creativity and resilience.</p>
                 </div>
             </div>
 

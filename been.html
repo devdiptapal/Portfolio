@@ -132,6 +132,73 @@
                 font-size: 0.95rem;
             }
         }
+        /* Modern accent styles for Experience */
+        .experience-section {
+            margin: 2.5rem 0 2.5rem 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .post > header.major {
+            text-align: center;
+            border-bottom: 3px solid #667eea;
+            padding-bottom: 1.2rem;
+            margin-bottom: 2.2rem;
+            background: none;
+            box-shadow: none;
+        }
+        .post > header.major .date {
+            color: #667eea;
+            font-weight: 700;
+            font-size: 1.1rem;
+            letter-spacing: 0.08em;
+        }
+        .posts article {
+            background: #23272f;
+            border-radius: 14px;
+            box-shadow: 0 4px 24px rgba(0,0,0,0.10);
+            margin-bottom: 2.2rem;
+            padding: 1.5rem 1.2rem 1.2rem 1.2rem;
+            transition: box-shadow 0.2s, transform 0.2s;
+        }
+        .posts article:hover {
+            box-shadow: 0 8px 32px rgba(102,126,234,0.18);
+            transform: translateY(-2px);
+        }
+        .posts article h2 {
+            color: #fff;
+            font-size: 1.3rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+        .posts article .date {
+            color: #667eea;
+            font-weight: 600;
+            font-size: 1rem;
+        }
+        ul.actions.special .button {
+            background: linear-gradient(90deg, #667eea 0%, #764ba2 100%);
+            color: #fff;
+            font-weight: 700;
+            border-radius: 8px;
+            box-shadow: 0 2px 12px rgba(102,126,234,0.10);
+            transition: background 0.2s, box-shadow 0.2s, transform 0.2s;
+        }
+        ul.actions.special .button:hover {
+            background: linear-gradient(90deg, #764ba2 0%, #667eea 100%);
+            box-shadow: 0 4px 24px rgba(102,126,234,0.18);
+            transform: translateY(-2px);
+        }
+        @media (max-width: 600px) {
+            .posts article {
+                padding: 1rem 0.5rem 0.7rem 0.5rem;
+            }
+            .post > header.major {
+                padding-bottom: 0.7rem;
+                margin-bottom: 1.2rem;
+            }
+        }
     </style>
 </head>
 
@@ -151,6 +218,7 @@
                 <li><a href="index.html">Me</a></li>
                 <li class="active"><a href="been.html">Experience</a></li>
                 <li><a href="going.html">Core Values</a></li>
+                <li><a href="blog.html">Blog</a></li>
             </ul>
 
             <ul class="icons">
@@ -166,8 +234,7 @@
             <!-- Post -->
             <section class="post">
                 <header class="major">
-                    <span class="date">Professional Journey</span>
-                    <h1>Using data to shape product success<br /> </h1>
+                    <h1>USING DATA TO SHAPE PRODUCT SUCCESS</h1>
                     <p>Data Scientist with 11 years of experience specializing in e-commerce, social media, and consumer internet products. Proven expertise in experimentation, causal inference, product analytics, and machine learning with a track record of driving zero-to-one growth through data-driven insights and cross-functional collaboration.</p>
                 </header>
 
