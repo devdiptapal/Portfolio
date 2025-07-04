@@ -105,13 +105,23 @@ html {
     color: #fff !important;
 }
 
-/* Enhanced typography */
-body {
-    background: linear-gradient(135deg, #23272f 0%, #1e252d 100%) !important;
-    color: #f3f3f3;
-    font-family: 'Open Sans', 'Merriweather', Georgia, serif;
-    font-size: 1rem;
-    line-height: 1.6;
+/* Modern System Font Stack (like danielmcauley.com) */
+body, input, select, textarea, p, li, ul, ol, div, span {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  font-weight: 400;
+  line-height: 1.6;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  font-weight: 600;
+  line-height: 1.3;
+}
+
+/* Override any existing font declarations */
+#intro, .main-section, .post, .blog-hero, .value-card, .posts article,
+#main, .intro-content, .skills-list, .achievements-list, .principles-list {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif !important;
 }
 
 /* Improved button styling */
