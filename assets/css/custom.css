@@ -311,6 +311,12 @@ h1, h2, h3, h4, h5, h6 {
     font-weight: 600;
 }
 
+.principles-list li:hover {
+    color: #333333;
+    transform: translateX(5px);
+    transition: all 0.3s ease;
+}
+
 /* Skills section styling */
 .skills-list {
     list-style: none !important;
@@ -1560,4 +1566,20 @@ body.home #header .logo {
   margin-bottom: 1.1rem;
   max-width: 100%;
   box-sizing: border-box;
+}
+
+.value-card .skills-list li, .value-card .skills-list h3 {
+  color: #23272f !important;
+}
+
+.value-card .skills-list li::before {
+  color: #667eea;
+}
+
+.value-card, .value-card *, .value-card strong, .value-card h1, .value-card h2, .value-card h3, .value-card h4, .value-card h5, .value-card h6, .value-card p, .value-card li {
+  color: #23272f !important;
+}
+
+.value-card .achievements-list li strong, .value-card .principles-list li strong {
+  color: #23272f !important;
 }
