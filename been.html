@@ -133,12 +133,26 @@
             }
         }
         /* Modern accent styles for Experience */
-        .experience-section {
-            margin: 2.5rem 0 2.5rem 0;
-            padding: 0;
+        .experience-section-bg {
+            background: #FCFAF5;
+            border-radius: 24px;
+            box-shadow: 0 6px 32px 0 rgba(0,0,0,0.10);
+            padding: 2rem 1rem 0 1rem;
+            max-width: 1200px;
+            margin: 0 auto 5rem auto;
             display: flex;
             flex-direction: column;
             align-items: center;
+        }
+        .experience-section-bg .experience-section {
+            width: 100%;
+        }
+        .experience-section {
+            margin: 0;
+            padding: 0;
+            border-radius: 24px;
+            box-shadow: none;
+            background: none;
         }
         .post > header.major {
             text-align: center;
@@ -234,97 +248,91 @@
 
         <!-- Main -->
         <div id="main">
+            <div class="experience-section-bg">
             <!-- Post -->
-            <section class="post">
-                <header class="major">
-                    <h1>USING DATA TO SHAPE PRODUCT SUCCESS</h1>
-                    <p>Data Scientist with 11 years of experience specializing in e-commerce, social media, and consumer internet products. Proven expertise in experimentation, causal inference, product analytics, and machine learning with a track record of driving zero-to-one growth through data-driven insights and cross-functional collaboration.</p>
-                </header>
-
-                <!-- Posts -->
-                <section class="experience-section">
-                    <div style="height: 3.5rem;"></div>
-                    <div class="experience-grid">
-                        <!-- TikTok -->
-                        <div class="experience-card">
-                            <img src="images/TikTok.png" alt="TikTok Logo" class="experience-logo" />
-                            <div class="experience-meta">2023 – Present</div>
-                            <div class="experience-company">TikTok</div>
-                            <ul class="experience-details">
-                                <li>Lead iterative experimentation on User Reviews Product team, leveraging Generative AI (LLM) to build review summaries and insights, resulting in meaningful uplift in Click-to-Order rates.</li>
-                                <li>Foundational Data Scientist for TikTok Shop, supporting launch from 0 to significant GMV in months.</li>
-                            </ul>
-                        </div>
-                        <!-- Instagram -->
-                        <div class="experience-card">
-                            <img src="images/insta.png" alt="Instagram Logo" class="experience-logo" />
-                            <div class="experience-meta">2021 – 2023</div>
-                            <div class="experience-company">Instagram</div>
-                            <ul class="experience-details">
-                                <li>Spearheaded experimentation efforts for the successful release of "Notes", Instagram's 4th sharing primitive which increased daily active messaging by +1.2pp among teen users.</li>
-                                <li>DS partner for the "Add Yours" sticker on IG Stories, driving Story creation by +0.6pp.</li>
-                            </ul>
-                        </div>
-                        <!-- Postmates -->
-                        <div class="experience-card">
-                            <img src="images/postmates.png" alt="Postmates Logo" class="experience-logo" />
-                            <div class="experience-meta">2019 – 2021</div>
-                            <div class="experience-company">Postmates</div>
-                            <ul class="experience-details">
-                                <li>Drove experimentation to improve checkout conversion and launched co-funded SMB promotions during the pandemic, leading to 8.7% growth.</li>
-                                <li>Designed and launched the first co-funded merchant promotion campaign working with sales and Account management during the pandemic.</li>
-                            </ul>
-                        </div>
-                        <!-- Electronic Arts -->
-                        <div class="experience-card">
-                            <img src="images/ea.png" alt="Electronic Arts Logo" class="experience-logo" />
-                            <div class="experience-meta">2018 – 2019</div>
-                            <div class="experience-company">Electronic Arts</div>
-                            <ul class="experience-details">
-                                <li>Developed data-driven frameworks for NBA Live, driving a +17pp increase in digital monetization through strategic analytics and optimization.</li>
-                            </ul>
-                        </div>
-                        <!-- Zynga -->
-                        <div class="experience-card">
-                            <img src="images/zynga.png" alt="Zynga Logo" class="experience-logo" />
-                            <div class="experience-meta">2016 – 2017</div>
-                            <div class="experience-company">Zynga</div>
-                            <ul class="experience-details">
-                                <li>Supported analytics for Farmville 2, Zynga's flagship game, improving retention by +17pp through data-driven optimizations and campaign strategies.</li>
-                            </ul>
-                        </div>
-                        <!-- Ola -->
-                        <div class="experience-card">
-                            <img src="images/ola.png" alt="Ola Logo" class="experience-logo" />
-                            <div class="experience-meta">2015 – 2016</div>
-                            <div class="experience-company">Ola</div>
-                            <ul class="experience-details">
-                                <li>Early analytics hire at Ola, India's leading Series D ride-sharing startup, scaling from 0 to 128K daily rides through data-driven growth strategies and operational insights.</li>
-                            </ul>
-                        </div>
-                        <!-- Carnegie Mellon University -->
-                        <div class="experience-card">
-                            <img src="images/cmu.png" alt="Carnegie Mellon University Logo" class="experience-logo" />
-                            <div class="experience-meta">2017 – 2018</div>
-                            <div class="experience-company">Carnegie Mellon University</div>
-                            <ul class="experience-details">
-                                <li>M.S. Information Systems from Carnegie Mellon University, graduated with cum laude honors.</li>
-                                <li>Assistant for Data Mining and Statistics courses, building the foundation for a career in data science and analytics.</li>
-                            </ul>
-                        </div>
-                        <!-- Mu Sigma -->
-                        <div class="experience-card">
-                            <img src="images/musigma.png" alt="Mu Sigma Logo" class="experience-logo" />
-                            <div class="experience-meta">2014 – 2015</div>
-                            <div class="experience-company">Mu Sigma</div>
-                            <ul class="experience-details">
-                                <li>Led customer segmentation pilot saving $300K yearly for top UK bank through data-driven insights and strategic analytics consulting.</li>
-                            </ul>
-                        </div>
+            <section class="experience-section">
+                <div style="height: 3.5rem;"></div>
+                <div class="experience-grid">
+                    <!-- TikTok -->
+                    <div class="experience-card">
+                        <img src="images/TikTok.png" alt="TikTok Logo" class="experience-logo" />
+                        <div class="experience-meta">2023 – Present</div>
+                        <div class="experience-company">TikTok</div>
+                        <ul class="experience-details">
+                            <li>Lead iterative experimentation on User Reviews Product team, leveraging Generative AI (LLM) to build review summaries and insights, resulting in meaningful uplift in Click-to-Order rates.</li>
+                            <li>Foundational Data Scientist for TikTok Shop, supporting launch from 0 to significant GMV in months.</li>
+                        </ul>
                     </div>
-                    <div style="height: 3.5rem;"></div>
-                </section>
+                    <!-- Instagram -->
+                    <div class="experience-card">
+                        <img src="images/insta.png" alt="Instagram Logo" class="experience-logo" />
+                        <div class="experience-meta">2021 – 2023</div>
+                        <div class="experience-company">Instagram</div>
+                        <ul class="experience-details">
+                            <li>Spearheaded experimentation efforts for the successful release of "Notes", Instagram's 4th sharing primitive which increased daily active messaging by +1.2pp among teen users.</li>
+                            <li>DS partner for the "Add Yours" sticker on IG Stories, driving Story creation by +0.6pp.</li>
+                        </ul>
+                    </div>
+                    <!-- Postmates -->
+                    <div class="experience-card">
+                        <img src="images/postmates.png" alt="Postmates Logo" class="experience-logo" />
+                        <div class="experience-meta">2019 – 2021</div>
+                        <div class="experience-company">Postmates</div>
+                        <ul class="experience-details">
+                            <li>Drove experimentation to improve checkout conversion and launched co-funded SMB promotions during the pandemic, leading to 8.7% growth.</li>
+                            <li>Designed and launched the first co-funded merchant promotion campaign working with sales and Account management during the pandemic.</li>
+                        </ul>
+                    </div>
+                    <!-- Electronic Arts -->
+                    <div class="experience-card">
+                        <img src="images/ea.png" alt="Electronic Arts Logo" class="experience-logo" />
+                        <div class="experience-meta">2018 – 2019</div>
+                        <div class="experience-company">Electronic Arts</div>
+                        <ul class="experience-details">
+                            <li>Developed data-driven frameworks for NBA Live, driving a +17pp increase in digital monetization through strategic analytics and optimization.</li>
+                        </ul>
+                    </div>
+                    <!-- Zynga -->
+                    <div class="experience-card">
+                        <img src="images/zynga.png" alt="Zynga Logo" class="experience-logo" />
+                        <div class="experience-meta">2016 – 2017</div>
+                        <div class="experience-company">Zynga</div>
+                        <ul class="experience-details">
+                            <li>Supported analytics for Farmville 2, Zynga's flagship game, improving retention by +17pp through data-driven optimizations and campaign strategies.</li>
+                        </ul>
+                    </div>
+                    <!-- Ola -->
+                    <div class="experience-card">
+                        <img src="images/ola.png" alt="Ola Logo" class="experience-logo" />
+                        <div class="experience-meta">2015 – 2016</div>
+                        <div class="experience-company">Ola</div>
+                        <ul class="experience-details">
+                            <li>Early analytics hire at Ola, India's leading Series D ride-sharing startup, scaling from 0 to 128K daily rides through data-driven growth strategies and operational insights.</li>
+                        </ul>
+                    </div>
+                    <!-- Carnegie Mellon University -->
+                    <div class="experience-card">
+                        <img src="images/cmu.png" alt="Carnegie Mellon University Logo" class="experience-logo" />
+                        <div class="experience-meta">2017 – 2018</div>
+                        <div class="experience-company">Carnegie Mellon University</div>
+                        <ul class="experience-details">
+                            <li>M.S. Information Systems from Carnegie Mellon University, graduated with cum laude honors.</li>
+                            <li>Assistant for Data Mining and Statistics courses, building the foundation for a career in data science and analytics.</li>
+                        </ul>
+                    </div>
+                    <!-- Mu Sigma -->
+                    <div class="experience-card">
+                        <img src="images/musigma.png" alt="Mu Sigma Logo" class="experience-logo" />
+                        <div class="experience-meta">2014 – 2015</div>
+                        <div class="experience-company">Mu Sigma</div>
+                        <ul class="experience-details">
+                            <li>Led customer segmentation pilot saving $300K yearly for top UK bank through data-driven insights and strategic analytics consulting.</li>
+                        </ul>
+                    </div>
+                </div>
+                <div style="height: 3.5rem;"></div>
             </section>
+            </div>
         </div>
 
         <!-- Footer -->
