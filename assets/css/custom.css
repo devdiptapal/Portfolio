@@ -1175,3 +1175,7 @@ footer#footer, #footer > section, #footer .split.contact section {
     justify-content: center;
   }
 }
+
+body#index #header {
+  display: none !important;
+}
