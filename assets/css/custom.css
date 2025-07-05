@@ -7,21 +7,26 @@ html {
 
 /* Blog-specific styles */
 .substack-embed-container {
-    margin: 2rem 0;
-    border-radius: 12px;
-    overflow: hidden;
-    box-shadow: 0 4px 20px rgba(0,0,0,0.1);
-    transition: all 0.3s ease;
+    max-width: 420px;
+    margin: 0 auto 2rem auto;
+    background: #fff;
+    border-radius: 18px;
+    box-shadow: 0 6px 32px rgba(102,126,234,0.10), 0 1.5px 8px rgba(30,37,45,0.07);
+    padding: 2.2rem 1.5rem 1.5rem 1.5rem;
+    text-align: center;
+    transition: box-shadow 0.2s, transform 0.2s;
 }
 
 .substack-embed-container:hover {
-    box-shadow: 0 8px 30px rgba(0,0,0,0.15);
-    transform: translateY(-2px);
+    box-shadow: 0 12px 40px rgba(102,126,234,0.18), 0 2px 12px rgba(30,37,45,0.10);
+    transform: translateY(-2px) scale(1.015);
 }
 
 .substack-embed-container iframe {
     border-radius: 12px;
     border: none !important;
+    min-height: 180px;
+    box-shadow: 0 1.5px 8px rgba(102,126,234,0.07);
 }
 
 .substack-info {
@@ -182,12 +187,24 @@ h1, h2, h3, h4, h5, h6 {
     margin: 1.5rem auto 2.5rem auto;
     max-width: 95vw;
     padding: 0.2rem 1.2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2.5rem;
 }
 
 #nav ul.links {
     display: flex;
     align-items: center;
     gap: 2.2rem;
+    margin: 0;
+    padding: 0;
+}
+
+#nav ul.social-nav-center {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
     margin: 0;
     padding: 0;
 }
@@ -863,12 +880,24 @@ a:focus, button:focus, input:focus, textarea:focus {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    padding: 2.2rem 1rem 1.2rem 1rem;
+    padding: 2.2rem 1rem 0.5rem 1rem;
     background: none;
 }
+
+/* Subtle divider between hero and substack */
+.blog-divider {
+    width: 100%;
+    max-width: 540px;
+    margin: 1.2rem auto 1.8rem auto;
+    border: none;
+    border-top: 1.5px solid #ececec;
+    opacity: 0.5;
+}
+
 .blog-profile-pic {
     margin-bottom: 2rem;
 }
+
 .blog-profile-pic img {
     width: 220px;
     height: 220px;
@@ -879,6 +908,7 @@ a:focus, button:focus, input:focus, textarea:focus {
     background: #fff;
     margin-bottom: 1.2rem;
 }
+
 .blog-title {
     font-size: 3.5rem;
     font-weight: 900;
@@ -889,6 +919,7 @@ a:focus, button:focus, input:focus, textarea:focus {
     background-clip: text;
     text-align: center;
 }
+
 .blog-desc {
     color: #b0bec5;
     font-size: 1.15rem;
@@ -896,6 +927,7 @@ a:focus, button:focus, input:focus, textarea:focus {
     max-width: 540px;
     margin-bottom: 2.2rem;
 }
+
 .blog-subscribe-btn {
     display: inline-block;
     background: linear-gradient(90deg, #667eea 0%, #764ba2 100%);
@@ -909,30 +941,37 @@ a:focus, button:focus, input:focus, textarea:focus {
     transition: background 0.2s, box-shadow 0.2s, transform 0.2s;
     margin-bottom: 2.5rem;
 }
+
 .blog-subscribe-btn:hover {
     background: linear-gradient(90deg, #764ba2 0%, #667eea 100%);
     box-shadow: 0 4px 24px rgba(102,126,234,0.18);
     transform: translateY(-2px);
 }
+
 .blog-substack {
     padding: 1.2rem 1rem 1.5rem 1rem;
 }
+
 .blog-substack-title {
-    color: #fff;
-    font-size: 1.4rem;
+    color: #222;
+    font-size: 1.25rem;
     font-weight: 700;
-    margin-bottom: 0.7rem;
+    margin-bottom: 1.1rem;
     text-align: center;
+    letter-spacing: 0.01em;
 }
+
 .blog-substack-desc {
     color: #b0bec5;
     font-size: 1.05rem;
     text-align: center;
     margin-bottom: 1.5rem;
 }
+
 .blog-substack-embed {
     margin-bottom: 0.5rem;
 }
+
 .blog-substack .button {
     background: linear-gradient(90deg, #667eea 0%, #764ba2 100%);
     color: #fff;
@@ -946,11 +985,13 @@ a:focus, button:focus, input:focus, textarea:focus {
     text-align: center;
     max-width: 240px;
 }
+
 .blog-substack .button:hover {
     background: linear-gradient(90deg, #764ba2 0%, #667eea 100%);
     box-shadow: 0 4px 24px rgba(102,126,234,0.18);
     transform: translateY(-2px);
 }
+
 @media (max-width: 600px) {
     .blog-profile-pic img {
         width: 88px;
@@ -964,6 +1005,13 @@ a:focus, button:focus, input:focus, textarea:focus {
     }
     .blog-substack-embed {
         max-width: 100%;
+    }
+    .substack-embed-container {
+        max-width: 98vw;
+        padding: 1.2rem 0.5rem 1rem 0.5rem;
+    }
+    .blog-divider {
+        max-width: 90vw;
     }
 }
 
@@ -1095,4 +1143,35 @@ footer#footer, #footer > section, #footer .split.contact section {
 }
 #intro .social-link-box .icon {
   color: #f26b1d !important;
+}
+
+/* Substack embed and button styles */
+.substack-link-btn {
+  display: inline-block;
+  background: #f26b1d;
+  color: #fff !important;
+  font-weight: 700;
+  font-size: 1.15rem;
+  border-radius: 8px;
+  padding: 0.85em 2.2em;
+  margin-top: 1.2rem;
+  box-shadow: 0 2px 8px rgba(242,107,29,0.10);
+  text-decoration: none;
+  transition: background 0.18s, box-shadow 0.18s, color 0.18s;
+  border: none;
+}
+.substack-link-btn:hover, .substack-link-btn:focus {
+  background: #d35400;
+  color: #fff !important;
+  box-shadow: 0 4px 18px rgba(242,107,29,0.13);
+}
+
+@media (max-width: 900px) {
+  #nav {
+    flex-direction: column;
+    gap: 1.2rem;
+  }
+  #nav ul.links, #nav ul.social-nav-center {
+    justify-content: center;
+  }
 }

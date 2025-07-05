@@ -33,7 +33,7 @@
 			<ul class="links">
 				<li><a href="index.html">Me</a></li>
 				<li><a href="been.html">Experience</a></li>
-				<li><a href="going.html">Core Values</a></li>
+				<li><a href="going.html">Values</a></li>
 				<li class="active"><a href="blog.html">Blog</a></li>
 			</ul>
 			<ul class="icons">
@@ -41,27 +41,33 @@
 				<li><a href="https://www.linkedin.com/in/devpal/" class="icon brands fa-linkedin-in"><span class="label">Linkedin</span></a></li>
 				<li><a href="https://www.instagram.com/yourpaldev/" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
 				<li><a href="https://github.com/devdiptapal/" class="icon brands fa-github"><span class="label">GitHub</span></a></li>
+				<li><a href="https://medium.com/@devpal" class="icon brands fa-medium-m"><span class="label">Medium</span></a></li>
+				<li><a href="https://www.strava.com/athletes/52260606" class="icon brands fa-strava"><span class="label">Strava</span></a></li>
 			</ul>
 		</nav>
 
 		<!-- Main -->
 		<div id="main">
 			<section class="blog-hero">
-				<div class="blog-profile-pic">
-					<img src="images/devprofilepic.png" alt="Dev Pal" />
-				</div>
-				<h1 class="blog-title">Coming Soon: Data Science Insights</h1>
-				<p class="blog-desc">I'm working on sharing insights from my experience in data science and product analytics. Subscribe to stay updated on new articles about experimentation, causal inference, and product strategy.</p>
-				<a href="#substack-embed" class="blog-subscribe-btn">Subscribe to My Newsletter</a>
-			</section>
-			<section id="substack-embed" class="blog-substack">
-				<h2 class="blog-substack-title">Subscribe to My Substack</h2>
-				<p class="blog-substack-desc">Get insights on data science, product analytics, and industry commentary delivered to your inbox.</p>
-				<div class="blog-substack-embed">
-					<iframe src="https://yourpaldev.substack.com/embed" width="100%" height="320" frameborder="0" scrolling="no" title="Substack Newsletter" style="background:transparent;" onerror="document.getElementById('substack-fallback').style.display='block';"></iframe>
-					<div id="substack-fallback" style="display:block; text-align:center; padding:0.5rem; font-size:1.1rem; background:none; box-shadow:none; border-radius:0; max-width:none; margin:0.5rem auto 0 auto; color:#667eea;">
-						<a href="https://yourpaldev.substack.com" target="_blank" style="color:#667eea; text-decoration:underline; font-weight:700; font-size:1.1rem;">View my Substack directly.</a>
-					</div>
+				<h1 class="blog-title" style="font-size: 2.5rem; font-weight: 800; color: #6c6fd1; margin-bottom: 1.1rem; letter-spacing: 0.01em; text-align: left;">Insights & Writing on Data Science</h1>
+				<p class="blog-desc" style="font-size: 1.18rem; color: #7a7a8c; margin-bottom: 2.2rem; max-width: 700px; text-align: left;">
+					Actionable ideas and lessons from a decade in data science, experimentation, and product analytics. Subscribe for new articles on strategy, causal inference, and more.
+				</p>
+				<div id="blog-main-content" style="max-width: 900px; margin: 3rem auto 2rem auto; display: flex; flex-direction: row; align-items: stretch; gap: 2.5rem; flex-wrap: wrap;">
+					<section id="medium-link" class="blog-medium" style="flex: 1 1 340px; max-width: 420px; background: #fff; color: #222; border-radius: 14px; box-shadow: 0 2px 16px rgba(0,0,0,0.07); padding: 2rem 1.5rem; display: flex; flex-direction: column; align-items: flex-start; justify-content: center; min-width: 260px; min-height: 220px;">
+						<a href="https://medium.com/@devpal" target="_blank" rel="noopener" style="display: flex; align-items: center; gap: 0.7rem; text-decoration: none; color: #222; font-weight: 700; font-size: 1.2rem;">
+							<span style="font-size: 2rem; vertical-align: middle;"><i class="fab fa-medium-m" style="color: #00ab6c;"></i></span>
+							Medium Profile
+						</a>
+						<hr style="width: 60%; margin: 1.2rem 0 0.5rem 0; border: none; border-top: 1px dashed #bbb;">
+						<span style="font-size: 1rem; color: #444;">Read my latest articles on data science, analytics, and product strategy.</span>
+					</section>
+					<section id="substack-embed" class="blog-substack" style="flex: 1 1 340px; max-width: 420px; background: #fff; color: #222; border-radius: 14px; box-shadow: 0 2px 16px rgba(0,0,0,0.07); padding: 2rem 1.5rem; display: flex; flex-direction: column; align-items: flex-start; justify-content: center; min-width: 260px; min-height: 220px;">
+						<h2 class="blog-substack-title" style="font-size: 1.1rem; margin-bottom: 0.7rem;">Subscribe to My Substack</h2>
+						<div class="substack-embed-container" style="width: 100%;">
+							<iframe src="https://devdiptapal.substack.com/embed" width="100%" height="140" style="border:1px solid #EEE; background:white; border-radius: 8px;" frameborder="0" scrolling="no"></iframe>
+						</div>
+					</section>
 				</div>
 			</section>
 		</div>
@@ -117,6 +123,30 @@
 	<script src="assets/js/util.js"></script>
 	<script src="assets/js/main.js"></script>
 	<script src="assets/js/enhancements.js"></script>
+	<script>
+	// Medium RSS Feed Fetcher (using Feedrapp)
+	(function() {
+		const feedUrl = 'https://medium.com/feed/@devdiptapal';
+		const apiUrl = 'https://api.feedrapp.info/api/v1/feed?url=' + encodeURIComponent(feedUrl);
+		fetch(apiUrl)
+			.then(response => response.json())
+			.then(data => {
+				if (!data.items || !data.items.length) throw new Error('No articles found');
+				const articles = data.items.slice(0, 5); // Show 5 latest
+				const container = document.getElementById('medium-articles');
+				container.innerHTML = articles.map(item => `
+					<div style="margin-bottom: 1.2rem;">
+						<a href="${item.link}" target="_blank" rel="noopener" style="font-weight: bold; color: #222; font-size: 1.05rem; text-decoration: none;">${item.title}</a>
+						<div style="font-size: 0.9rem; color: #888; margin-top: 0.2rem;">${new Date(item.pubDate || item.date_published).toLocaleDateString()}</div>
+					</div>
+				`).join('');
+			})
+			.catch(() => {
+				const container = document.getElementById('medium-articles');
+				container.innerHTML = '<p>Could not load Medium articles.</p>';
+			});
+	})();
+	</script>
 
 </body>
 
