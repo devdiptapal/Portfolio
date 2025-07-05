@@ -134,83 +134,71 @@
         }
         /* Modern accent styles for Experience */
         .experience-section-bg {
-            background: #FCFAF5;
-            border-radius: 24px;
-            box-shadow: 0 6px 32px 0 rgba(0,0,0,0.10);
-            padding: 2rem 1rem 0 1rem;
-            max-width: 1200px;
-            margin: 0 auto 5rem auto;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
-        .experience-section-bg .experience-section {
-            width: 100%;
+            background: none !important;
+            box-shadow: none !important;
+            border-radius: 0 !important;
+            padding: 0 !important;
+            max-width: none !important;
+            margin: 0 !important;
         }
         .experience-section {
+            width: 100% !important;
+            max-width: 100% !important;
+            margin: 0 auto !important;
+            padding: 0 !important;
+        }
+        .experience-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2.5rem 2rem;
+            max-width: 1400px;
+            margin: 0 auto;
+            width: 100%;
+            padding: 0 2vw;
+        }
+        .experience-card {
+            min-width: 0;
+            width: 100%;
             margin: 0;
-            padding: 0;
-            border-radius: 24px;
-            box-shadow: none;
-            background: none;
+            border-radius: 18px;
+            box-shadow: 0 4px 24px 0 rgba(0,0,0,0.10);
+            background: #fff !important;
+            padding: 2.2rem 1.5rem 1.5rem 1.5rem;
+            color: #23272f !important;
+            opacity: 1 !important;
+            filter: none !important;
+            transition: box-shadow 0.22s cubic-bezier(.4,2,.6,1), transform 0.18s cubic-bezier(.4,2,.6,1);
         }
-        .post > header.major {
-            text-align: center;
-            border-bottom: 3px solid #667eea;
-            padding-bottom: 1.2rem;
-            margin-bottom: 2.2rem;
-            background: none;
-            box-shadow: none;
+        .experience-card * {
+            color: #23272f !important;
+            opacity: 1 !important;
+            filter: none !important;
         }
-        .post > header.major .date {
-            color: #667eea;
-            font-weight: 700;
-            font-size: 1.1rem;
-            letter-spacing: 0.08em;
+        .experience-card:hover {
+            box-shadow: 0 12px 36px 0 rgba(0,0,0,0.13);
+            transform: translateY(-7px) scale(1.025);
+            background: #f7f6f2 !important;
         }
-        .posts article {
-            background: #23272f;
-            border-radius: 14px;
-            box-shadow: 0 4px 24px rgba(0,0,0,0.10);
-            margin-bottom: 2.2rem;
-            padding: 1.5rem 1.2rem 1.2rem 1.2rem;
-            transition: box-shadow 0.2s, transform 0.2s;
+        @media (min-width: 1200px) {
+            .experience-grid {
+                grid-template-columns: repeat(3, 1fr);
+                max-width: 1400px;
+            }
         }
-        .posts article:hover {
-            box-shadow: 0 8px 32px rgba(102,126,234,0.18);
-            transform: translateY(-2px);
-        }
-        .posts article h2 {
-            color: #fff;
-            font-size: 1.3rem;
-            font-weight: 700;
-            margin-bottom: 0.5rem;
-        }
-        .posts article .date {
-            color: #667eea;
-            font-weight: 600;
-            font-size: 1rem;
-        }
-        ul.actions.special .button {
-            background: linear-gradient(90deg, #667eea 0%, #764ba2 100%);
-            color: #fff;
-            font-weight: 700;
-            border-radius: 8px;
-            box-shadow: 0 2px 12px rgba(102,126,234,0.10);
-            transition: background 0.2s, box-shadow 0.2s, transform 0.2s;
-        }
-        ul.actions.special .button:hover {
-            background: linear-gradient(90deg, #764ba2 0%, #667eea 100%);
-            box-shadow: 0 4px 24px rgba(102,126,234,0.18);
-            transform: translateY(-2px);
+        @media (max-width: 900px) {
+            .experience-grid {
+                grid-template-columns: repeat(2, 1fr);
+                padding: 0 1vw;
+            }
         }
         @media (max-width: 600px) {
-            .posts article {
-                padding: 1rem 0.5rem 0.7rem 0.5rem;
+            .experience-grid {
+                grid-template-columns: 1fr;
+                gap: 1.2rem 0;
+                padding: 0 0.5rem;
             }
-            .post > header.major {
-                padding-bottom: 0.7rem;
-                margin-bottom: 1.2rem;
+            .experience-card {
+                padding: 1.2rem 0.5rem 1rem 0.5rem;
             }
         }
     </style>
@@ -248,10 +236,9 @@
 
         <!-- Main -->
         <div id="main">
-            <div class="experience-section-bg">
             <!-- Post -->
             <section class="experience-section">
-                <div style="height: 3.5rem;"></div>
+                <div style="height: 2.5rem;"></div>
                 <div class="experience-grid">
                     <!-- TikTok -->
                     <div class="experience-card">
@@ -330,9 +317,8 @@
                         </ul>
                     </div>
                 </div>
-                <div style="height: 3.5rem;"></div>
+                <div style="height: 2.5rem;"></div>
             </section>
-            </div>
         </div>
 
         <!-- Footer -->
