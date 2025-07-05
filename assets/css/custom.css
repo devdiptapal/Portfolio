@@ -1,8 +1,62 @@
 /* Custom Enhancements for Dev Pal Portfolio */
 
+/* iOS Safari specific fixes */
+@supports (-webkit-touch-callout: none) {
+  /* iOS Safari specific styles */
+  html, body {
+    -webkit-text-size-adjust: 100%;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  
+  /* Prevent horizontal scrolling on iOS */
+  body {
+    overflow-x: hidden;
+    width: 100%;
+    position: relative;
+  }
+  
+  /* Fix viewport issues */
+  #wrapper {
+    width: 100%;
+    max-width: 100vw;
+    overflow-x: hidden;
+  }
+}
+
 /* Smooth scrolling */
 html {
     scroll-behavior: smooth;
+}
+
+/* iOS Safari viewport fixes */
+@media screen and (max-width: 480px) {
+  html, body {
+    min-width: 320px;
+    max-width: 100vw;
+    overflow-x: hidden;
+  }
+  
+  #wrapper {
+    width: 100%;
+    max-width: 100vw;
+    overflow-x: hidden;
+  }
+}
+
+/* iOS Safe Area Support */
+@supports (padding: max(0px)) {
+  body {
+    padding-left: max(0px, env(safe-area-inset-left));
+    padding-right: max(0px, env(safe-area-inset-right));
+    padding-top: max(0px, env(safe-area-inset-top));
+    padding-bottom: max(0px, env(safe-area-inset-bottom));
+  }
+  
+  #wrapper {
+    padding-left: max(0px, env(safe-area-inset-left));
+    padding-right: max(0px, env(safe-area-inset-right));
+  }
 }
 
 /* Blog-specific styles */
@@ -356,10 +410,18 @@ h1, h2, h3, h4, h5, h6 {
 
 /* Enhanced header */
 #header {
-    backdrop-filter: blur(10px);
-    background: rgba(255, 255, 255, 0.95);
-    border-bottom: 1px solid rgba(0,0,0,0.1);
-    display: none !important;
+    position: absolute !important;
+    top: -9999px !important;
+    left: 0 !important;
+    width: 100% !important;
+    height: auto !important;
+    overflow: hidden !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    border: none !important;
+    background: none !important;
+    box-shadow: none !important;
+    z-index: 1 !important;
 }
 
 #header .logo {
@@ -580,6 +642,12 @@ a:focus, button:focus, input:focus, textarea:focus {
   justify-content: center;
   display: flex;
   flex-direction: column;
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+  hyphens: auto;
 }
 
 .intro-image img {
@@ -608,6 +676,11 @@ a:focus, button:focus, input:focus, textarea:focus {
   font-size: 1.25rem;
   margin-bottom: 1.2rem;
   text-align: center;
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+  hyphens: auto;
+  max-width: 100%;
+  box-sizing: border-box;
 }
 
 @media (max-width: 800px) {
@@ -632,6 +705,10 @@ a:focus, button:focus, input:focus, textarea:focus {
   margin: 0 auto 0.7rem auto;
   padding: 0 0 0.2rem 0;
   max-width: 900px;
+  width: 100%;
+  box-sizing: border-box;
+  overflow-wrap: break-word;
+  word-wrap: break-word;
 }
 
 .main-section.compact article.post,
@@ -1080,6 +1157,11 @@ footer#footer, #footer > section, #footer .split.contact section {
   gap: 1.2rem;
   margin: 2.5rem 0 1.5rem 0;
   justify-items: center;
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
+  overflow-wrap: break-word;
+  word-wrap: break-word;
 }
 .social-link-box {
   display: flex;
@@ -1096,7 +1178,13 @@ footer#footer, #footer > section, #footer .split.contact section {
   transition: background 0.18s, box-shadow 0.18s, color 0.18s, transform 0.18s;
   border: 1.5px solid #f3f3f3;
   min-width: 150px;
+  max-width: 100%;
   justify-content: center;
+  box-sizing: border-box;
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+  white-space: normal;
+  text-align: center;
 }
 .social-link-box .icon {
   font-size: 1.3em;
@@ -1115,10 +1203,78 @@ footer#footer, #footer > section, #footer .split.contact section {
   .social-links-grid {
     grid-template-columns: 1fr;
     gap: 0.7rem;
+    width: 100%;
+    max-width: 100%;
+    padding: 0 0.5rem;
+    box-sizing: border-box;
   }
   .social-link-box {
     font-size: 1rem;
     padding: 0.8rem 1rem;
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+    min-width: auto;
+  }
+}
+
+/* iOS Safari specific mobile fixes */
+@supports (-webkit-touch-callout: none) {
+  @media (max-width: 600px) {
+    .social-links-grid {
+      grid-template-columns: 1fr;
+      gap: 0.8rem;
+      margin: 1.5rem 0.5rem 1rem 0.5rem;
+    }
+    
+    .social-link-box {
+      font-size: 0.95rem;
+      padding: 0.7rem 0.8rem;
+      min-width: auto;
+      width: 100%;
+      max-width: 100%;
+    }
+    
+    #intro .intro-content p {
+      font-size: 1rem;
+      line-height: 1.5;
+      padding: 0 0.5rem;
+    }
+    
+    #intro .intro-content h1 {
+      font-size: 2rem;
+      line-height: 1.2;
+      padding: 0 0.5rem;
+    }
+    
+    /* Fix main content sections */
+    .main-section.compact {
+      padding: 0 0.5rem 0.2rem 0.5rem;
+      margin: 0 auto 0.7rem auto;
+    }
+    
+    .main-section.compact article.post {
+      padding: 0.5rem 0.3rem 0.3rem 0.3rem;
+      margin: 0 0 0.5rem 0;
+    }
+    
+    /* Fix text wrapping in lists */
+    .skills-list li,
+    .achievements-list li,
+    .principles-list li {
+      overflow-wrap: break-word;
+      word-wrap: break-word;
+      hyphens: auto;
+      padding-right: 0.5rem;
+    }
+    
+    /* Fix navigation */
+    #nav {
+      margin: 1rem 0.5rem 2rem 0.5rem;
+      padding: 0.2rem 0.8rem;
+      width: calc(100% - 1rem);
+      box-sizing: border-box;
+    }
   }
 }
 
@@ -1174,5 +1330,105 @@ footer#footer, #footer > section, #footer .split.contact section {
   }
   #nav ul.links, #nav ul.social-nav-center {
     justify-content: center;
+  }
+}
+
+@media (max-width: 800px) {
+  #intro {
+    margin-top: 0 !important;
+  }
+  .social-links-grid {
+    margin-top: 1.2rem !important;
+  }
+}
+
+body.home #header {
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+  min-height: 0 !important;
+  height: 40px !important;
+  display: flex !important;
+  align-items: flex-start !important;
+  justify-content: flex-end !important;
+}
+body.home #header .logo {
+  display: none !important;
+}
+
+@media (max-width: 600px) {
+  #intro .intro-content p {
+    word-break: break-word;
+    overflow-wrap: break-word;
+    white-space: normal;
+    max-width: 100%;
+    display: block;
+    box-sizing: border-box;
+    padding: 0 0.5rem;
+  }
+  #intro, #intro.intro-flex {
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+    box-sizing: border-box;
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+    overflow-x: hidden;
+  }
+  
+  /* Ensure all content stays within bounds */
+  .intro-content {
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+    padding: 0 0.5rem;
+  }
+  
+  /* Extra small screen fixes */
+  @media (max-width: 375px) {
+    #intro .intro-content h1 {
+      font-size: 1.8rem;
+      line-height: 1.1;
+    }
+    
+    #intro .intro-content p {
+      font-size: 0.9rem;
+      line-height: 1.4;
+    }
+    
+    .social-link-box {
+      font-size: 0.9rem;
+      padding: 0.6rem 0.7rem;
+    }
+  }
+}
+
+@media (max-width: 700px) {
+  .social-links-grid {
+    grid-template-columns: 1fr !important;
+    width: 100% !important;
+    max-width: 100vw !important;
+    padding: 0 1rem !important;
+    box-sizing: border-box !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+  }
+  .social-link-box {
+    min-width: 0 !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+    padding-left: 0.5rem !important;
+    padding-right: 0.5rem !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+  }
+  #intro, #intro.intro-flex {
+    padding-left: 0.5rem !important;
+    padding-right: 0.5rem !important;
+    box-sizing: border-box !important;
+    width: 100vw !important;
+    max-width: 100vw !important;
+    overflow-x: hidden !important;
   }
 }
