@@ -17,9 +17,201 @@
 	<noscript>
 		<link rel="stylesheet" href="assets/css/noscript.css" />
 	</noscript>
+	<style>
+		/* Add custom fonts */
+		@import url('https://fonts.googleapis.com/css?family=Open+Sans:400,700&display=swap');
+
+		/* Adjust typography */
+		body {
+			font-family: 'Open Sans', sans-serif;
+			font-size: 16px;
+			line-height: 1.6;
+			color: #f3f3f3;
+			background: linear-gradient(135deg, #23272f 0%, #1e252d 100%) !important;
+		}
+
+		h1, h2 {
+			font-weight: 700;
+		}
+
+		a {
+			color: #a5b4fc;
+		}
+
+		/* Adjust layout */
+		#main {
+			background: transparent !important;
+		}
+
+		/* Modern accent styles for Blog */
+		.blog-section-bg {
+			background: none !important;
+			box-shadow: none !important;
+			border-radius: 0 !important;
+			padding: 0 !important;
+			max-width: none !important;
+			margin: 0 !important;
+		}
+
+		.blog-section {
+			width: 100% !important;
+			max-width: 100% !important;
+			margin: 0 auto !important;
+			padding: 0 !important;
+		}
+
+		.blog-grid {
+			display: grid;
+			grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+			gap: 2.5rem 2rem;
+			max-width: 1400px;
+			margin: 0 auto;
+			width: 100%;
+			padding: 0 2vw;
+		}
+
+		.blog-card {
+			min-width: 0;
+			width: 100%;
+			margin: 0;
+			border-radius: 18px;
+			box-shadow: 0 4px 24px 0 rgba(0,0,0,0.10);
+			background: #fff !important;
+			padding: 2.2rem 1.5rem 1.5rem 1.5rem;
+			color: #23272f !important;
+			opacity: 1 !important;
+			filter: none !important;
+			transition: box-shadow 0.22s cubic-bezier(.4,2,.6,1), transform 0.18s cubic-bezier(.4,2,.6,1);
+		}
+
+		.blog-card * {
+			color: #23272f !important;
+			opacity: 1 !important;
+			filter: none !important;
+		}
+
+		.blog-card:hover {
+			box-shadow: 0 12px 36px 0 rgba(0,0,0,0.13);
+			transform: translateY(-7px) scale(1.025);
+			background: #f7f6f2 !important;
+		}
+
+		.blog-title {
+			font-size: 2.5rem;
+			font-weight: 800;
+			color: #fff !important;
+			margin-bottom: 1.1rem;
+			letter-spacing: 0.01em;
+			text-align: center;
+			text-shadow: 0 1px 4px rgba(0,0,0,0.18);
+		}
+
+		.blog-desc {
+			font-size: 1.18rem;
+			color: #fff !important;
+			margin-bottom: 2.2rem;
+			max-width: 700px;
+			text-align: center;
+			margin-left: auto;
+			margin-right: auto;
+		}
+
+		.blog-header-container {
+			background: rgba(30, 37, 45, 0.7);
+			border-radius: 8px;
+			padding: 1.2rem 1rem 1rem 1rem;
+			margin-bottom: 1.2rem;
+			box-shadow: 0 2px 10px rgba(0,0,0,0.10);
+			max-width: 1400px;
+			margin-left: auto;
+			margin-right: auto;
+			width: 100%;
+		}
+
+		.blog-card h2 {
+			font-size: 1.1rem;
+			margin-bottom: 0.7rem;
+			color: #23272f !important;
+		}
+
+		.blog-card p {
+			font-size: 0.98rem;
+			color: #444 !important;
+			margin-bottom: 0.5rem;
+		}
+
+		.blog-card .date {
+			color: #a5b4fc !important;
+			font-size: 0.9rem;
+			font-weight: 600;
+		}
+
+		.blog-card a {
+			color: #23272f !important;
+			text-decoration: none;
+			font-weight: 700;
+		}
+
+		.blog-card a:hover {
+			color: #a5b4fc !important;
+		}
+
+		.blog-card hr {
+			width: 60%;
+			margin: 1.2rem 0 0.5rem 0;
+			border: none;
+			border-top: 1px dashed #bbb;
+		}
+
+		.substack-embed-container iframe {
+			border: 1px solid #EEE;
+			background: white;
+			border-radius: 8px;
+		}
+
+		@media (min-width: 1200px) {
+			.blog-grid {
+				grid-template-columns: repeat(2, 1fr);
+				max-width: 1400px;
+			}
+		}
+
+		@media (max-width: 900px) {
+			.blog-grid {
+				grid-template-columns: 1fr;
+				padding: 0 1vw;
+			}
+		}
+
+		@media (max-width: 600px) {
+			.blog-grid {
+				grid-template-columns: 1fr;
+				gap: 1.2rem 0;
+				padding: 0 0.5rem;
+			}
+			.blog-card {
+				padding: 1.2rem 0.5rem 1rem 0.5rem;
+			}
+			.blog-title {
+				font-size: 2rem;
+			}
+			.blog-desc {
+				font-size: 1rem;
+			}
+		}
+
+		/* Modify logo and header colors */
+		#header .logo {
+			color: #fff;
+		}
+
+		#header {
+			background: transparent;
+		}
+	</style>
 </head>
 
-<body class="is-preload" style="background:#1e252d; color:#fff;">
+<body class="is-preload">
 
 	<!-- Wrapper -->
 	<div id="wrapper" class="fade-in">
@@ -31,10 +223,10 @@
 		<!-- Nav -->
 		<nav id="nav">
 			<ul class="links">
-				<li><a href="index.html">Me</a></li>
-				<li><a href="been.html">Experience</a></li>
-				<li><a href="going.html">Values</a></li>
-				<li class="active"><a href="blog.html">Blog</a></li>
+				<li><a href="index.html">ME</a></li>
+				<li><a href="been.html">EXPERIENCE</a></li>
+				<li><a href="going.html">VALUES</a></li>
+				<li class="active"><a href="blog.html">BLOG</a></li>
 			</ul>
 			<ul class="icons social-nav-center">
 				<li><a href="https://x.com/devpecks" target="_blank" rel="noopener" title="Twitter"><span class="icon brands fa-twitter"></span></a></li>
@@ -49,27 +241,31 @@
 
 		<!-- Main -->
 		<div id="main">
-			<section class="blog-hero">
-				<h1 class="blog-title" style="font-size: 2.5rem; font-weight: 800; color: #6c6fd1; margin-bottom: 1.1rem; letter-spacing: 0.01em; text-align: left;">Insights & Writing on Data Science</h1>
-				<p class="blog-desc" style="font-size: 1.18rem; color: #7a7a8c; margin-bottom: 2.2rem; max-width: 700px; text-align: left;">
-					Actionable ideas and lessons from a decade in data science, experimentation, and product analytics. Subscribe for new articles on strategy, causal inference, and more.
-				</p>
-				<div id="blog-main-content" style="max-width: 900px; margin: 3rem auto 2rem auto; display: flex; flex-direction: row; align-items: stretch; gap: 2.5rem; flex-wrap: wrap;">
-					<section id="medium-link" class="blog-medium" style="flex: 1 1 340px; max-width: 420px; background: #fff; color: #222; border-radius: 14px; box-shadow: 0 2px 16px rgba(0,0,0,0.07); padding: 2rem 1.5rem; display: flex; flex-direction: column; align-items: flex-start; justify-content: center; min-width: 260px; min-height: 220px;">
-						<a href="https://medium.com/@devpal" target="_blank" rel="noopener" style="display: flex; align-items: center; gap: 0.7rem; text-decoration: none; color: #222; font-weight: 700; font-size: 1.2rem;">
-							<span style="font-size: 2rem; vertical-align: middle;"><i class="fab fa-medium-m" style="color: #00ab6c;"></i></span>
-							Medium Profile
-						</a>
-						<hr style="width: 60%; margin: 1.2rem 0 0.5rem 0; border: none; border-top: 1px dashed #bbb;">
-						<span style="font-size: 1rem; color: #444;">Read my latest articles on data science, analytics, and product strategy.</span>
-					</section>
-					<section id="substack-embed" class="blog-substack" style="flex: 1 1 340px; max-width: 420px; background: #fff; color: #222; border-radius: 14px; box-shadow: 0 2px 16px rgba(0,0,0,0.07); padding: 2rem 1.5rem; display: flex; flex-direction: column; align-items: flex-start; justify-content: center; min-width: 260px; min-height: 220px;">
-						<h2 class="blog-substack-title" style="font-size: 1.1rem; margin-bottom: 0.7rem;">Subscribe to Dev's Newsletter</h2>
-						        <div class="substack-embed-container" style="width: 100%;">
-            <iframe src="https://dpal.substack.com/embed" width="100%" height="140" style="border:1px solid #EEE; background:white; border-radius: 8px;" frameborder="0" scrolling="no"></iframe>
-						</div>
-					</section>
+			<section class="blog-section">
+				<div style="height: 2.5rem;"></div>
+				<div class="blog-header-container">
+					<h1 class="blog-title">Insights & Writing on Data Science</h1>
+					<p class="blog-desc">
+						Actionable ideas and lessons from a decade in data science, experimentation, and product analytics. Subscribe for new articles on strategy, causal inference, and more.
+					</p>
 				</div>
+				<div class="blog-grid">
+					<div class="blog-card">
+						<a href="https://medium.com/@devpal" target="_blank" rel="noopener">
+							<span style="font-size: 2rem; vertical-align: middle; color: #00ab6c;"><i class="fab fa-medium-m"></i></span>
+							<h2>Medium Profile</h2>
+						</a>
+						<hr>
+						<p>Read my latest articles on data science, analytics, and product strategy.</p>
+					</div>
+					<div class="blog-card">
+						<h2>Subscribe to Dev's Newsletter</h2>
+						<div class="substack-embed-container">
+							<iframe src="https://dpal.substack.com/embed" width="100%" height="140" frameborder="0" scrolling="no"></iframe>
+						</div>
+					</div>
+				</div>
+				<div style="height: 2.5rem;"></div>
 			</section>
 		</div>
 
@@ -124,30 +320,6 @@
 	<script src="assets/js/util.js"></script>
 	<script src="assets/js/main.js"></script>
 	<script src="assets/js/enhancements.js"></script>
-	<script>
-	// Medium RSS Feed Fetcher (using Feedrapp)
-	(function() {
-		const feedUrl = 'https://medium.com/feed/@devdiptapal';
-		const apiUrl = 'https://api.feedrapp.info/api/v1/feed?url=' + encodeURIComponent(feedUrl);
-		fetch(apiUrl)
-			.then(response => response.json())
-			.then(data => {
-				if (!data.items || !data.items.length) throw new Error('No articles found');
-				const articles = data.items.slice(0, 5); // Show 5 latest
-				const container = document.getElementById('medium-articles');
-				container.innerHTML = articles.map(item => `
-					<div style="margin-bottom: 1.2rem;">
-						<a href="${item.link}" target="_blank" rel="noopener" style="font-weight: bold; color: #222; font-size: 1.05rem; text-decoration: none;">${item.title}</a>
-						<div style="font-size: 0.9rem; color: #888; margin-top: 0.2rem;">${new Date(item.pubDate || item.date_published).toLocaleDateString()}</div>
-					</div>
-				`).join('');
-			})
-			.catch(() => {
-				const container = document.getElementById('medium-articles');
-				container.innerHTML = '<p>Could not load Medium articles.</p>';
-			});
-	})();
-	</script>
 
 </body>
 

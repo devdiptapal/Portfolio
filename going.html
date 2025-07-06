@@ -67,36 +67,55 @@
             letter-spacing: 0.08em;
         }
         .value-card {
-            background: #23272f;
-            border-radius: 14px;
-            box-shadow: 0 4px 24px rgba(0,0,0,0.10);
-            margin-bottom: 2.2rem;
-            padding: 1.5rem 1.2rem 1.2rem 1.2rem;
-            transition: box-shadow 0.2s, transform 0.2s;
+            background: #fff !important;
+            color: #23272f !important;
+            border-radius: 28px;
+            box-shadow: 0 4px 24px 0 rgba(0,0,0,0.10);
+            border: 1px solid rgba(35,39,47,0.06);
+            padding: 2.7rem 2rem 2.2rem 2rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 370px;
+            transition: box-shadow 0.22s cubic-bezier(.4,2,.6,1), transform 0.18s cubic-bezier(.4,2,.6,1);
+            margin-bottom: 0;
         }
         .value-card:hover {
-            box-shadow: 0 8px 32px rgba(102,126,234,0.18);
-            transform: translateY(-2px);
+            box-shadow: 0 12px 36px 0 rgba(0,0,0,0.13) !important;
+            transform: translateY(-7px) scale(1.025) !important;
+            background: #f7f6f2 !important;
         }
         .value-card h3 {
-            color: #667eea;
-            font-size: 1.1rem;
-            font-weight: 700;
-            margin-bottom: 0.5rem;
-            border-bottom: 1px solid #333;
-            padding-bottom: 0.3rem;
+            color: #23272f !important;
+            font-size: 1.35rem;
+            font-weight: 800;
+            margin-bottom: 1rem;
+            text-align: center;
+            border-bottom: none;
+            padding-bottom: 0;
+            letter-spacing: 0.01em;
         }
         .value-card p {
-            margin: 0;
-            color: #f3f3f3;
-            font-size: 0.98rem;
+            color: #23272f !important;
+            font-size: 1.08rem;
+            text-align: left;
+            line-height: 1.7;
+            margin-bottom: 0;
+            margin-top: 0;
+            word-spacing: normal;
+            letter-spacing: normal;
+            max-width: 100%;
+            box-sizing: border-box;
         }
         /* Grid layout for values */
         .values-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-            gap: 18px;
-            margin: 1.2rem 0;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2.5rem 2rem;
+            max-width: 1400px;
+            margin: 0 auto;
+            width: 100%;
+            padding: 0 2vw;
         }
         ul.actions.special .button {
             background: linear-gradient(90deg, #667eea 0%, #764ba2 100%);
@@ -159,9 +178,30 @@
             align-items: center;
         }
         .values-section-bg .values-grid {
-            width: 100%;
+            width: 100% !important;
+        }
+        @media (min-width: 1200px) {
+            .values-grid {
+                grid-template-columns: repeat(3, 1fr);
+                max-width: 1400px;
+            }
+        }
+        @media (max-width: 900px) {
+            .values-grid {
+                grid-template-columns: repeat(2, 1fr);
+                padding: 0 1vw;
+            }
         }
         @media (max-width: 600px) {
+            .values-grid {
+                grid-template-columns: 1fr;
+                gap: 1.2rem 0;
+                padding: 0 0.5rem;
+            }
+            .value-card {
+                padding: 1.2rem 0.5rem 1rem 0.5rem;
+                min-height: 320px;
+            }
             .values-section-bg {
                 padding: 1rem 0.2rem;
             }
