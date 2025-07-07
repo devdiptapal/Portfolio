@@ -27,8 +27,10 @@
             font-family: 'Open Sans', sans-serif;
             font-size: 16px;
             line-height: 1.6;
-            color: #f3f3f3;
+            color: #23272f;
             background: linear-gradient(135deg, #23272f 0%, #1e252d 100%) !important;
+            margin: 0;
+            padding: 0;
         }
 
         h1, h2, h3 {
@@ -72,11 +74,11 @@
             border-radius: 28px;
             box-shadow: 0 4px 24px 0 rgba(0,0,0,0.10);
             border: 1px solid rgba(35,39,47,0.06);
-            padding: 2.7rem 2rem 2.2rem 2rem;
+            padding: 2.2rem 1.2rem 1.7rem 1.2rem;
             display: flex;
             flex-direction: column;
             align-items: center;
-            min-height: 370px;
+            min-height: 320px;
             transition: box-shadow 0.22s cubic-bezier(.4,2,.6,1), transform 0.18s cubic-bezier(.4,2,.6,1);
             margin-bottom: 0;
         }
@@ -87,7 +89,7 @@
         }
         .value-card h3 {
             color: #23272f !important;
-            font-size: 1.35rem;
+            font-size: 1.25rem;
             font-weight: 800;
             margin-bottom: 1rem;
             text-align: center;
@@ -110,12 +112,11 @@
         /* Grid layout for values */
         .values-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-            gap: 2.5rem 2rem;
-            max-width: 1400px;
-            margin: 0 auto;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 2.2rem 1.5rem;
             width: 100%;
-            padding: 0 2vw;
+            padding: 0;
+            box-sizing: border-box;
         }
         ul.actions.special .button {
             background: linear-gradient(90deg, #667eea 0%, #764ba2 100%);
@@ -170,26 +171,26 @@
             background: #FCFAF5;
             border-radius: 24px;
             box-shadow: 0 6px 32px 0 rgba(0,0,0,0.10);
-            padding: 3.5rem 2.5rem 2.5rem 2.5rem;
+            padding: 2rem 1rem 2.5rem 1rem;
             max-width: 1200px;
-            margin: 0 auto 5rem auto;
+            width: 100%;
+            margin: 0 auto 0 auto;
             display: flex;
             flex-direction: column;
             align-items: center;
+            box-sizing: border-box;
         }
         .values-section-bg .values-grid {
             width: 100% !important;
         }
         @media (min-width: 1200px) {
             .values-grid {
-                grid-template-columns: repeat(3, 1fr);
-                max-width: 1400px;
+                grid-template-columns: repeat(4, 1fr);
             }
         }
         @media (max-width: 900px) {
             .values-grid {
                 grid-template-columns: repeat(2, 1fr);
-                padding: 0 1vw;
             }
         }
         @media (max-width: 600px) {
@@ -198,13 +199,21 @@
                 gap: 1.2rem 0;
                 padding: 0 0.5rem;
             }
-            .value-card {
-                padding: 1.2rem 0.5rem 1rem 0.5rem;
-                min-height: 320px;
-            }
             .values-section-bg {
-                padding: 2rem 0.7rem;
+                padding: 1.5rem 0.5rem 1.5rem 0.5rem;
             }
+        }
+        section.post {
+            padding-top: 0 !important;
+            margin-top: 0 !important;
+        }
+        #main > .post {
+            padding-top: 0 !important;
+        }
+        .value-card {
+            min-width: 0;
+            min-height: 340px;
+            padding: 2.2rem 1.5rem 1.7rem 1.5rem;
         }
     </style>
 </head>
@@ -244,7 +253,6 @@
 
         <!-- Post -->
         <section class="post">
-            <div style="height: 1rem;"></div>
             <div class="values-section-bg">
                 <div class="values-grid">
                     <div class="value-card">
@@ -325,10 +333,17 @@
     <footer id="footer">
         <section class="split contact">
             <section class="alt">
+                <h3>Let's Connect</h3>
+                <p>I'm always interested in discussing data science opportunities,<br />
+                product analytics challenges, and innovative projects.</p>
             </section>
             <section>
                 <h3>Email</h3>
                 <p><a href="mailto: devdiptapal@gmail.com">devdiptapal@gmail.com</a></p>
+            </section>
+            <section>
+                <h3>Location</h3>
+                <p>San Francisco Bay Area, CA</p>
             </section>
             <section>
                 <h3>Social</h3>
@@ -345,7 +360,7 @@
     <!-- Copyright -->
     <div id="copyright">
         <ul>
-            <li>&copy; DEV PAL 2024</li>
+            <li>&copy; DEV PAL 2025</li>
         </ul>
     </div>
 
