@@ -114,7 +114,7 @@ html {
     content: "•";
     position: absolute;
     left: 0;
-    color: #212931;
+    color: #000000;
     font-weight: bold;
     font-size: 1.2em;
 }
@@ -320,7 +320,7 @@ h1, h2, h3, h4, h5, h6 {
     content: "•";
     position: absolute;
     left: 0;
-    color: #212931;
+    color: #000000;
     font-weight: bold;
     font-size: 1.2em;
 }
@@ -354,7 +354,7 @@ h1, h2, h3, h4, h5, h6 {
     content: "•";
     position: absolute;
     left: 0;
-    color: #212931;
+    color: #000000;
     font-weight: bold;
     font-size: 1.2em;
 }
@@ -411,7 +411,7 @@ h1, h2, h3, h4, h5, h6 {
     content: "•";
     position: absolute;
     left: 0;
-    color: #212931;
+    color: #000000;
     font-weight: bold;
     font-size: 1.2em;
 }
@@ -451,7 +451,7 @@ h1, h2, h3, h4, h5, h6 {
     content: "•";
     position: absolute;
     left: 0;
-    color: #212931;
+    color: #000000;
     font-weight: bold;
     font-size: 1.2em;
     top: 0;
@@ -1605,12 +1605,12 @@ body.home #header .logo {
 }
 
 .experience-details li::before {
-  content: "•";
-  position: absolute;
-  left: 0;
-  color: #212931;
-  font-weight: bold;
-  font-size: 1.2em;
+    content: "•";
+    position: absolute;
+    left: 0;
+    color: #000000;
+    font-weight: bold;
+    font-size: 1.2em;
 }
 @media (max-width: 900px) {
   .experience-grid {
@@ -1710,7 +1710,7 @@ body.home #header .logo {
 }
 
 .value-card .skills-list li::before {
-  color: #007aff;
+  color: #000000;
 }
 
 .value-card, .value-card *, .value-card strong, .value-card h1, .value-card h2, .value-card h3, .value-card h4, .value-card h5, .value-card h6, .value-card p, .value-card li {
@@ -1751,7 +1751,7 @@ body.home #header .logo {
   content: "•";
   position: absolute;
   left: 0;
-  color: #007aff;
+  color: #000000;
   font-weight: 600;
   font-size: 1.2em;
   top: -0.1em;
