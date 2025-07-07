@@ -166,17 +166,21 @@ html {
     color: #fff !important;
 }
 
-/* Modern System Font Stack (like danielmcauley.com) */
+/* Modern System Font Stack (Apple-like) */
 body, input, select, textarea, p, li, ul, ol, div, span {
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
   font-weight: 400;
   line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 h1, h2, h3, h4, h5, h6 {
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
   font-weight: 600;
   line-height: 1.3;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 /* Override any existing font declarations */
@@ -187,14 +191,16 @@ h1, h2, h3, h4, h5, h6 {
 
 /* Improved button styling */
 .button {
-    transition: all 0.3s ease;
-    border-radius: 4px;
-    font-weight: 600;
+    transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    border-radius: 8px;
+    font-weight: 500;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
 }
 
 .button:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.12);
 }
 
 .button.primary {
@@ -770,15 +776,30 @@ a:focus, button:focus, input:focus, textarea:focus {
   }
 }
 
+/* Main section background container */
+.main-section-bg {
+  background: #FCFAF5;
+  max-width: 1200px;
+  margin: 0 auto 4rem auto;
+  padding: 2rem 1rem 3rem 1rem;
+  border-radius: 24px;
+  box-shadow: 0 6px 32px 0 rgba(0,0,0,0.10);
+  position: relative;
+}
+
 /* Compact main section layout */
 .main-section.compact {
-  margin: 0 auto 0.7rem auto;
-  padding: 0 0 0.2rem 0;
-  max-width: 900px;
+  margin: 0 auto 3rem auto;
+  padding: 2.5rem 1.5rem 2rem 1.5rem;
+  max-width: 1200px;
   width: 100%;
   box-sizing: border-box;
   overflow-wrap: break-word;
   word-wrap: break-word;
+  background: #ffffff;
+  border-radius: 20px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04), 0 1px 3px rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(0, 0, 0, 0.08);
 }
 
 .main-section.compact article.post,
@@ -805,12 +826,13 @@ a:focus, button:focus, input:focus, textarea:focus {
 }
 
 @media (max-width: 800px) {
-  .main-section.compact article.post,
-  .main-section.compact article.post.featured {
-    padding: 0.5rem 0.2rem 0.3rem 0.2rem;
+  .main-section-bg {
+    padding: 2rem 0.5rem 2rem 0.5rem;
   }
+  
   .main-section.compact {
-    padding: 0 0 0.1rem 0;
+    padding: 2rem 1rem 1.5rem 1rem;
+    margin: 0 auto 2rem auto;
   }
 }
 
@@ -1626,39 +1648,197 @@ body.home #header .logo {
   align-items: center;
   min-height: 370px;
   transition: box-shadow 0.22s cubic-bezier(.4,2,.6,1), transform 0.18s cubic-bezier(.4,2,.6,1);
+  position: relative;
+  overflow: hidden;
 }
+
 .value-card:hover {
   box-shadow: 0 12px 36px 0 rgba(0,0,0,0.13) !important;
   transform: translateY(-7px) scale(1.025) !important;
   background: #f7f6f2 !important;
 }
+
 .value-card h3, .value-card:hover h3, .value-card p, .value-card:hover p {
-  color: #23272f !important;
+  color: #1d1d1f !important;
+}
+
+.value-card header.major {
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+.value-card header.major .date {
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: #86868b;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  margin-bottom: 0.5rem;
+  display: block;
+}
+
+.value-card header.major h2 {
+  font-size: 1.75rem;
+  font-weight: 600;
+  color: #1d1d1f;
+  margin: 0;
+  line-height: 1.3;
+}
+
+.value-card h3 {
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: #1d1d1f;
+  margin-bottom: 1rem;
+  line-height: 1.4;
 }
 
 .value-card p {
   word-spacing: normal;
-  letter-spacing: normal;
+  letter-spacing: -0.01em;
   text-align: left;
   white-space: normal;
   line-height: 1.6;
   margin-bottom: 1.1rem;
   max-width: 100%;
   box-sizing: border-box;
+  color: #424245;
 }
 
 .value-card .skills-list li, .value-card .skills-list h3 {
-  color: #23272f !important;
+  color: #1d1d1f !important;
 }
 
 .value-card .skills-list li::before {
-  color: #212931;
+  color: #007aff;
 }
 
 .value-card, .value-card *, .value-card strong, .value-card h1, .value-card h2, .value-card h3, .value-card h4, .value-card h5, .value-card h6, .value-card p, .value-card li {
-  color: #23272f !important;
+  color: #1d1d1f !important;
 }
 
 .value-card .achievements-list li strong, .value-card .principles-list li strong {
-  color: #23272f !important;
+  color: #1d1d1f !important;
+  font-weight: 600;
+}
+
+/* Enhanced list styling for Apple-like appearance */
+.value-card .skills-list,
+.value-card .achievements-list,
+.value-card .principles-list,
+.value-card .education-list {
+  list-style: none;
+  padding-left: 0;
+  margin: 0;
+}
+
+.value-card .skills-list li,
+.value-card .achievements-list li,
+.value-card .principles-list li,
+.value-card .education-list li {
+  margin-bottom: 0.75rem;
+  color: #424245;
+  position: relative;
+  padding-left: 1.25rem;
+  line-height: 1.5;
+  font-size: 0.95rem;
+}
+
+.value-card .skills-list li::before,
+.value-card .achievements-list li::before,
+.value-card .principles-list li::before,
+.value-card .education-list li::before {
+  content: "•";
+  position: absolute;
+  left: 0;
+  color: #007aff;
+  font-weight: 600;
+  font-size: 1.2em;
+  top: -0.1em;
+}
+
+.value-card .skills-list li:hover,
+.value-card .achievements-list li:hover,
+.value-card .principles-list li:hover,
+.value-card .education-list li:hover {
+  color: #1d1d1f;
+  transform: translateX(2px);
+  transition: all 0.2s ease;
+}
+
+/* Education institution styling */
+.value-card .education-institution {
+  font-size: 0.95rem;
+  color: #424245;
+  margin-bottom: 0.75rem;
+  line-height: 1.4;
+}
+
+.value-card .education-institution strong {
+  color: #1d1d1f;
+  font-weight: 600;
+}
+
+/* Row styling for better spacing */
+.value-card .row {
+  width: 100%;
+  gap: 2rem;
+}
+
+.value-card .col-6 {
+  flex: 1;
+}
+
+/* Responsive adjustments */
+@media (max-width: 800px) {
+  .value-card {
+    padding: 2rem 1.5rem 1.5rem 1.5rem;
+    min-height: 350px;
+  }
+  
+  .value-card header.major h2 {
+    font-size: 1.5rem;
+  }
+  
+  .value-card h3 {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .main-section-bg {
+    padding: 1.5rem 0.25rem 1.5rem 0.25rem;
+  }
+  
+  .main-section.compact {
+    padding: 1.5rem 0.75rem 1rem 0.75rem;
+    margin: 0 auto 1.5rem auto;
+    border-radius: 16px;
+  }
+  
+  .value-card {
+    padding: 1.75rem 1.25rem 1.25rem 1.25rem;
+    min-height: 320px;
+    border-radius: 16px;
+  }
+  
+  .value-card .row {
+    gap: 1.5rem;
+  }
+  
+  .value-card .skills-list li,
+  .value-card .achievements-list li,
+  .value-card .principles-list li,
+  .value-card .education-list li {
+    font-size: 0.9rem;
+    margin-bottom: 0.6rem;
+  }
+}
+
+.main-section-bg > .value-card {
+  margin-bottom: 2.5rem;
+}
+
+.main-section-bg > .value-card:last-child {
+  margin-bottom: 0;
 }
