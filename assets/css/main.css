@@ -99,7 +99,7 @@ input, select, textarea {
 	}
 
 	body {
-		background-color: #1e252d;
+		background-color: #faf9f6;
 	}
 
 		body.is-preload *, body.is-preload *:before, body.is-preload *:after {
@@ -2224,7 +2224,7 @@ input, select, textarea {
 		input[type="button"].primary,
 		button.primary,
 		.button.primary {
-			background-color: #212931;
+			background-color: #f26b1d;
 			box-shadow: none;
 			color: #ffffff !important;
 		}
@@ -2447,7 +2447,9 @@ input, select, textarea {
 
 		input[type="checkbox"]:checked + label:before,
 		input[type="radio"]:checked + label:before {
-			content: '\f00c';
+			background-color: #f26b1d;
+			border-color: #f26b1d;
+			color: #ffffff;
 		}
 
 	input[type="checkbox"] + label:before {
@@ -2519,8 +2521,8 @@ input, select, textarea {
 
 	input[type="checkbox"]:checked + label:before,
 	input[type="radio"]:checked + label:before {
-		background-color: #212931;
-		border-color: #212931;
+		background-color: #f26b1d;
+		border-color: #f26b1d;
 		color: #ffffff;
 	}
 
@@ -3233,12 +3235,8 @@ input, select, textarea {
 			left: 0;
 			width: 100%;
 			height: 100%;
-			background-color: #212931;
-			background-image: url("../../images/overlay.png"), linear-gradient(0deg, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)), url("../../images/bg.jpg");
-			background-size: auto,								auto,														100% auto;
-			background-position: center,								center,														top center;
-			background-repeat: repeat,								no-repeat,													no-repeat;
-			background-attachment: scroll,								scroll,														scroll;
+			background-color: #faf9f6;
+			background-image: none;
 			z-index: -1;
 		}
 

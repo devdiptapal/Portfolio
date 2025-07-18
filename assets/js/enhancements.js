@@ -46,6 +46,23 @@ document.addEventListener('DOMContentLoaded', function() {
     const sections = document.querySelectorAll('section, article');
     
     function updateActiveNav() {
+        // Check if we're on the home page
+        const isHomePage = window.location.pathname === '/' || 
+                          window.location.pathname === '/index.html' || 
+                          window.location.pathname.endsWith('/');
+        
+        if (isHomePage) {
+            // On home page, always keep "ME" active
+            navLinks.forEach(link => {
+                link.parentElement.classList.remove('active');
+                if (link.getAttribute('href') === 'index.html') {
+                    link.parentElement.classList.add('active');
+                }
+            });
+            return;
+        }
+        
+        // For other pages, use scroll-based highlighting
         let current = '';
         sections.forEach(section => {
             const sectionTop = section.offsetTop;
@@ -172,32 +189,49 @@ document.addEventListener('DOMContentLoaded', function() {
     backToTop.className = 'back-to-top';
     backToTop.style.cssText = `
         position: fixed;
-        bottom: 20px;
-        right: 20px;
-        width: 50px;
-        height: 50px;
+        bottom: 30px;
+        right: 30px;
+        width: 56px;
+        height: 56px;
         border-radius: 50%;
-        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        background: linear-gradient(135deg, #f26b1d 0%, #e55a1a 100%);
         color: white;
-        border: none;
+        border: 2px solid #f26b1d;
         cursor: pointer;
         opacity: 0;
         visibility: hidden;
-        transition: all 0.3s ease;
+        transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
         z-index: 1000;
-        font-size: 20px;
+        font-size: 24px;
         font-weight: bold;
+        box-shadow: 0 4px 12px rgba(242, 107, 29, 0.3);
+        transform: scale(0.8);
     `;
 
     document.body.appendChild(backToTop);
+
+    // Add hover effects
+    backToTop.addEventListener('mouseenter', function() {
+        this.style.transform = 'scale(1.1)';
+        this.style.boxShadow = '0 6px 20px rgba(242, 107, 29, 0.4)';
+        this.style.background = 'linear-gradient(135deg, #e55a1a 0%, #d35400 100%)';
+    });
+    
+    backToTop.addEventListener('mouseleave', function() {
+        this.style.transform = 'scale(1)';
+        this.style.boxShadow = '0 4px 12px rgba(242, 107, 29, 0.3)';
+        this.style.background = 'linear-gradient(135deg, #f26b1d 0%, #e55a1a 100%)';
+    });
 
     window.addEventListener('scroll', function() {
         if (window.pageYOffset > 300) {
             backToTop.style.opacity = '1';
             backToTop.style.visibility = 'visible';
+            backToTop.style.transform = 'scale(1)';
         } else {
             backToTop.style.opacity = '0';
             backToTop.style.visibility = 'hidden';
+            backToTop.style.transform = 'scale(0.8)';
         }
     });
 

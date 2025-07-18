@@ -88,7 +88,7 @@ html {
     padding: 2rem;
     background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
     border-radius: 12px;
-    border-left: 4px solid #667eea;
+    border-left: 4px solid #f26b1d !important;
 }
 
 .substack-info h3 {
@@ -132,12 +132,12 @@ html {
 
 /* Featured post styling */
 .post.featured {
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    background: #f26b1d !important;
     color: white;
     border-radius: 16px;
     padding: 2rem;
     margin-bottom: 3rem;
-    box-shadow: 0 8px 30px rgba(102,126,234,0.3);
+    box-shadow: 0 8px 30px rgba(242,107,29,0.3);
 }
 
 .post.featured h2 a {
@@ -150,7 +150,7 @@ html {
 
 .post.featured .button {
     background: white;
-    color: #667eea;
+    color: #f26b1d;
     border: 2px solid white;
 }
 
@@ -204,12 +204,12 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .button.primary {
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    background: #f26b1d !important;
     border: none;
 }
 
 .button.primary:hover {
-    background: linear-gradient(135deg, #764ba2 0%, #667eea 100%);
+    background: #d35400 !important;
 }
 
 /* Enhanced intro section */
@@ -242,10 +242,10 @@ h1, h2, h3, h4, h5, h6 {
 
 /* Improved nav bar aesthetics */
 #nav {
-    background: #23272f !important;
+    background: #faf9f6 !important;
     box-shadow: 0 2px 12px rgba(0,0,0,0.10);
     border-radius: 12px;
-    border: 1px solid #23272f;
+    border: 1px solid #faf9f6;
     margin: 1.5rem auto 2.5rem auto;
     max-width: 95vw;
     padding: 0.2rem 1.2rem;
@@ -274,28 +274,91 @@ h1, h2, h3, h4, h5, h6 {
     overflow: hidden;
 }
 
+/* Navigation bar fixes - black text on light background when not selected */
 #nav ul.links li a {
-    position: relative;
-    transition: color 0.3s, background 0.3s, box-shadow 0.3s;
-    color: #fff !important;
-    font-weight: 700;
-    letter-spacing: 0.08em;
-    padding: 0.75em 1.5em;
-    border-radius: 8px;
-    background: transparent;
-    z-index: 1;
-    box-shadow: none;
+  color: #23272f !important;
+  background: transparent !important;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  padding: 0.75em 1.5em;
+  border-radius: 8px;
+  transition: color 0.3s, background 0.3s, box-shadow 0.3s;
 }
 
-#nav ul.links li a:hover {
-    color: #fff !important;
-    background: rgba(255,255,255,0.12);
+#nav ul.links li a:hover, #nav ul.links li a:focus {
+  background: #f26b1d !important;
+  color: #fff !important;
+  box-shadow: 0 2px 8px rgba(242,107,29,0.10);
 }
 
 #nav ul.links li.active a {
-    color: #fff !important;
-    background: linear-gradient(90deg, #667eea 0%, #764ba2 100%);
-    box-shadow: 0 2px 12px rgba(102,126,234,0.10);
+  background: #f26b1d !important;
+  color: #fff !important;
+  box-shadow: 0 2px 8px rgba(242,107,29,0.10);
+}
+
+#nav ul.icons.social-nav-center li a {
+  color: #23272f !important;
+}
+
+#nav ul.icons.social-nav-center li a:hover {
+  color: #f26b1d !important;
+}
+
+/* Fix blog tab - remove purple background and ensure light immediately */
+#nav ul.links li a[href="blog.html"] {
+  background: transparent !important;
+  color: #23272f !important;
+}
+
+#nav ul.links li a[href="blog.html"]:hover,
+#nav ul.links li a[href="blog.html"]:focus,
+#nav ul.links li.active a[href="blog.html"] {
+  background: #f26b1d !important;
+  color: #fff !important;
+}
+
+/* Fix insights section - white background with black text */
+.blog-hero {
+  background: #faf9f6 !important;
+  color: #23272f !important;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+}
+
+.blog-hero h1, .blog-hero h2, .blog-hero h3, .blog-hero p {
+  color: #23272f !important;
+}
+
+/* Fix up arrow - change from purple to orange */
+.button.round-arrow {
+  background: #f26b1d !important;
+  color: #fff !important;
+  border: 2px solid #f26b1d !important;
+}
+
+/* Back to top button styling */
+.back-to-top {
+  background: linear-gradient(135deg, #f26b1d 0%, #e55a1a 100%) !important;
+  color: white !important;
+  border: 2px solid #f26b1d !important;
+  box-shadow: 0 4px 12px rgba(242, 107, 29, 0.3) !important;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1) !important;
+}
+
+.back-to-top:hover {
+  background: linear-gradient(135deg, #e55a1a 0%, #d35400 100%) !important;
+  transform: scale(1.1) !important;
+  box-shadow: 0 6px 20px rgba(242, 107, 29, 0.4) !important;
+}
+
+.button.round-arrow:hover {
+  background: #d35400 !important;
+  color: #fff !important;
+  border-color: #d35400 !important;
+}
+
+.button.round-arrow .icon {
+  color: #fff !important;
 }
 
 #nav ul.links li a::after {
@@ -370,7 +433,7 @@ h1, h2, h3, h4, h5, h6 {
     color: #212931;
     font-weight: 600;
     margin-bottom: 1rem;
-    border-bottom: 2px solid #667eea;
+    border-bottom: 2px solid #f26b1d;
     padding-bottom: 0.5rem;
 }
 
@@ -383,7 +446,7 @@ h1, h2, h3, h4, h5, h6 {
     padding: 0.75rem 1rem;
     background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
     border-radius: 8px;
-    border-left: 4px solid #667eea;
+    border-left: 4px solid #f26b1d;
     box-shadow: 0 2px 8px rgba(0,0,0,0.05);
 }
 
@@ -502,7 +565,8 @@ h1, h2, h3, h4, h5, h6 {
 
 #header .logo {
     font-weight: 700;
-    background: linear-gradient(45deg, #667eea, #764ba2);
+    background: none !important;
+    color: #f26b1d !important;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
@@ -515,12 +579,18 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 #footer, #footer h3, #footer p, #footer a, #footer ul, #footer li, #footer section, #footer .split.contact section, #footer .split.contact section h3, #footer .split.contact section p, #footer .split.contact section a {
-  color: #fff !important;
+  color: #23272f !important;
+  border-color: #23272f !important;
 }
 
 #footer .icons.alt a {
-  color: #fff !important;
-  border-color: #fff !important;
+  color: #23272f !important;
+  border-color: #23272f !important;
+}
+
+#footer .icons.alt a:hover {
+  color: #f26b1d !important;
+  border-color: #f26b1d !important;
 }
 
 /* Loading animations */
@@ -589,8 +659,8 @@ input[type="text"], input[type="email"], textarea {
 }
 
 input[type="text"]:focus, input[type="email"]:focus, textarea:focus {
-    border-color: #667eea;
-    box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+    border-color: #f26b1d;
+    box-shadow: 0 0 0 3px rgba(242, 107, 29, 0.1);
     outline: none;
 }
 
@@ -661,7 +731,7 @@ input[type="text"]:focus, input[type="email"]:focus, textarea:focus {
 
 /* Focus styles for accessibility */
 a:focus, button:focus, input:focus, textarea:focus {
-    outline: 2px solid #667eea;
+    outline: 2px solid #f26b1d;
     outline-offset: 2px;
 }
 
@@ -741,11 +811,10 @@ a:focus, button:focus, input:focus, textarea:focus {
   font-size: 3.5rem;
   font-weight: 900;
   margin-bottom: 1.2rem;
-  background: linear-gradient(45deg, #667eea, #764ba2);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  text-align: center;
+  background: none !important;
+  color: #23272f !important;
+  padding: 0.1em 0.4em;
+  border-radius: 6px;
 }
 
 #intro .intro-content p {
@@ -808,7 +877,7 @@ a:focus, button:focus, input:focus, textarea:focus {
   padding: 0.7rem 0.7rem 0.5rem 0.7rem;
   border-radius: 8px;
   box-shadow: none;
-  background: #23272f;
+      background: #faf9f6;
 }
 
 .main-section.compact .row {
@@ -869,7 +938,7 @@ a:focus, button:focus, input:focus, textarea:focus {
 
 /* Ensure links are also readable */
 .main-section .post a {
-  color: #a5b4fc !important;
+  color: #f26b1d !important;
 }
 
 /* Intro actions layout */
@@ -893,7 +962,7 @@ a:focus, button:focus, input:focus, textarea:focus {
   color: #f26b1d !important;
   font-size: 1.6rem;
   transition: background 0.2s, color 0.2s, box-shadow 0.2s;
-  box-shadow: 0 2px 8px rgba(102,126,234,0.08);
+  box-shadow: 0 2px 8px rgba(242,107,29,0.08);
   opacity: 1 !important;
 }
 .button.round-arrow:hover {
@@ -917,7 +986,7 @@ a:focus, button:focus, input:focus, textarea:focus {
 
 @media (max-width: 800px) {
   #footer, #footer section, #footer .split.contact section {
-    background: #23272f !important;
+    background: #faf9f6 !important;
     color: #fff !important;
   }
   #footer h3, #footer p, #footer a, #footer ul, #footer li {
@@ -932,7 +1001,7 @@ a:focus, button:focus, input:focus, textarea:focus {
 
 /* Experience section enhancements */
 .posts article {
-    background: linear-gradient(135deg, #23272f 80%, #1e252d 100%);
+    background: linear-gradient(135deg, #faf9f6 80%, #f5f5f0 100%);
     border-radius: 14px;
     box-shadow: 0 4px 24px rgba(30,37,45,0.10);
     padding: 2.2rem 1.5rem 1.5rem 1.5rem;
@@ -1046,12 +1115,33 @@ a:focus, button:focus, input:focus, textarea:focus {
 
 /* Minimal & Modern Blog Styles */
 .blog-hero {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    padding: 2.2rem 1rem 0.5rem 1rem;
-    background: none;
+  background: #faf9f6 !important;
+  color: #23272f !important;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+}
+.blog-title, .blog-hero h1, .blog-hero h2, .blog-hero h3 {
+  color: #23272f !important;
+  background: none !important;
+  -webkit-text-fill-color: initial !important;
+  background-clip: initial !important;
+}
+.blog-subscribe-btn, .button.primary, .post.featured, .blog-substack .button {
+  background: #f26b1d !important;
+  color: #fff !important;
+  border: none !important;
+  box-shadow: 0 2px 8px rgba(242,107,29,0.10);
+}
+.blog-subscribe-btn:hover, .button.primary:hover, .post.featured:hover, .blog-substack .button:hover {
+  background: #d35400 !important;
+  color: #fff !important;
+}
+#nav ul.links li.active a {
+  background: #f26b1d !important;
+  color: #fff !important;
+}
+#nav ul.links li a {
+  color: #23272f !important;
+  background: transparent !important;
 }
 
 /* Subtle divider between hero and substack */
@@ -1083,10 +1173,10 @@ a:focus, button:focus, input:focus, textarea:focus {
     font-size: 3.5rem;
     font-weight: 900;
     margin-bottom: 1.2rem;
-    background: linear-gradient(45deg, #667eea, #764ba2);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
+    background: none !important;
+    color: #23272f !important;
+    -webkit-text-fill-color: initial !important;
+    background-clip: initial !important;
     text-align: center;
 }
 
@@ -1100,21 +1190,21 @@ a:focus, button:focus, input:focus, textarea:focus {
 
 .blog-subscribe-btn {
     display: inline-block;
-    background: linear-gradient(90deg, #667eea 0%, #764ba2 100%);
+    background: #f26b1d !important;
     color: #fff;
     font-weight: 700;
     font-size: 1.1rem;
     padding: 0.85em 2.2em;
     border-radius: 8px;
     text-decoration: none;
-    box-shadow: 0 2px 12px rgba(102,126,234,0.10);
+    box-shadow: 0 2px 12px rgba(242,107,29,0.10);
     transition: background 0.2s, box-shadow 0.2s, transform 0.2s;
     margin-bottom: 2.5rem;
 }
 
 .blog-subscribe-btn:hover {
-    background: linear-gradient(90deg, #764ba2 0%, #667eea 100%);
-    box-shadow: 0 4px 24px rgba(102,126,234,0.18);
+    background: #d35400 !important;
+    box-shadow: 0 4px 24px rgba(242,107,29,0.18);
     transform: translateY(-2px);
 }
 
@@ -1143,11 +1233,11 @@ a:focus, button:focus, input:focus, textarea:focus {
 }
 
 .blog-substack .button {
-    background: linear-gradient(90deg, #667eea 0%, #764ba2 100%);
+    background: #f26b1d !important;
     color: #fff;
     font-weight: 700;
     border-radius: 8px;
-    box-shadow: 0 2px 12px rgba(102,126,234,0.10);
+    box-shadow: 0 2px 12px rgba(242,107,29,0.10);
     transition: background 0.2s, box-shadow 0.2s, transform 0.2s;
     padding: 0.85em 2.2em;
     margin: 0 auto;
@@ -1157,8 +1247,8 @@ a:focus, button:focus, input:focus, textarea:focus {
 }
 
 .blog-substack .button:hover {
-    background: linear-gradient(90deg, #764ba2 0%, #667eea 100%);
-    box-shadow: 0 4px 24px rgba(102,126,234,0.18);
+    background: #d35400 !important;
+    box-shadow: 0 4px 24px rgba(242,107,29,0.18);
     transform: translateY(-2px);
 }
 
@@ -1197,7 +1287,7 @@ a:focus, button:focus, input:focus, textarea:focus {
 
 .post > header.major {
   position: relative;
-  border-bottom: 3px solid #667eea;
+  border-bottom: 3px solid #f26b1d !important;
   padding-bottom: 1.8rem;
   margin-bottom: 2.2rem;
 }
@@ -1214,7 +1304,7 @@ a:focus, button:focus, input:focus, textarea:focus {
   padding-top: 0.7rem;
   padding-bottom: 0.7rem;
   margin-bottom: 0.7rem;
-  border-bottom: 1.5px solid #667eea;
+  border-bottom: 1.5px solid #f26b1d;
 }
 
 footer#footer, #footer > section, #footer .split.contact section {
@@ -1239,7 +1329,7 @@ footer#footer, #footer > section, #footer .split.contact section {
   border-radius: 0;
   max-width: none;
   margin: 0.5rem auto 0 auto;
-  color: #667eea;
+  color: #f26b1d !important;
 }
 
 /* Social Links Grid (Daniel McAuley style) */
@@ -1841,4 +1931,24 @@ body.home #header .logo {
 
 .main-section-bg > .value-card:last-child {
   margin-bottom: 0;
+}
+
+#nav ul.links li a,
+#nav ul.icons.social-nav-center li a {
+  color: #23272f !important;
+}
+#nav ul.links li.active a {
+  background: #f26b1d !important;
+  color: #fff !important;
+}
+#footer, #footer section, #footer .split.contact section {
+  color: #23272f !important;
+}
+#footer .icons.alt a {
+  color: #23272f !important;
+  border-color: #23272f !important;
+}
+#footer .icons.alt a:hover {
+  color: #f26b1d !important;
+  border-color: #f26b1d !important;
 }
