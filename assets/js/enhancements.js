@@ -183,20 +183,38 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
-    // Back to top functionality
-    const backToTop = document.createElement('button');
-    backToTop.innerHTML = '↑';
-    backToTop.className = 'back-to-top';
-    backToTop.style.cssText = `
+    // --- Fix Down Arrow Button Scroll ---
+    // Ensure the down arrow scrolls to #expertise
+    const downArrow = document.querySelector('.button.round-arrow');
+    if (downArrow) {
+        downArrow.addEventListener('click', function(e) {
+            e.preventDefault();
+            const target = document.querySelector('#expertise');
+            if (target) {
+                target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }
+        });
+    }
+
+    // --- Redesign Up Button (Back to Top) ---
+    // Remove previous backToTop if it exists
+    const oldBackToTop = document.querySelector('.back-to-top');
+    if (oldBackToTop) oldBackToTop.remove();
+
+    // Create new up button with orange outline style
+    const upButton = document.createElement('button');
+    upButton.innerHTML = '<span class="icon solid solo fa-arrow-up"></span>';
+    upButton.className = 'back-to-top orange-outline';
+    upButton.style.cssText = `
         position: fixed;
         bottom: 30px;
         right: 30px;
         width: 56px;
         height: 56px;
         border-radius: 50%;
-        background: linear-gradient(135deg, #f26b1d 0%, #e55a1a 100%);
-        color: white;
-        border: 2px solid #f26b1d;
+        background: #fff;
+        color: #f26b1d;
+        border: 2.5px solid #f26b1d;
         cursor: pointer;
         opacity: 0;
         visibility: hidden;
@@ -204,42 +222,42 @@ document.addEventListener('DOMContentLoaded', function() {
         z-index: 1000;
         font-size: 24px;
         font-weight: bold;
-        box-shadow: 0 4px 12px rgba(242, 107, 29, 0.3);
+        box-shadow: 0 4px 12px rgba(242, 107, 29, 0.13);
         transform: scale(0.8);
+        display: flex;
+        align-items: center;
+        justify-content: center;
     `;
+    document.body.appendChild(upButton);
 
-    document.body.appendChild(backToTop);
-
-    // Add hover effects
-    backToTop.addEventListener('mouseenter', function() {
+    // Hover effect for up button
+    upButton.addEventListener('mouseenter', function() {
         this.style.transform = 'scale(1.1)';
-        this.style.boxShadow = '0 6px 20px rgba(242, 107, 29, 0.4)';
-        this.style.background = 'linear-gradient(135deg, #e55a1a 0%, #d35400 100%)';
+        this.style.boxShadow = '0 6px 20px rgba(242, 107, 29, 0.18)';
+        this.style.background = '#fff';
     });
-    
-    backToTop.addEventListener('mouseleave', function() {
+    upButton.addEventListener('mouseleave', function() {
         this.style.transform = 'scale(1)';
-        this.style.boxShadow = '0 4px 12px rgba(242, 107, 29, 0.3)';
-        this.style.background = 'linear-gradient(135deg, #f26b1d 0%, #e55a1a 100%)';
+        this.style.boxShadow = '0 4px 12px rgba(242, 107, 29, 0.13)';
+        this.style.background = '#fff';
     });
 
+    // Show/hide up button on scroll
     window.addEventListener('scroll', function() {
         if (window.pageYOffset > 300) {
-            backToTop.style.opacity = '1';
-            backToTop.style.visibility = 'visible';
-            backToTop.style.transform = 'scale(1)';
+            upButton.style.opacity = '1';
+            upButton.style.visibility = 'visible';
+            upButton.style.transform = 'scale(1)';
         } else {
-            backToTop.style.opacity = '0';
-            backToTop.style.visibility = 'hidden';
-            backToTop.style.transform = 'scale(0.8)';
+            upButton.style.opacity = '0';
+            upButton.style.visibility = 'hidden';
+            upButton.style.transform = 'scale(0.8)';
         }
     });
 
-    backToTop.addEventListener('click', function() {
-        window.scrollTo({
-            top: 0,
-            behavior: 'smooth'
-        });
+    // Scroll to top on up button click
+    upButton.addEventListener('click', function() {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
     });
 
     // Performance optimization: Debounce scroll events
