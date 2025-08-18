@@ -1,12 +1,16 @@
 # Clean URLs - redirect .html to clean URLs
 /now.html /now 301
-/been.html /experience 301
-/going.html /values 301
+/experience.html /experience 301
+/values.html /values 301
 /blog.html /blog 301
 /index.html / 301
 
 # Serve .html files without extension
 /now /now.html 200
-/experience /been.html 200
-/values /going.html 200
-/blog /blog.html 200 
+/experience /experience.html 200
+/values /values.html 200
+/blog /blog.html 200
+
+# Ensure proper routing
+/experience /experience.html 200
+/values /values.html 200 

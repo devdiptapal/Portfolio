@@ -13,5 +13,5 @@ RewriteRule ^ /%1? [NC,L,R=301]
 RewriteRule ^$ index.html [L]
 
 # Custom URL mappings
-RewriteRule ^experience/?$ been.html [L]
-RewriteRule ^values/?$ going.html [L] 
+RewriteRule ^experience/?$ experience.html [L]
+RewriteRule ^values/?$ values.html [L] 

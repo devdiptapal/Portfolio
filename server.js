@@ -9,8 +9,8 @@ const port = 8000;
 const urlMappings = {
   '/': '/index.html',
   '/now': '/now.html',
-  '/experience': '/been.html',
-  '/values': '/going.html',
+  '/experience': '/experience.html',
+  '/values': '/values.html',
   '/blog': '/blog.html'
 };
 

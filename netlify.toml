@@ -1,0 +1,47 @@
+[build]
+  publish = "."
+
+[[redirects]]
+  from = "/experience"
+  to = "/experience.html"
+  status = 200
+
+[[redirects]]
+  from = "/values"
+  to = "/values.html"
+  status = 200
+
+[[redirects]]
+  from = "/now"
+  to = "/now.html"
+  status = 200
+
+[[redirects]]
+  from = "/blog"
+  to = "/blog.html"
+  status = 200
+
+[[redirects]]
+  from = "/experience.html"
+  to = "/experience"
+  status = 301
+
+[[redirects]]
+  from = "/values.html"
+  to = "/values"
+  status = 301
+
+[[redirects]]
+  from = "/now.html"
+  to = "/now"
+  status = 301
+
+[[redirects]]
+  from = "/blog.html"
+  to = "/blog"
+  status = 301
+
+[[redirects]]
+  from = "/index.html"
+  to = "/"
+  status = 301
