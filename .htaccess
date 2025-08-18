@@ -10,4 +10,8 @@ RewriteCond %{THE_REQUEST} /([^.]+)\.html [NC]
 RewriteRule ^ /%1? [NC,L,R=301]
 
 # Handle index.html specifically
-RewriteRule ^$ index.html [L] 
+RewriteRule ^$ index.html [L]
+
+# Custom URL mappings
+RewriteRule ^experience/?$ been.html [L]
+RewriteRule ^values/?$ going.html [L] 

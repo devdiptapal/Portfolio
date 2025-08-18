@@ -9,8 +9,8 @@ const port = 8000;
 const urlMappings = {
   '/': '/index.html',
   '/now': '/now.html',
-  '/been': '/been.html',
-  '/going': '/going.html',
+  '/experience': '/been.html',
+  '/values': '/going.html',
   '/blog': '/blog.html'
 };
 
@@ -68,7 +68,7 @@ server.listen(port, () => {
   console.log('Clean URLs supported:');
   console.log('  http://localhost:8000/');
   console.log('  http://localhost:8000/now');
-  console.log('  http://localhost:8000/been');
-  console.log('  http://localhost:8000/going');
+  console.log('  http://localhost:8000/experience');
+  console.log('  http://localhost:8000/values');
   console.log('  http://localhost:8000/blog');
 }); 
