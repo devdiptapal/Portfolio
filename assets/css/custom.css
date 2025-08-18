@@ -1997,3 +1997,65 @@ body.home #header .logo {
 .blog-card:last-child {
   margin-bottom: 0;
 }
+
+/* Remove dark fade-in effect completely */
+#wrapper.fade-in:before {
+    display: none !important;
+}
+
+/* Ensure no dark overlay appears during page load */
+body.is-preload #wrapper.fade-in:before {
+    display: none !important;
+    opacity: 0 !important;
+}
+
+/* Remove any dark transitions for is-preload state */
+body.is-preload {
+    background-color: #faf9f6 !important;
+}
+
+/* Ensure wrapper has no dark background during preload */
+body.is-preload #wrapper {
+    background-color: transparent !important;
+}
+
+/* Remove any dark overlays or backgrounds that might appear */
+body.is-preload #wrapper:before,
+body.is-preload #wrapper:after {
+    display: none !important;
+    background: none !important;
+}
+
+/* Comprehensive fix: Remove ALL dark backgrounds and overlays */
+#wrapper:before,
+#wrapper:after {
+    background: none !important;
+}
+
+/* Ensure no dark backgrounds appear anywhere */
+body.is-preload *:before,
+body.is-preload *:after {
+    background: none !important;
+}
+
+/* Override any dark background colors that might be set */
+body.is-preload,
+body.is-preload #wrapper,
+body.is-preload #main {
+    background-color: transparent !important;
+    background-image: none !important;
+}
+
+/* Override noscript.css dark background */
+#wrapper {
+    background-color: transparent !important;
+    background-image: none !important;
+}
+
+/* Ensure no dark backgrounds from any source */
+body,
+#wrapper,
+#main {
+    background-color: transparent !important;
+    background-image: none !important;
+}
