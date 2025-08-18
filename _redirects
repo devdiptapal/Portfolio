@@ -1,0 +1,12 @@
+# Clean URLs - redirect .html to clean URLs
+/now.html /now 301
+/been.html /been 301
+/going.html /going 301
+/blog.html /blog 301
+/index.html / 301
+
+# Serve .html files without extension
+/now /now.html 200
+/been /been.html 200
+/going /going.html 200
+/blog /blog.html 200 
