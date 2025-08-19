@@ -37,9 +37,21 @@
         }
 
         .now-content {
-            max-width: 800px;
+            max-width: 1200px;
             margin: 0 auto;
             padding: 2rem 1rem;
+        }
+
+        .now-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 1.5rem;
+        }
+
+        @media screen and (min-width: 900px) {
+            .now-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
         }
 
         .now-section {
@@ -113,6 +125,7 @@
                     <p>This is what I'm focused on right now.</p>
                 </div>
 
+                <div class="now-grid">
                 <!-- Work -->
                 <div class="now-section">
                     <h2>Work & Projects</h2>
@@ -159,6 +172,7 @@
                         <li>Long international travel.</li>
                         <li>Overcommitting my calendar — keeping space for focus and rest.</li>
                     </ul>
+                </div>
                 </div>
 
                 <!-- Last updated -->
