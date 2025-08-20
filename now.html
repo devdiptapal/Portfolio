@@ -125,6 +125,11 @@
                     <p>This is what I'm focused on right now.</p>
                 </div>
 
+                <!-- Last updated -->
+                <div class="last-updated" style="text-align: center; margin-bottom: 2rem; color: #666; font-size: 0.9rem;">
+                    <p id="lastUpdated"></p>
+                </div>
+
                 <div class="now-grid">
                 <!-- Work -->
                 <div class="now-section">
@@ -142,6 +147,7 @@
                     <ul>
                         <li>Experimentation guardrails, CUPED, & experimentation systems design</li>
                         <li>LLMs and their applications - Andrej Karpathy </li>
+                        <li>Spanish A1 level using Duolingo.</li>
                         <li>Daily Python reps.</li>
                     </ul>
                 </div>
@@ -161,7 +167,7 @@
                     <ul>
                         <li><em>Trustworthy Online Controlled Experiments</em> — Kohavi.</li>
                         <li><em>Range: Why Generalists Triumph in a Specialized World</em> — David Epstein.</li>
-                        <li><em>Tomorrow, and Tomorrow, and Tomorrow</em> - Gabrielle Zevi</li>
+                        <li><em>Tomorrow, and Tomorrow, and Tomorrow</em> - Gabrielle Zevi.</li>
                     </ul>
                 </div>
 
@@ -172,11 +178,6 @@
                         <li>Long international travel.</li>
                         <li>Overcommitting my calendar — keeping space for focus and rest.</li>
                     </ul>
-                </div>
-
-                <!-- Last updated -->
-                <div class="last-updated">
-                    <p id="lastUpdated"></p>
                 </div>
             </div>
         </div>
@@ -231,7 +232,7 @@
 
     <!-- Last Updated Script -->
     <script>
-      const lastUpdatedDate = new Date("2025-08-18"); 
+      const lastUpdatedDate = new Date(); 
       const options = { year: 'numeric', month: 'long', day: 'numeric' };
       document.getElementById("lastUpdated").textContent =
         "Last updated: " + lastUpdatedDate.toLocaleDateString(undefined, options);
