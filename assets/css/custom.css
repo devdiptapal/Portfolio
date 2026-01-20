@@ -2059,3 +2059,21 @@ body,
     background-color: transparent !important;
     background-image: none !important;
 }
+
+/* Skip to main content link (accessibility) */
+.skip-link {
+    position: absolute;
+    top: -40px;
+    left: 0;
+    background: #f26b1d;
+    color: #fff;
+    padding: 8px;
+    text-decoration: none;
+    z-index: 10000;
+    font-weight: 600;
+    border-radius: 0 0 4px 0;
+}
+
+.skip-link:focus {
+    top: 0;
+}
