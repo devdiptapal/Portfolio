@@ -5,11 +5,11 @@
 	<title>Dev Pal - Blog & Insights</title>
 	<meta charset="utf-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-	<meta name="description" content="Dev Pal's blog featuring insights on data science, product analytics, and industry commentary." />
-	<meta name="keywords" content="data science blog, product analytics, data insights, tech commentary" />
+	<meta name="description" content="Latest articles on experimentation, causal inference, and product analytics. Subscribe to get insights from a decade in data science." />
+	<meta name="keywords" content="data science blog, product analytics, experimentation, causal inference, data insights, tech commentary" />
 	<meta name="author" content="Dev Pal" />
-	<meta property="og:title" content="Dev Pal - Blog & Insights" />
-	<meta property="og:description" content="Insights on data science, product analytics, and industry commentary." />
+	<meta property="og:title" content="Dev Pal - Writing on Data Science" />
+	<meta property="og:description" content="Latest articles on experimentation, causal inference, and product analytics. Subscribe for actionable insights." />
 	<meta property="og:type" content="website" />
 	<meta property="og:url" content="https://devpal.com/blog" />
 	<meta property="og:image" content="https://devpal.com/images/devprofilepic.png" />
@@ -176,42 +176,334 @@
 			border-top: 1px dashed #bbb;
 		}
 
+		/* Latest Articles Grid */
+		.latest-articles-grid {
+			display: grid;
+			grid-template-columns: repeat(3, 1fr);
+			gap: 1.5rem;
+			max-width: 1400px;
+			margin: 0 auto;
+			width: 100%;
+			padding: 0 2vw;
+		}
+
+		@media (max-width: 1024px) {
+			.latest-articles-grid {
+				grid-template-columns: repeat(2, 1fr);
+				gap: 1.25rem;
+			}
+		}
+
+		@media (max-width: 600px) {
+			.latest-articles-grid {
+				grid-template-columns: 1fr;
+				gap: 1rem;
+				padding: 0 1rem;
+			}
+		}
+
+		/* Article card styling */
+		.article-card {
+			background: #fff;
+			border-radius: 20px;
+			box-shadow: 0 4px 20px 0 rgba(0,0,0,0.08);
+			border: 1px solid rgba(35,39,47,0.06);
+			padding: 1.5rem 1.75rem;
+			transition: all 0.3s cubic-bezier(.4,2,.6,1);
+			text-decoration: none;
+			display: flex;
+			flex-direction: column;
+			color: #23272f;
+			height: 100%;
+			position: relative;
+			overflow: hidden;
+		}
+
+		.article-card::before {
+			content: '';
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 4px;
+			height: 100%;
+			background: #f26b1d;
+			transform: scaleY(0);
+			transition: transform 0.3s cubic-bezier(.4,2,.6,1);
+		}
+
+		.article-card:hover {
+			box-shadow: 0 12px 40px 0 rgba(0,0,0,0.12);
+			transform: translateY(-6px);
+			background: #faf9f6;
+			border-color: rgba(242,107,29,0.15);
+		}
+
+		.article-card:hover::before {
+			transform: scaleY(1);
+		}
+
+		.article-card h3 {
+			font-size: 1.25rem;
+			font-weight: 700;
+			margin-bottom: 0.625rem;
+			color: #23272f;
+			line-height: 1.35;
+			letter-spacing: -0.01em;
+		}
+
+		.article-card:hover h3 {
+			color: #f26b1d;
+		}
+
+		.article-card .article-date {
+			color: #888;
+			font-size: 0.8rem;
+			margin-bottom: 0.75rem;
+			display: block;
+			font-weight: 500;
+			text-transform: uppercase;
+			letter-spacing: 0.05em;
+		}
+
+		.article-card .article-excerpt {
+			color: #555;
+			font-size: 0.9rem;
+			line-height: 1.6;
+			margin: 0 0 1rem 0;
+			flex-grow: 1;
+		}
+
+		.article-card .article-link {
+			color: #f26b1d;
+			font-size: 0.9rem;
+			font-weight: 600;
+			margin-top: auto;
+			display: inline-flex;
+			align-items: center;
+			gap: 0.5rem;
+			transition: gap 0.3s ease;
+		}
+
+		.article-card:hover .article-link {
+			gap: 0.75rem;
+		}
+
+		.article-card .article-link::after {
+			content: '→';
+			font-size: 1.1rem;
+			transition: transform 0.3s ease;
+		}
+
+		.article-card:hover .article-link::after {
+			transform: translateX(3px);
+		}
+
 		.substack-embed-container iframe {
 			border: 1px solid #EEE;
 			background: white;
 			border-radius: 8px;
 		}
 
-		@media (min-width: 1200px) {
-			.blog-grid {
-				grid-template-columns: repeat(2, 1fr);
-				max-width: 1400px;
+		/* Substack Banner - Prominent */
+		.substack-banner {
+			background: linear-gradient(135deg, #faf9f6 0%, #fff 100%);
+			border: 1px solid rgba(242,107,29,0.15);
+			border-radius: 20px;
+			padding: 2rem 2.5rem;
+			margin-bottom: 3rem;
+			max-width: 1400px;
+			margin-left: auto;
+			margin-right: auto;
+			box-shadow: 0 4px 24px 0 rgba(0,0,0,0.08);
+		}
+
+		.substack-banner-content {
+			display: grid;
+			grid-template-columns: 1fr 1fr;
+			gap: 2.5rem;
+			align-items: center;
+		}
+
+		.substack-banner-text h2 {
+			font-size: 1.75rem;
+			font-weight: 700;
+			color: #23272f;
+			margin-bottom: 0.75rem;
+			line-height: 1.3;
+		}
+
+		.substack-banner-text p {
+			color: #666;
+			font-size: 1rem;
+			line-height: 1.6;
+			margin: 0;
+		}
+
+		.substack-banner-form {
+			width: 100%;
+		}
+
+		.substack-banner-form iframe {
+			border: none;
+			border-radius: 8px;
+			width: 100%;
+		}
+
+		@media (max-width: 768px) {
+			.substack-banner-content {
+				grid-template-columns: 1fr;
+				gap: 1.5rem;
+			}
+			.substack-banner {
+				padding: 1.5rem 1.5rem;
+			}
+			.substack-banner-text h2 {
+				font-size: 1.5rem;
 			}
 		}
 
-		@media (max-width: 900px) {
-			.blog-grid {
-				grid-template-columns: 1fr;
-				padding: 0 1vw;
-			}
+		/* Medium Compact Link */
+		.medium-compact {
+			max-width: 1400px;
+			margin: 0 auto 2rem auto;
+			padding: 0 2vw;
+		}
+
+		.medium-link {
+			display: flex;
+			align-items: center;
+			gap: 1rem;
+			padding: 1.25rem 1.75rem;
+			background: #fff;
+			border: 1px solid rgba(35,39,47,0.08);
+			border-radius: 16px;
+			text-decoration: none;
+			color: #23272f;
+			transition: all 0.3s ease;
+			box-shadow: 0 2px 12px 0 rgba(0,0,0,0.06);
+		}
+
+		.medium-link:hover {
+			box-shadow: 0 6px 24px 0 rgba(0,0,0,0.10);
+			transform: translateY(-2px);
+			border-color: rgba(0,171,108,0.2);
+		}
+
+		.medium-icon {
+			font-size: 2rem;
+			color: #00ab6c;
+			display: flex;
+			align-items: center;
+		}
+
+		.medium-text {
+			flex: 1;
+			display: flex;
+			flex-direction: column;
+			gap: 0.25rem;
+		}
+
+		.medium-text strong {
+			font-size: 1.1rem;
+			font-weight: 600;
+			color: #23272f;
+		}
+
+		.medium-text span {
+			font-size: 0.9rem;
+			color: #666;
+		}
+
+		.medium-arrow {
+			font-size: 1.5rem;
+			color: #00ab6c;
+			transition: transform 0.3s ease;
+		}
+
+		.medium-link:hover .medium-arrow {
+			transform: translateX(4px);
 		}
 
 		@media (max-width: 600px) {
-			.blog-grid {
-				grid-template-columns: 1fr;
-				gap: 1.2rem 0;
-				padding: 0 0.5rem;
+			.medium-link {
+				padding: 1rem 1.25rem;
+				flex-direction: column;
+				text-align: center;
 			}
-			.blog-card {
-				padding: 1.2rem 0.5rem 1rem 0.5rem;
-			}
-			.blog-title {
-				font-size: 2rem;
-			}
-			.blog-desc {
-				font-size: 1rem;
+			.medium-icon {
+				font-size: 1.75rem;
 			}
 		}
+
+		/* Skeleton Loader Styles */
+		.article-skeleton {
+			background: #fff;
+			border-radius: 20px;
+			padding: 1.5rem 1.75rem;
+			box-shadow: 0 4px 20px 0 rgba(0,0,0,0.08);
+			border: 1px solid rgba(35,39,47,0.06);
+			animation: skeleton-pulse 1.5s ease-in-out infinite;
+		}
+
+		.skeleton-line {
+			background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+			background-size: 200% 100%;
+			border-radius: 4px;
+			animation: skeleton-loading 1.5s ease-in-out infinite;
+		}
+
+		@keyframes skeleton-loading {
+			0% {
+				background-position: 200% 0;
+			}
+			100% {
+				background-position: -200% 0;
+			}
+		}
+
+		@keyframes skeleton-pulse {
+			0%, 100% {
+				opacity: 1;
+			}
+			50% {
+				opacity: 0.8;
+			}
+		}
+
+		/* Error State */
+		.article-error {
+			grid-column: 1 / -1;
+			text-align: center;
+			color: #666;
+			padding: 3rem;
+			background: #fff;
+			border-radius: 20px;
+			border: 1px solid rgba(35,39,47,0.06);
+		}
+
+		.article-error p {
+			font-size: 1rem;
+			margin-bottom: 1rem;
+		}
+
+		.article-error .retry-btn {
+			color: #f26b1d;
+			font-weight: 600;
+			text-decoration: none;
+			cursor: pointer;
+			display: inline-block;
+			margin-top: 0.5rem;
+			padding: 0.5rem 1rem;
+			border: 1px solid #f26b1d;
+			border-radius: 6px;
+			transition: all 0.3s ease;
+		}
+
+		.article-error .retry-btn:hover {
+			background: #f26b1d;
+			color: #fff;
+		}
+
 
 		/* Modify logo and header colors */
 		#header .logo {
@@ -261,30 +553,47 @@
 		<!-- Main -->
 		<div id="main">
 			<section class="blog-section">
-				<div style="height: 2.5rem;"></div>
-				<div class="blog-header-container">
-					<h1 class="blog-title">Insights & Writing on Data Science</h1>
-					<p class="blog-desc">
-						Actionable ideas and lessons from a decade in data science, experimentation, and product analytics. Subscribe for new articles on strategy, causal inference, and more.
-					</p>
-				</div>
-				<div class="blog-grid">
-					<div class="blog-card">
-						<a href="https://medium.com/@devpal" target="_blank" rel="noopener">
-							<span style="font-size: 2rem; vertical-align: middle; color: #00ab6c;"><i class="fab fa-medium-m"></i></span>
-							<h2>Medium Profile</h2>
-						</a>
-						<hr>
-						<p>Read my latest articles on data science, analytics, and product strategy.</p>
-					</div>
-					<div class="blog-card">
-						<h2>Subscribe to Dev's Newsletter</h2>
-						<div class="substack-embed-container">
+				<div style="height: 1.5rem;"></div>
+				
+				<!-- Substack Subscribe Banner - Prominent -->
+				<div class="substack-banner">
+					<div class="substack-banner-content">
+						<div class="substack-banner-text">
+							<h2>Subscribe to my newsletter</h2>
+							<p>Get the latest articles on experimentation, causal inference, and product analytics delivered to your inbox.</p>
+						</div>
+						<div class="substack-banner-form">
 							<iframe src="https://dpal.substack.com/embed" width="100%" height="140" frameborder="0" scrolling="no"></iframe>
 						</div>
 					</div>
 				</div>
-				<div style="height: 2.5rem;"></div>
+
+				<!-- Latest Articles Section -->
+				<div style="margin-bottom: 2rem;">
+					<div id="latest-articles" class="latest-articles-grid">
+						<!-- Skeleton loaders -->
+						<div class="article-skeleton"><div class="skeleton-line" style="width: 80%; height: 1.5rem; margin-bottom: 0.75rem;"></div><div class="skeleton-line" style="width: 50%; height: 0.9rem; margin-bottom: 1rem;"></div><div class="skeleton-line" style="width: 100%; height: 0.9rem; margin-bottom: 0.5rem;"></div><div class="skeleton-line" style="width: 90%; height: 0.9rem; margin-bottom: 1rem;"></div><div class="skeleton-line" style="width: 40%; height: 0.9rem;"></div></div>
+						<div class="article-skeleton"><div class="skeleton-line" style="width: 80%; height: 1.5rem; margin-bottom: 0.75rem;"></div><div class="skeleton-line" style="width: 50%; height: 0.9rem; margin-bottom: 1rem;"></div><div class="skeleton-line" style="width: 100%; height: 0.9rem; margin-bottom: 0.5rem;"></div><div class="skeleton-line" style="width: 90%; height: 0.9rem; margin-bottom: 1rem;"></div><div class="skeleton-line" style="width: 40%; height: 0.9rem;"></div></div>
+						<div class="article-skeleton"><div class="skeleton-line" style="width: 80%; height: 1.5rem; margin-bottom: 0.75rem;"></div><div class="skeleton-line" style="width: 50%; height: 0.9rem; margin-bottom: 1rem;"></div><div class="skeleton-line" style="width: 100%; height: 0.9rem; margin-bottom: 0.5rem;"></div><div class="skeleton-line" style="width: 90%; height: 0.9rem; margin-bottom: 1rem;"></div><div class="skeleton-line" style="width: 40%; height: 0.9rem;"></div></div>
+						<div class="article-skeleton"><div class="skeleton-line" style="width: 80%; height: 1.5rem; margin-bottom: 0.75rem;"></div><div class="skeleton-line" style="width: 50%; height: 0.9rem; margin-bottom: 1rem;"></div><div class="skeleton-line" style="width: 100%; height: 0.9rem; margin-bottom: 0.5rem;"></div><div class="skeleton-line" style="width: 90%; height: 0.9rem; margin-bottom: 1rem;"></div><div class="skeleton-line" style="width: 40%; height: 0.9rem;"></div></div>
+						<div class="article-skeleton"><div class="skeleton-line" style="width: 80%; height: 1.5rem; margin-bottom: 0.75rem;"></div><div class="skeleton-line" style="width: 50%; height: 0.9rem; margin-bottom: 1rem;"></div><div class="skeleton-line" style="width: 100%; height: 0.9rem; margin-bottom: 0.5rem;"></div><div class="skeleton-line" style="width: 90%; height: 0.9rem; margin-bottom: 1rem;"></div><div class="skeleton-line" style="width: 40%; height: 0.9rem;"></div></div>
+						<div class="article-skeleton"><div class="skeleton-line" style="width: 80%; height: 1.5rem; margin-bottom: 0.75rem;"></div><div class="skeleton-line" style="width: 50%; height: 0.9rem; margin-bottom: 1rem;"></div><div class="skeleton-line" style="width: 100%; height: 0.9rem; margin-bottom: 0.5rem;"></div><div class="skeleton-line" style="width: 90%; height: 0.9rem; margin-bottom: 1rem;"></div><div class="skeleton-line" style="width: 40%; height: 0.9rem;"></div></div>
+					</div>
+				</div>
+
+				<!-- Medium Link - Compact -->
+				<div class="medium-compact">
+					<a href="https://medium.com/@devpal" target="_blank" rel="noopener" class="medium-link">
+						<span class="medium-icon"><i class="fab fa-medium-m"></i></span>
+						<span class="medium-text">
+							<strong>Also on Medium</strong>
+							<span>Read more articles on data science and analytics</span>
+						</span>
+						<span class="medium-arrow">→</span>
+					</a>
+				</div>
+
+				<div style="height: 2rem;"></div>
 			</section>
 		</div>
 
@@ -339,6 +648,84 @@
 	<script src="assets/js/util.js"></script>
 	<script src="assets/js/main.js"></script>
 	<script src="assets/js/enhancements.js"></script>
+	<script>
+		// Fetch and display latest 3 Substack articles
+		async function loadSubstackArticles() {
+			const articlesContainer = document.getElementById('latest-articles');
+			
+			try {
+				// Fetch RSS feed - using a CORS proxy for local testing, or use your server
+				const rssUrl = 'https://dpal.substack.com/feed';
+				
+				// Using a CORS proxy for client-side fetching
+				// In production, you might want to fetch this server-side or use Substack API
+				const proxyUrl = `https://api.rss2json.com/v1/api.json?rss_url=${encodeURIComponent(rssUrl)}`;
+				
+				const response = await fetch(proxyUrl);
+				const data = await response.json();
+				
+				if (data.status === 'ok' && data.items && data.items.length > 0) {
+					// Get latest 6 articles
+					const latestArticles = data.items.slice(0, 6);
+					
+					// Calculate reading time
+					function calculateReadingTime(text) {
+						const wordsPerMinute = 200;
+						const words = text.replace(/<[^>]*>/g, '').split(/\s+/).length;
+						const minutes = Math.ceil(words / wordsPerMinute);
+						return minutes;
+					}
+					
+					articlesContainer.innerHTML = latestArticles.map(article => {
+						// Format date
+						const date = new Date(article.pubDate);
+						const formattedDate = date.toLocaleDateString('en-US', { 
+							year: 'numeric', 
+							month: 'long', 
+							day: 'numeric' 
+						});
+						
+						// Get excerpt (first 150 chars)
+						const cleanText = article.description ? article.description.replace(/<[^>]*>/g, '') : '';
+						const excerpt = cleanText ? cleanText.substring(0, 150) + '...' : 'Read the full article on Substack...';
+						
+						// Calculate reading time
+						const readingTime = calculateReadingTime(cleanText);
+						const readingTimeText = readingTime === 1 ? '1 min read' : `${readingTime} min read`;
+						
+						return `
+							<a href="${article.link}" target="_blank" rel="noopener" class="article-card">
+								<h3>${article.title}</h3>
+								<span class="article-date">${formattedDate} · ${readingTimeText}</span>
+								<p class="article-excerpt">${excerpt}</p>
+								<span class="article-link">Read on Substack</span>
+							</a>
+						`;
+					}).join('');
+				} else {
+					throw new Error('Failed to fetch articles');
+				}
+			} catch (error) {
+				console.error('Error loading Substack articles:', error);
+				articlesContainer.innerHTML = `
+					<div class="article-error">
+						<p>Unable to load latest articles. Please check your connection and try again.</p>
+						<a href="https://dpal.substack.com/" target="_blank" rel="noopener" class="retry-btn">
+							Visit my Substack →
+						</a>
+						<div style="margin-top: 1rem;">
+							<button onclick="loadSubstackArticles()" class="retry-btn" style="background: transparent; border: none; cursor: pointer;">
+								Retry
+							</button>
+						</div>
+					</div>
+				`;
+			}
+		}
+		
+		// Load articles when page loads
+		document.addEventListener('DOMContentLoaded', loadSubstackArticles);
+	</script>
 
 </body>
 

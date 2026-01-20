@@ -281,4 +281,24 @@ document.addEventListener('DOMContentLoaded', function() {
     console.log('%c👋 Welcome to Dev Pal\'s Portfolio!', 'color: #667eea; font-size: 20px; font-weight: bold;');
     console.log('%cFeel free to explore the code and reach out if you\'d like to connect!', 'color: #764ba2; font-size: 14px;');
 
+    // Page transitions - fade in on load
+    document.body.style.opacity = '0';
+    window.addEventListener('load', function() {
+        document.body.style.transition = 'opacity 0.4s ease-in-out';
+        document.body.style.opacity = '1';
+    });
+
+    // Smooth page transitions for internal links
+    const internalLinks = document.querySelectorAll('a[href^="/"], a[href^="index.html"], a[href^="experience.html"], a[href^="blog.html"], a[href^="values.html"], a[href^="now.html"]');
+    internalLinks.forEach(link => {
+        link.addEventListener('click', function(e) {
+            const href = this.getAttribute('href');
+            // Only apply transition if it's a different page
+            if (href !== window.location.pathname && !href.startsWith('#')) {
+                document.body.style.transition = 'opacity 0.2s ease-out';
+                document.body.style.opacity = '0.7';
+            }
+        });
+    });
+
 }); 
