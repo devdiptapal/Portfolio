@@ -136,4 +136,4 @@ Simply upload the files to your hosting provider and the website will be live!
 
 ---
 
-*Last updated: 2024* 
+*Last updated: 2026* 
