@@ -1,6 +1,77 @@
 // Enhanced JavaScript for Dev Pal Portfolio
 
 document.addEventListener('DOMContentLoaded', function() {
+    const SOCIAL_LINKS = {
+        linkedin: {
+            label: 'LinkedIn',
+            href: 'https://www.linkedin.com/in/devpal/',
+            iconClass: 'fa-linkedin-in'
+        },
+        twitter: {
+            label: 'Twitter',
+            href: 'https://x.com/devpecks',
+            iconClass: 'fa-twitter'
+        },
+        substack: {
+            label: 'Substack',
+            href: 'https://dpal.substack.com/'
+        },
+        medium: {
+            label: 'Medium',
+            href: 'https://medium.com/@devpal',
+            iconClass: 'fa-medium-m'
+        },
+        github: {
+            label: 'GitHub',
+            href: 'https://github.com/devdiptapal/',
+            iconClass: 'fa-github'
+        },
+        instagram: {
+            label: 'Instagram',
+            href: 'https://www.instagram.com/yourpaldev/',
+            iconClass: 'fa-instagram'
+        },
+        strava: {
+            label: 'Strava',
+            href: 'https://www.strava.com/athletes/52260606',
+            iconClass: 'fa-strava'
+        }
+    };
+
+    function substackSvg(className, width, height, bgFill, lineFill) {
+        return `<svg class="${className}" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" width="${width}" height="${height}"><rect width="448" height="512" rx="80" fill="${bgFill}"/><path d="M112 192v32h224v-32zm0 64v32h224v-32zm0 64v32h224v-32z" fill="${lineFill}"/></svg>`;
+    }
+
+    function renderIntroSocialLinks() {
+        const container = document.querySelector('#intro-social-links');
+        if (!container) return;
+
+        const order = ['linkedin', 'twitter', 'substack', 'medium', 'github', 'instagram', 'strava'];
+        container.innerHTML = order.map((key) => {
+            const link = SOCIAL_LINKS[key];
+            if (key === 'substack') {
+                return `<a class="social-link-box social-link-fixed" href="${link.href}" target="_blank" rel="noopener"><span class="substack-link-content">${substackSvg('substack-logo', 22, 22, '#FF6719', '#fff')}${link.label}</span></a>`;
+            }
+            return `<a class="social-link-box social-link-fixed" href="${link.href}" target="_blank" rel="noopener"><span class="icon brands ${link.iconClass}"></span> ${link.label}</a>`;
+        }).join('');
+    }
+
+    function renderSocialIcons(targetSelector, order) {
+        const container = document.querySelector(targetSelector);
+        if (!container) return;
+
+        container.innerHTML = order.map((key) => {
+            const link = SOCIAL_LINKS[key];
+            if (key === 'substack') {
+                return `<li><a href="${link.href}" target="_blank" rel="noopener" title="${link.label}"><span class="icon">${substackSvg('nav-substack-logo', 20, 20, '#fff', '#23272f')}</span></a></li>`;
+            }
+            return `<li><a href="${link.href}" target="_blank" rel="noopener" title="${link.label}" class="icon brands ${link.iconClass}"><span class="label">${link.label}</span></a></li>`;
+        }).join('');
+    }
+
+    renderIntroSocialLinks();
+    renderSocialIcons('#top-social-icons', ['twitter', 'linkedin', 'instagram', 'github', 'medium', 'strava', 'substack']);
+    renderSocialIcons('#footer-social-icons', ['twitter', 'linkedin', 'instagram', 'github']);
     
     // Smooth scrolling for anchor links
     const anchorLinks = document.querySelectorAll('a[href^="#"]');
@@ -45,17 +116,25 @@ document.addEventListener('DOMContentLoaded', function() {
     const navLinks = document.querySelectorAll('#nav ul.links li a');
     const sections = document.querySelectorAll('section, article');
     
+    function normalizePath(pathname) {
+        if (!pathname) return '/';
+        let normalized = pathname;
+        if (!normalized.startsWith('/')) normalized = `/${normalized}`;
+        if (normalized.length > 1 && normalized.endsWith('/')) normalized = normalized.slice(0, -1);
+        if (normalized === '/index.html') return '/';
+        return normalized;
+    }
+
     function updateActiveNav() {
+        const currentPath = normalizePath(window.location.pathname);
         // Check if we're on the home page
-        const isHomePage = window.location.pathname === '/' || 
-                          window.location.pathname === '/index.html' || 
-                          window.location.pathname.endsWith('/');
+        const isHomePage = currentPath === '/';
         
         if (isHomePage) {
             // On home page, always keep "ME" active
             navLinks.forEach(link => {
                 link.parentElement.classList.remove('active');
-                if (link.getAttribute('href') === 'index.html') {
+                if (normalizePath(link.getAttribute('href')) === '/') {
                     link.parentElement.classList.add('active');
                 }
             });
@@ -74,7 +153,8 @@ document.addEventListener('DOMContentLoaded', function() {
 
         navLinks.forEach(link => {
             link.parentElement.classList.remove('active');
-            if (link.getAttribute('href') === window.location.pathname.split('/').pop() || 
+            const linkPath = normalizePath(link.getAttribute('href'));
+            if (linkPath === currentPath || 
                 (current && link.getAttribute('href').includes(current))) {
                 link.parentElement.classList.add('active');
             }

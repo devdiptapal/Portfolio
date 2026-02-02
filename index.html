@@ -82,32 +82,7 @@
 			<div class="intro-content">
 				<h1>Dev Pal</h1>
 				<p> I'm a data scientist & investor with expertise in foundational analytics and causal inference. <br /> Outside work, I enjoy coffee,  writing, and yoga.</p>
-				<div class="social-links-grid" style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.2rem 1.2rem; justify-items: center; align-items: center; max-width: 800px; margin: 0 auto;">
-					<a class="social-link-box" href="https://www.linkedin.com/in/devpal/" target="_blank" rel="noopener" style="width: 180px; height: 56px; display: flex; align-items: center; justify-content: center; text-align: center;">
-						<span class="icon brands fa-linkedin-in"></span> LinkedIn
-					</a>
-					<a class="social-link-box" href="https://x.com/devpecks" target="_blank" rel="noopener" style="width: 180px; height: 56px; display: flex; align-items: center; justify-content: center; text-align: center;">
-						<span class="icon brands fa-twitter"></span> Twitter
-					</a>
-					<a class="social-link-box" href="https://dpal.substack.com/" target="_blank" rel="noopener" style="width: 180px; height: 56px; display: flex; align-items: center; justify-content: center; text-align: center;">
-						<span style="display: flex; align-items: center;">
-							<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" width="22" height="22" style="margin-right: 0.5em; vertical-align: middle;"><rect width="448" height="512" rx="80" fill="#FF6719"/><path d="M112 192v32h224v-32zm0 64v32h224v-32zm0 64v32h224v-32z" fill="#fff"/></svg>
-							Substack
-						</span>
-					</a>
-					<a class="social-link-box" href="https://medium.com/@devpal" target="_blank" rel="noopener" style="width: 180px; height: 56px; display: flex; align-items: center; justify-content: center; text-align: center;">
-						<span class="icon brands fa-medium-m"></span> Medium
-					</a>
-					<a class="social-link-box" href="https://github.com/devdiptapal/" target="_blank" rel="noopener" style="width: 180px; height: 56px; display: flex; align-items: center; justify-content: center; text-align: center;">
-						<span class="icon brands fa-github"></span> GitHub
-					</a>
-					<a class="social-link-box" href="https://www.instagram.com/yourpaldev/" target="_blank" rel="noopener" style="width: 180px; height: 56px; display: flex; align-items: center; justify-content: center; text-align: center;">
-						<span class="icon brands fa-instagram"></span> Instagram
-					</a>
-					<a class="social-link-box" href="https://www.strava.com/athletes/52260606" target="_blank" rel="noopener" style="width: 180px; height: 56px; display: flex; align-items: center; justify-content: center; text-align: center;">
-						<span class="icon brands fa-strava"></span> Strava
-					</a>
-				</div>
+				<div id="intro-social-links" class="social-links-grid social-links-grid-fixed"></div>
 				<div class="intro-actions">
 					<a href="#expertise" class="button round-arrow" aria-label="Scroll to expertise section"><span class="icon solid solo fa-arrow-down" aria-hidden="true"></span></a>
 				</div>
@@ -123,15 +98,7 @@
 				<li><a href="/blog">BLOG</a></li>
 				<li><a href="/now">NOW</a></li>
 			</ul>
-			<ul class="icons social-nav-center">
-				<li><a href="https://x.com/devpecks" target="_blank" rel="noopener" title="Twitter"><span class="icon brands fa-twitter"></span></a></li>
-				<li><a href="https://www.linkedin.com/in/devpal/" target="_blank" rel="noopener" title="LinkedIn"><span class="icon brands fa-linkedin"></span></a></li>
-				<li><a href="https://www.instagram.com/yourpaldev/" target="_blank" rel="noopener" title="Instagram"><span class="icon brands fa-instagram"></span></a></li>
-				<li><a href="https://github.com/devdiptapal/" target="_blank" rel="noopener" title="GitHub"><span class="icon brands fa-github"></span></a></li>
-				<li><a href="https://medium.com/@devpal" target="_blank" rel="noopener" title="Medium"><span class="icon brands fa-medium-m"></span></a></li>
-				<li><a href="https://www.strava.com/athletes/52260606" target="_blank" rel="noopener" title="Strava"><span class="icon brands fa-strava"></span></a></li>
-				<li><a href="https://dpal.substack.com/" target="_blank" rel="noopener" title="Substack"><span class="icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" width="20" height="20" style="vertical-align: middle;"><rect width="448" height="512" rx="80" fill="#fff"/><path d="M112 192v32h224v-32zm0 64v32h224v-32zm0 64v32h224v-32z" fill="#23272f"/></svg></span></a></li>
-			</ul>
+			<ul id="top-social-icons" class="icons social-nav-center"></ul>
 		</nav>
 
 		<!-- About Me section removed as requested -->
@@ -140,9 +107,9 @@
 		<main id="main-content" class="main-section-bg">
 			<div id="expertise"></div>
 			<article class="value-card">
-				<header class="major" style="text-align:center; margin-bottom: 0.7em; padding-bottom: 0.2em;">
+				<header class="major value-card-header value-card-header-tight">
 					<span class="date">Expertise</span>
-					<h2 style="margin-top:0.1em; margin-bottom:0.2em;">Technical Skills</h2>
+					<h2 class="value-card-title-tight">Technical Skills</h2>
 				</header>
 				<div class="row">
 					<div class="col-6 col-12-medium">
@@ -168,9 +135,9 @@
 				</div>
 			</article>
 			<article class="value-card">
-				<header class="major" style="text-align:center;">
+				<header class="major value-card-header">
 					<span class="date">Key Achievements</span>
-					<h2 style="margin-top:0.2em;">Impact & Results</h2>
+					<h2 class="value-card-title">Impact & Results</h2>
 				</header>
 				<div class="row">
 					<div class="col-6 col-12-medium">
@@ -194,13 +161,13 @@
 				</div>
 			</article>
 			<article class="value-card">
-				<header class="major" style="text-align:center;">
+				<header class="major value-card-header">
 					<span class="date">Education</span>
-					<h2 style="margin-top:0.2em;">Academic Background</h2>
+					<h2 class="value-card-title">Academic Background</h2>
 				</header>
-				<div class="row" style="display: flex; align-items: flex-start;">
-					<div class="col-6 col-12-medium" style="display: flex; flex-direction: column;">
-						<h3 style="margin-bottom: 0.5rem;">M.S. INFORMATION SYSTEMS</h3>
+				<div class="row education-row">
+					<div class="col-6 col-12-medium education-col">
+						<h3 class="education-degree">M.S. INFORMATION SYSTEMS</h3>
 						<div class="education-institution">
 							<strong>Carnegie Mellon University</strong> | Pittsburgh, PA
 						</div>
@@ -209,8 +176,8 @@
 							<li>Teaching Assistant for Data Mining and Statistics</li>
 						</ul>
 					</div>
-					<div class="col-6 col-12-medium" style="display: flex; flex-direction: column;">
-						<h3 style="margin-bottom: 0.5rem;">B.ENG. ELECTRICAL ENGINEERING</h3>
+					<div class="col-6 col-12-medium education-col">
+						<h3 class="education-degree">B.ENG. ELECTRICAL ENGINEERING</h3>
 						<div class="education-institution">
 							<strong>BMS College of Engineering</strong> | Bangalore, India
 						</div>
@@ -222,13 +189,13 @@
 				</div>
 			</article>
 			<article class="value-card">
-				<header class="major" style="text-align:center;">
+				<header class="major value-card-header">
 					<span class="date">Core Principles</span>
-					<h2 style="margin-top:0.2em;">My Approach to Data & Product</h2>
+					<h2 class="value-card-title">My Approach to Data & Product</h2>
 				</header>
 				<div class="row">
 					<div class="col-6 col-12-medium">
-						<ul class="principles-list" style="font-weight:400;">
+						<ul class="principles-list principles-list-regular">
 							<li>Ask if something is important, over interesting</li>
 							<li>Share stories, not just data points or analyses</li>
 							<li>In consumer tech, sensitivity often outweighs specificity</li>
@@ -236,7 +203,7 @@
 						</ul>
 					</div>
 					<div class="col-6 col-12-medium">
-						<ul class="principles-list" style="font-weight:400;">
+						<ul class="principles-list principles-list-regular">
 							<li>Have opinions but don't be married to them</li>
 							<li>Fix a leaky bucket before turning on the faucet</li>
 							<li>Iterate daily rather than perfecting once - consistent progress beats perfection</li>
@@ -266,16 +233,7 @@
 				</section>
 				<section>
 					<h3>Social</h3>
-					<ul class="icons alt">
-						<li><a href="https://twitter.com/devpecks" class="icon brands fa-twitter"><span
-									class="label">Twitter</span></a></li>
-						<li><a href="https://www.linkedin.com/in/devpal/" class="icon brands fa-linkedin-in"><span
-									class="label">Linkedin</span></a></li>
-						<li><a href="https://www.instagram.com/yourpaldev/" class="icon brands fa-instagram"><span
-									class="label">Instagram</span></a></li>
-						<li><a href="https://github.com/devdiptapal/" class="icon brands fa-github"><span
-									class="label">GitHub</span></a></li>
-					</ul>
+					<ul id="footer-social-icons" class="icons alt"></ul>
 				</section>
 			</section>
 		</footer>

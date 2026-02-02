@@ -161,7 +161,8 @@ html {
 }
 
 /* Blog navigation active state */
-#nav ul.links li a[href="blog.html"] {
+#nav ul.links li a[href="blog.html"],
+#nav ul.links li a[href="/blog"] {
     background: transparent;
     color: #fff !important;
 }
@@ -225,7 +226,7 @@ h1, h2, h3, h4, h5, h6 {
   font-size: 3.2rem;
   background: none !important;
   -webkit-text-fill-color: initial !important;
-  color: #222 !important;
+  color: #f8f9fa !important;
   padding: 0.1em 0.4em;
   border-radius: 6px;
 }
@@ -306,14 +307,18 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 /* Fix blog tab - remove purple background and ensure light immediately */
-#nav ul.links li a[href="blog.html"] {
+#nav ul.links li a[href="blog.html"],
+#nav ul.links li a[href="/blog"] {
   background: transparent !important;
   color: #23272f !important;
 }
 
 #nav ul.links li a[href="blog.html"]:hover,
 #nav ul.links li a[href="blog.html"]:focus,
-#nav ul.links li.active a[href="blog.html"] {
+#nav ul.links li.active a[href="blog.html"],
+#nav ul.links li a[href="/blog"]:hover,
+#nav ul.links li a[href="/blog"]:focus,
+#nav ul.links li.active a[href="/blog"] {
   background: #f26b1d !important;
   color: #fff !important;
 }
@@ -1345,6 +1350,38 @@ footer#footer, #footer > section, #footer .split.contact section {
   overflow-wrap: break-word;
   word-wrap: break-word;
 }
+
+.social-links-grid-fixed {
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.2rem;
+  max-width: 800px;
+  margin: 0 auto;
+  align-items: center;
+}
+
+.social-link-fixed {
+  width: 180px;
+  height: 56px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.substack-link-content {
+  display: flex;
+  align-items: center;
+}
+
+.substack-logo {
+  margin-right: 0.5em;
+  vertical-align: middle;
+}
+
+.nav-substack-logo {
+  vertical-align: middle;
+}
+
 .social-link-box {
   display: flex;
   align-items: center;
@@ -1810,6 +1847,42 @@ body.home #header .logo {
 .value-card .achievements-list li strong, .value-card .principles-list li strong {
   color: #1d1d1f !important;
   font-weight: 600;
+}
+
+.value-card-header {
+  text-align: center;
+}
+
+.value-card-header-tight {
+  margin-bottom: 0.7em;
+  padding-bottom: 0.2em;
+}
+
+.value-card-title {
+  margin-top: 0.2em;
+}
+
+.value-card-title-tight {
+  margin-top: 0.1em;
+  margin-bottom: 0.2em;
+}
+
+.education-row {
+  display: flex;
+  align-items: flex-start;
+}
+
+.education-col {
+  display: flex;
+  flex-direction: column;
+}
+
+.education-degree {
+  margin-bottom: 0.5rem;
+}
+
+.principles-list-regular {
+  font-weight: 400;
 }
 
 /* Enhanced list styling for Apple-like appearance */
