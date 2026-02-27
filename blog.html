@@ -69,12 +69,20 @@
 
 		.blog-grid {
 			display: grid;
-			grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-			gap: 2.5rem 2rem;
+			grid-template-columns: repeat(3, 1fr);
+			gap: 1.5rem 2rem;
 			max-width: 1400px;
 			margin: 0 auto;
 			width: 100%;
 			padding: 0 2vw;
+		}
+
+		@media (max-width: 1024px) {
+			.blog-grid { grid-template-columns: repeat(2, 1fr); }
+		}
+
+		@media (max-width: 600px) {
+			.blog-grid { grid-template-columns: 1fr; }
 		}
 
 		.blog-card {
@@ -84,7 +92,7 @@
 			border-radius: 18px;
 			box-shadow: 0 4px 24px 0 rgba(0,0,0,0.10);
 			background: #fff !important;
-			padding: 2.2rem 1.5rem 1.5rem 1.5rem;
+			padding: 1.4rem 1.5rem 1.1rem 1.5rem;
 			color: #23272f !important;
 			opacity: 1 !important;
 			filter: none !important;
@@ -555,19 +563,6 @@
 			<section class="blog-section">
 				<div style="height: 1.5rem;"></div>
 				
-				<!-- Substack Subscribe Banner - Prominent -->
-				<div class="substack-banner">
-					<div class="substack-banner-content">
-						<div class="substack-banner-text">
-							<h2>Subscribe to my newsletter</h2>
-							<p>Get the latest articles on experimentation, causal inference, and product analytics delivered to your inbox.</p>
-						</div>
-						<div class="substack-banner-form">
-							<iframe src="https://dpal.substack.com/embed" width="100%" height="140" frameborder="0" scrolling="no"></iframe>
-						</div>
-					</div>
-				</div>
-
 				<!-- Latest Articles Section -->
 				<div style="margin-bottom: 2rem;">
 					<div id="latest-articles" class="latest-articles-grid">
@@ -588,6 +583,18 @@
 						<span class="medium-text">
 							<strong>Also on Medium</strong>
 							<span>Read more articles on data science and analytics</span>
+						</span>
+						<span class="medium-arrow">→</span>
+					</a>
+				</div>
+
+				<!-- Substack Subscribe - Compact -->
+				<div class="medium-compact">
+					<a href="https://dpal.substack.com/" target="_blank" rel="noopener" class="medium-link">
+						<span class="medium-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" width="20" height="20" style="vertical-align:middle;"><rect width="448" height="512" rx="80" fill="#FF6719"/><path d="M112 192v32h224v-32zm0 64v32h224v-32zm0 64v32h224v-32z" fill="#fff"/></svg></span>
+						<span class="medium-text">
+							<strong>Subscribe on Substack</strong>
+							<span>Get new articles delivered to your inbox</span>
 						</span>
 						<span class="medium-arrow">→</span>
 					</a>
@@ -666,7 +673,7 @@
 				
 				if (data.status === 'ok' && data.items && data.items.length > 0) {
 					// Get latest 6 articles
-					const latestArticles = data.items.slice(0, 6);
+					const latestArticles = data.items.slice(0, 9);
 					
 					// Calculate reading time
 					function calculateReadingTime(text) {
