@@ -1583,7 +1583,7 @@ footer#footer, #footer > section, #footer .split.contact section {
   justify-content: center;
   gap: 0.45rem;
   height: 56px;
-  padding: 0 0.9rem;
+  padding: 0 1.1rem;
 }
 
 #intro .hero-cta-group .button:hover,
@@ -1591,6 +1591,26 @@ footer#footer, #footer > section, #footer .split.contact section {
   background: rgba(242, 107, 29, 0.08) !important;
   border-color: #f26b1d !important;
   color: #f26b1d !important;
+}
+
+/* Primary (filled) button */
+#intro .hero-cta-group .button.primary {
+  background: #f26b1d !important;
+  color: #fff !important;
+  border-color: #f26b1d !important;
+  box-shadow: 0 4px 16px rgba(242, 107, 29, 0.28);
+}
+
+#intro .hero-cta-group .button.primary:hover,
+#intro .hero-cta-group .button.primary:focus {
+  background: #d35400 !important;
+  border-color: #d35400 !important;
+  color: #fff !important;
+  box-shadow: 0 6px 20px rgba(242, 107, 29, 0.36);
+}
+
+#intro .hero-cta-group .button.primary .icon {
+  color: #fff !important;
 }
 
 #intro .hero-cta-group .button:focus {
@@ -1612,7 +1632,7 @@ footer#footer, #footer > section, #footer .split.contact section {
   width: 56px;
   height: 56px;
   padding: 0;
-  border-radius: 14px !important;
+  border-radius: 50% !important;
 }
 
 #intro .hero-cta-group .button.icon-only .icon {
@@ -1680,6 +1700,7 @@ footer#footer, #footer > section, #footer .split.contact section {
     min-width: 52px;
     width: 52px;
     height: 52px;
+    border-radius: 50% !important;
   }
 }
 

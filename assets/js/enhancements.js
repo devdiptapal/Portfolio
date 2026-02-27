@@ -70,7 +70,7 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     renderIntroSocialLinks();
-    renderSocialIcons('#top-social-icons', ['twitter', 'linkedin', 'instagram', 'github', 'medium', 'strava', 'substack']);
+    renderSocialIcons('#top-social-icons', ['substack', 'twitter', 'linkedin', 'instagram', 'github', 'medium', 'strava']);
     renderSocialIcons('#footer-social-icons', ['twitter', 'linkedin', 'instagram', 'github']);
     
     // Smooth scrolling for anchor links
