@@ -70,8 +70,8 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     renderIntroSocialLinks();
-    renderSocialIcons('#top-social-icons', ['substack', 'twitter', 'linkedin', 'instagram', 'github', 'medium', 'strava']);
-    renderSocialIcons('#footer-social-icons', ['twitter', 'linkedin', 'instagram', 'github']);
+    renderSocialIcons('#top-social-icons', ['substack', 'twitter', 'linkedin', 'github', 'medium', 'strava']);
+    renderSocialIcons('#footer-social-icons', ['twitter', 'linkedin', 'github']);
     
     // Smooth scrolling for anchor links
     const anchorLinks = document.querySelectorAll('a[href^="#"]');
