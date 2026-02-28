@@ -2,8 +2,13 @@
   publish = "."
 
 [[redirects]]
-  from = "/experience"
-  to = "/experience.html"
+  from = "/impact"
+  to = "/impact.html"
+  status = 200
+
+[[redirects]]
+  from = "/writing"
+  to = "/writing.html"
   status = 200
 
 [[redirects]]
@@ -17,13 +22,13 @@
   status = 200
 
 [[redirects]]
-  from = "/blog"
-  to = "/blog.html"
-  status = 200
+  from = "/impact.html"
+  to = "/impact"
+  status = 301
 
 [[redirects]]
-  from = "/experience.html"
-  to = "/experience"
+  from = "/writing.html"
+  to = "/writing"
   status = 301
 
 [[redirects]]
@@ -37,11 +42,16 @@
   status = 301
 
 [[redirects]]
-  from = "/blog.html"
-  to = "/blog"
+  from = "/index.html"
+  to = "/"
   status = 301
 
 [[redirects]]
-  from = "/index.html"
-  to = "/"
+  from = "/experience"
+  to = "/impact"
+  status = 301
+
+[[redirects]]
+  from = "/blog"
+  to = "/writing"
   status = 301
