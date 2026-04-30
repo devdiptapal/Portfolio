@@ -663,7 +663,8 @@
 				
 				// Using a CORS proxy for client-side fetching
 				// In production, you might want to fetch this server-side or use Substack API
-				const proxyUrl = `https://api.rss2json.com/v1/api.json?rss_url=${encodeURIComponent(rssUrl)}`;
+				const cacheBust = Math.floor(Date.now() / (1000 * 60 * 30)); // refreshes every 30 min
+				const proxyUrl = `https://api.rss2json.com/v1/api.json?rss_url=${encodeURIComponent(rssUrl)}&_=${cacheBust}`;
 				
 				const response = await fetch(proxyUrl);
 				const data = await response.json();
