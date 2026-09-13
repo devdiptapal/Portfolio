@@ -14,9 +14,23 @@ const urlMappings = {
   '/blog': '/blog.html'
 };
 
-const server = http.createServer((req, res) => {
+const server = http.createServer(async (req, res) => {
   const parsedUrl = url.parse(req.url);
   let filePath = parsedUrl.pathname;
+
+  // Proxy Netlify function locally
+  if (filePath === '/.netlify/functions/rss-proxy') {
+    try {
+      const upstream = await fetch('https://dpal.substack.com/feed');
+      const xml = await upstream.text();
+      res.writeHead(200, { 'Content-Type': 'application/xml', 'Access-Control-Allow-Origin': '*' });
+      res.end(xml);
+    } catch (e) {
+      res.writeHead(502, { 'Content-Type': 'text/plain' });
+      res.end('upstream error');
+    }
+    return;
+  }
 
   // Handle clean URLs
   if (urlMappings[filePath]) {

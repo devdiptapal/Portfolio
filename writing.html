@@ -69,7 +69,7 @@
 
 		.blog-grid {
 			display: grid;
-			grid-template-columns: repeat(3, 1fr);
+			grid-template-columns: repeat(4, 1fr);
 			gap: 1.5rem 2rem;
 			max-width: 1400px;
 			margin: 0 auto;
@@ -78,6 +78,10 @@
 		}
 
 		@media (max-width: 1024px) {
+			.blog-grid { grid-template-columns: repeat(3, 1fr); }
+		}
+
+		@media (max-width: 768px) {
 			.blog-grid { grid-template-columns: repeat(2, 1fr); }
 		}
 
@@ -187,7 +191,7 @@
 		/* Latest Articles Grid */
 		.latest-articles-grid {
 			display: grid;
-			grid-template-columns: repeat(3, 1fr);
+			grid-template-columns: repeat(4, 1fr);
 			gap: 1.5rem;
 			max-width: 1400px;
 			margin: 0 auto;
@@ -195,7 +199,14 @@
 			padding: 0 2vw;
 		}
 
-		@media (max-width: 1024px) {
+		@media (max-width: 1200px) {
+			.latest-articles-grid {
+				grid-template-columns: repeat(3, 1fr);
+				gap: 1.25rem;
+			}
+		}
+
+		@media (max-width: 900px) {
 			.latest-articles-grid {
 				grid-template-columns: repeat(2, 1fr);
 				gap: 1.25rem;
@@ -565,7 +576,17 @@
 				<!-- Latest Articles Section -->
 				<div style="margin-bottom: 2rem;">
 					<div id="latest-articles" class="latest-articles-grid">
-						<!-- Skeleton loaders -->
+						<!-- Skeleton loaders (16 = 4x4 grid) -->
+						<div class="article-skeleton"><div class="skeleton-line" style="width: 80%; height: 1.5rem; margin-bottom: 0.75rem;"></div><div class="skeleton-line" style="width: 50%; height: 0.9rem; margin-bottom: 1rem;"></div><div class="skeleton-line" style="width: 100%; height: 0.9rem; margin-bottom: 0.5rem;"></div><div class="skeleton-line" style="width: 90%; height: 0.9rem; margin-bottom: 1rem;"></div><div class="skeleton-line" style="width: 40%; height: 0.9rem;"></div></div>
+						<div class="article-skeleton"><div class="skeleton-line" style="width: 80%; height: 1.5rem; margin-bottom: 0.75rem;"></div><div class="skeleton-line" style="width: 50%; height: 0.9rem; margin-bottom: 1rem;"></div><div class="skeleton-line" style="width: 100%; height: 0.9rem; margin-bottom: 0.5rem;"></div><div class="skeleton-line" style="width: 90%; height: 0.9rem; margin-bottom: 1rem;"></div><div class="skeleton-line" style="width: 40%; height: 0.9rem;"></div></div>
+						<div class="article-skeleton"><div class="skeleton-line" style="width: 80%; height: 1.5rem; margin-bottom: 0.75rem;"></div><div class="skeleton-line" style="width: 50%; height: 0.9rem; margin-bottom: 1rem;"></div><div class="skeleton-line" style="width: 100%; height: 0.9rem; margin-bottom: 0.5rem;"></div><div class="skeleton-line" style="width: 90%; height: 0.9rem; margin-bottom: 1rem;"></div><div class="skeleton-line" style="width: 40%; height: 0.9rem;"></div></div>
+						<div class="article-skeleton"><div class="skeleton-line" style="width: 80%; height: 1.5rem; margin-bottom: 0.75rem;"></div><div class="skeleton-line" style="width: 50%; height: 0.9rem; margin-bottom: 1rem;"></div><div class="skeleton-line" style="width: 100%; height: 0.9rem; margin-bottom: 0.5rem;"></div><div class="skeleton-line" style="width: 90%; height: 0.9rem; margin-bottom: 1rem;"></div><div class="skeleton-line" style="width: 40%; height: 0.9rem;"></div></div>
+						<div class="article-skeleton"><div class="skeleton-line" style="width: 80%; height: 1.5rem; margin-bottom: 0.75rem;"></div><div class="skeleton-line" style="width: 50%; height: 0.9rem; margin-bottom: 1rem;"></div><div class="skeleton-line" style="width: 100%; height: 0.9rem; margin-bottom: 0.5rem;"></div><div class="skeleton-line" style="width: 90%; height: 0.9rem; margin-bottom: 1rem;"></div><div class="skeleton-line" style="width: 40%; height: 0.9rem;"></div></div>
+						<div class="article-skeleton"><div class="skeleton-line" style="width: 80%; height: 1.5rem; margin-bottom: 0.75rem;"></div><div class="skeleton-line" style="width: 50%; height: 0.9rem; margin-bottom: 1rem;"></div><div class="skeleton-line" style="width: 100%; height: 0.9rem; margin-bottom: 0.5rem;"></div><div class="skeleton-line" style="width: 90%; height: 0.9rem; margin-bottom: 1rem;"></div><div class="skeleton-line" style="width: 40%; height: 0.9rem;"></div></div>
+						<div class="article-skeleton"><div class="skeleton-line" style="width: 80%; height: 1.5rem; margin-bottom: 0.75rem;"></div><div class="skeleton-line" style="width: 50%; height: 0.9rem; margin-bottom: 1rem;"></div><div class="skeleton-line" style="width: 100%; height: 0.9rem; margin-bottom: 0.5rem;"></div><div class="skeleton-line" style="width: 90%; height: 0.9rem; margin-bottom: 1rem;"></div><div class="skeleton-line" style="width: 40%; height: 0.9rem;"></div></div>
+						<div class="article-skeleton"><div class="skeleton-line" style="width: 80%; height: 1.5rem; margin-bottom: 0.75rem;"></div><div class="skeleton-line" style="width: 50%; height: 0.9rem; margin-bottom: 1rem;"></div><div class="skeleton-line" style="width: 100%; height: 0.9rem; margin-bottom: 0.5rem;"></div><div class="skeleton-line" style="width: 90%; height: 0.9rem; margin-bottom: 1rem;"></div><div class="skeleton-line" style="width: 40%; height: 0.9rem;"></div></div>
+						<div class="article-skeleton"><div class="skeleton-line" style="width: 80%; height: 1.5rem; margin-bottom: 0.75rem;"></div><div class="skeleton-line" style="width: 50%; height: 0.9rem; margin-bottom: 1rem;"></div><div class="skeleton-line" style="width: 100%; height: 0.9rem; margin-bottom: 0.5rem;"></div><div class="skeleton-line" style="width: 90%; height: 0.9rem; margin-bottom: 1rem;"></div><div class="skeleton-line" style="width: 40%; height: 0.9rem;"></div></div>
+						<div class="article-skeleton"><div class="skeleton-line" style="width: 80%; height: 1.5rem; margin-bottom: 0.75rem;"></div><div class="skeleton-line" style="width: 50%; height: 0.9rem; margin-bottom: 1rem;"></div><div class="skeleton-line" style="width: 100%; height: 0.9rem; margin-bottom: 0.5rem;"></div><div class="skeleton-line" style="width: 90%; height: 0.9rem; margin-bottom: 1rem;"></div><div class="skeleton-line" style="width: 40%; height: 0.9rem;"></div></div>
 						<div class="article-skeleton"><div class="skeleton-line" style="width: 80%; height: 1.5rem; margin-bottom: 0.75rem;"></div><div class="skeleton-line" style="width: 50%; height: 0.9rem; margin-bottom: 1rem;"></div><div class="skeleton-line" style="width: 100%; height: 0.9rem; margin-bottom: 0.5rem;"></div><div class="skeleton-line" style="width: 90%; height: 0.9rem; margin-bottom: 1rem;"></div><div class="skeleton-line" style="width: 40%; height: 0.9rem;"></div></div>
 						<div class="article-skeleton"><div class="skeleton-line" style="width: 80%; height: 1.5rem; margin-bottom: 0.75rem;"></div><div class="skeleton-line" style="width: 50%; height: 0.9rem; margin-bottom: 1rem;"></div><div class="skeleton-line" style="width: 100%; height: 0.9rem; margin-bottom: 0.5rem;"></div><div class="skeleton-line" style="width: 90%; height: 0.9rem; margin-bottom: 1rem;"></div><div class="skeleton-line" style="width: 40%; height: 0.9rem;"></div></div>
 						<div class="article-skeleton"><div class="skeleton-line" style="width: 80%; height: 1.5rem; margin-bottom: 0.75rem;"></div><div class="skeleton-line" style="width: 50%; height: 0.9rem; margin-bottom: 1rem;"></div><div class="skeleton-line" style="width: 100%; height: 0.9rem; margin-bottom: 0.5rem;"></div><div class="skeleton-line" style="width: 90%; height: 0.9rem; margin-bottom: 1rem;"></div><div class="skeleton-line" style="width: 40%; height: 0.9rem;"></div></div>
@@ -653,82 +674,83 @@
 	<script src="assets/js/main.js"></script>
 	<script src="assets/js/enhancements.js"></script>
 	<script>
-		// Fetch and display latest 3 Substack articles
 		async function loadSubstackArticles() {
 			const articlesContainer = document.getElementById('latest-articles');
-			
-			try {
-				// Fetch RSS feed - using a CORS proxy for local testing, or use your server
-				const rssUrl = 'https://dpal.substack.com/feed';
-				
-				// Using a CORS proxy for client-side fetching
-				// In production, you might want to fetch this server-side or use Substack API
-				const cacheBust = Math.floor(Date.now() / (1000 * 60 * 30)); // refreshes every 30 min
-				const proxyUrl = `https://api.rss2json.com/v1/api.json?rss_url=${encodeURIComponent(rssUrl)}&_=${cacheBust}`;
-				
-				const response = await fetch(proxyUrl);
-				const data = await response.json();
-				
-				if (data.status === 'ok' && data.items && data.items.length > 0) {
-					// Get latest 6 articles
-					const latestArticles = data.items.slice(0, 9);
-					
-					// Calculate reading time
-					function calculateReadingTime(text) {
-						const wordsPerMinute = 200;
-						const words = text.replace(/<[^>]*>/g, '').split(/\s+/).length;
-						const minutes = Math.ceil(words / wordsPerMinute);
-						return minutes;
-					}
-					
-					articlesContainer.innerHTML = latestArticles.map(article => {
-						// Format date
-						const date = new Date(article.pubDate);
-						const formattedDate = date.toLocaleDateString('en-US', { 
-							year: 'numeric', 
-							month: 'long', 
-							day: 'numeric' 
-						});
-						
-						// Get excerpt (first 150 chars)
-						const cleanText = article.description ? article.description.replace(/<[^>]*>/g, '') : '';
-						const excerpt = cleanText ? cleanText.substring(0, 150) + '...' : 'Read the full article on Substack...';
-						
-						// Calculate reading time
-						const readingTime = calculateReadingTime(cleanText);
-						const readingTimeText = readingTime === 1 ? '1 min read' : `${readingTime} min read`;
-						
-						return `
-							<a href="${article.link}" target="_blank" rel="noopener" class="article-card">
-								<h3>${article.title}</h3>
-								<span class="article-date">${formattedDate} · ${readingTimeText}</span>
-								<p class="article-excerpt">${excerpt}</p>
-								<span class="article-link">Read on Substack</span>
-							</a>
-						`;
-					}).join('');
-				} else {
-					throw new Error('Failed to fetch articles');
-				}
-			} catch (error) {
-				console.error('Error loading Substack articles:', error);
+			const rssUrl = 'https://dpal.substack.com/feed';
+
+			function calculateReadingTime(text) {
+				const words = text.replace(/<[^>]*>/g, '').split(/\s+/).filter(Boolean).length;
+				const minutes = Math.ceil(words / 200);
+				return minutes === 1 ? '1 min read' : `${minutes} min read`;
+			}
+
+			function renderArticles(items) {
+				articlesContainer.innerHTML = items.slice(0, 16).map(item => {
+					const date = new Date(item.pubDate);
+					const formattedDate = date.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' });
+					const cleanText = (item.description || '').replace(/<[^>]*>/g, '');
+					const excerpt = cleanText ? cleanText.substring(0, 150) + '...' : 'Read the full article on Substack...';
+					return `
+						<a href="${item.link}" target="_blank" rel="noopener" class="article-card">
+							<h3>${item.title}</h3>
+							<span class="article-date">${formattedDate} · ${calculateReadingTime(cleanText)}</span>
+							<p class="article-excerpt">${excerpt}</p>
+							<span class="article-link">Read on Substack</span>
+						</a>
+					`;
+				}).join('');
+			}
+
+			function parseXML(xmlString) {
+				const xml = new DOMParser().parseFromString(xmlString, 'text/xml');
+				if (xml.querySelector('parsererror')) throw new Error('XML parse error');
+				const nodes = [...xml.getElementsByTagName('item')];
+				if (!nodes.length) throw new Error('No items');
+				return nodes.map(node => ({
+					title: node.getElementsByTagName('title')[0]?.textContent || '',
+					link: node.getElementsByTagName('link')[0]?.textContent || '',
+					pubDate: node.getElementsByTagName('pubDate')[0]?.textContent || '',
+					description: node.getElementsByTagName('description')[0]?.textContent || '',
+				}));
+			}
+
+			function showError() {
 				articlesContainer.innerHTML = `
 					<div class="article-error">
 						<p>Unable to load latest articles. Please check your connection and try again.</p>
-						<a href="https://dpal.substack.com/" target="_blank" rel="noopener" class="retry-btn">
-							Visit my Substack →
-						</a>
+						<a href="https://dpal.substack.com/" target="_blank" rel="noopener" class="retry-btn">Visit my Substack →</a>
 						<div style="margin-top: 1rem;">
-							<button onclick="loadSubstackArticles()" class="retry-btn" style="background: transparent; border: none; cursor: pointer;">
-								Retry
-							</button>
+							<button onclick="loadSubstackArticles()" class="retry-btn" style="background: transparent; border: none; cursor: pointer;">Retry</button>
 						</div>
 					</div>
 				`;
 			}
+
+			// Primary: Netlify Function (no item cap, no third-party dependency)
+			try {
+				const res = await fetch('/.netlify/functions/rss-proxy');
+				if (!res.ok) throw new Error(`HTTP ${res.status}`);
+				const text = await res.text();
+				renderArticles(parseXML(text));
+				return;
+			} catch (e) {
+				console.warn('Netlify function failed:', e.message);
+			}
+
+			// Fallback: rss2json (reliable, free tier returns 10 items)
+			try {
+				const cacheBust = Math.floor(Date.now() / (1000 * 60 * 30));
+				const res = await fetch(`https://api.rss2json.com/v1/api.json?rss_url=${encodeURIComponent(rssUrl)}&_=${cacheBust}`);
+				if (!res.ok) throw new Error(`HTTP ${res.status}`);
+				const data = await res.json();
+				if (data.status !== 'ok' || !data.items?.length) throw new Error('Bad response');
+				renderArticles(data.items.map(i => ({ title: i.title, link: i.link, pubDate: i.pubDate, description: i.description })));
+			} catch (e) {
+				console.error('All sources failed:', e.message);
+				showError();
+			}
 		}
-		
-		// Load articles when page loads
+
 		document.addEventListener('DOMContentLoaded', loadSubstackArticles);
 	</script>
 
