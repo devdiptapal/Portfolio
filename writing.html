@@ -726,15 +726,15 @@
 				`;
 			}
 
-			// Primary: Netlify Function (no item cap, no third-party dependency)
+			// Primary: feed snapshot committed by .github/workflows/substack-feed.yml (same origin, no item cap)
 			try {
-				const res = await fetch('/.netlify/functions/rss-proxy');
+				const res = await fetch('/substack-feed.xml', { cache: 'no-cache' });
 				if (!res.ok) throw new Error(`HTTP ${res.status}`);
 				const text = await res.text();
 				renderArticles(parseXML(text));
 				return;
 			} catch (e) {
-				console.warn('Netlify function failed:', e.message);
+				console.warn('Feed snapshot failed:', e.message);
 			}
 
 			// Fallback: rss2json (reliable, free tier returns 10 items)
