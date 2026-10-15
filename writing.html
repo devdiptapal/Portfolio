@@ -726,7 +726,7 @@
 				`;
 			}
 
-			// Primary: feed snapshot committed by .github/workflows/substack-feed.yml (same origin, no item cap)
+			// Primary: feed snapshot updated by refresh-feed.sh (same origin, no item cap)
 			try {
 				const res = await fetch('/substack-feed.xml', { cache: 'no-cache' });
 				if (!res.ok) throw new Error(`HTTP ${res.status}`);
